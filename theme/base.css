@@ -772,7 +772,7 @@ table.table1 tbody td {
 	display: none;
 	padding: 0;
 	top: 25%;
-	max-width: 410px;
+	max-width: 420px;
 	margin: 0 auto;
 	border-radius: var(--border-radius-big);
 }
