@@ -1,0 +1,265 @@
+@charset "utf-8";
+
+:root, #getcolors {
+	--main-color1:	#2b5b84;
+	--main-color2:	#1e91fc;
+	--main-color3:	#4889c5;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: var(--main-color2);
+}
+
+.postlink:hover {
+	border-bottom-color: var(--main-color2);
+	color: var(--main-color2);
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+	color: var(--main-color2);
+}
+
+.headerbar {
+	background-color: var(--main-color1);
+}
+
+.forabg,
+.forumbg {
+	background-color: var(--main-color1);
+}
+
+.sep {
+	color: var(--main-color2);
+}
+
+a:hover .icon.icon-blue,
+a:hover .icon.icon-green,
+a:hover .icon.icon-lightgray,
+a:hover .icon.icon-orange,
+a:hover .icon.icon-red {
+	color: var(--main-color2);
+}
+	
+.icon.icon-red,
+a:hover .icon.icon-red {
+	color: var(--main-color1);
+}
+
+.jumpbox-cat-link {
+	background-color: var(--main-color1);
+	border-top-color: var(--main-color1);
+}
+
+.jumpbox-cat-link:hover {
+	background-color: var(--main-color3);
+	border-top-color: var(--main-color3);
+}
+
+li.row a:hover strong {
+	color: var(--main-color2);
+}
+
+.posthilit {
+	background-color: var(--main-color1);
+}
+
+.button {
+	border-color: var(--main-color1);
+	background-color: var(--main-color1);
+}
+
+.button:hover,
+.button:focus {
+	border-color: var(--main-color3);
+	background-color: var(--main-color3);
+}
+
+.button-search:hover,
+.button-search-end:hover {
+	border-color: var(--main-color3);
+}
+
+.pagination li a {
+	background-color: var(--main-color1);
+	border-color: var(--main-color1);
+}
+
+.pagination li.active span {
+	background-color: var(--main-color3);
+	border-color: var(--main-color3);
+}
+
+.pagination li a:hover,
+.pagination li a:hover .icon,
+.pagination .dropdown-visible a.dropdown-trigger,
+.nojs .pagination .dropdown-container:hover a.dropdown-trigger {
+	background-color: var(--main-color3);
+	border-color: var(--main-color3);
+}
+
+.tabs .tab > a {
+	background-color: var(--main-color1);
+}
+
+.tabs .tab > a:hover {
+	background: var(--main-color3);
+}
+
+.tabs .activetab > a,
+.tabs .activetab > a:hover {
+	background: var(--main-color3);
+	border-color: var(--main-color3);
+}
+
+.minitabs .tab > a {
+	background-color: var(--main-color1);
+}
+
+.minitabs .tab > a:hover,
+.minitabs .activetab > a,
+.minitabs .activetab > a:hover {
+	background-color: var(--main-color3);
+}
+
+.navigation a,
+.rtl .navigation a {
+	background: var(--main-color1);
+}
+
+.navigation a:hover,
+.navigation .active-subsection a,
+.navigation .active-subsection a:hover {
+	background-color: var(--main-color3);
+}
+
+@media (max-width: 900px) {
+	#navigation a, .rtl #navigation a {
+		background: var(--main-color1); 
+	}
+
+	#navigation a:hover,
+	#navigation .active-subsection a,
+	#navigation .active-subsection a:hover {
+		background-color: var(--main-color3);
+	}
+}
+
+.inputbox:hover {
+	border-color: var(--main-color2);
+}
+
+.inputbox:focus {
+	border-color: var(--main-color2);
+}
+
+a.button1,
+input.button1,
+a.button2,
+input.button2,
+input.button3 {
+	border-color: var(--main-color1);
+	background: var(--main-color1);
+}
+
+a.button1:hover,
+input.button1:hover,
+a.button2:hover,
+input.button2:hover,
+input.button3:hover {
+	border-color: var(--main-color3);
+	background-color: var(--main-color3);
+}
+
+input.button1:focus,
+input.button2:focus,
+input.button3:focus {
+	border-color: var(--main-color3);
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+	background-color: var(--main-color1);
+	border-color: var(--main-color1);
+}
+
+input[type="checkbox"]:hover,
+input[type="radio"]:not([disabled]):hover {
+	border-color: var(--main-color2);
+}
+
+.badge {
+	background-color: var(--main-color1);
+}
+
+.row-item[class*="_unread"]::before {
+	background-color: var(--main-color1);
+}
+
+.icon.fa-file-o.icon-red {
+	color: var(--main-color1);
+}
+
+
+.footerbar {
+	background-color: var(--main-color1);
+}
+
+a:hover .badge,
+.badge:hover {
+	background-color: var(--main-color3);
+}
+
+.online-text {
+	color: var(--main-color2);
+}
+
+.format-buttons .bbcode-size {
+	border-color: var(--main-color1);
+}
+	
+.format-buttons .bbcode-size:hover {
+	border-color: var(--main-color3);
+}
+
+.alert_close {
+	color: var(--main-color1);
+}
+
+.scrolltop {
+	background-color: var(--main-color1);
+}
+
+.scrolltop:hover {
+	background-color: var(--main-color3);
+}
+
+.sp-container button.sp-choose {
+	background-color: var(--main-color1);
+}
+
+.sp-container button.sp-choose:hover {
+    background-color: var(--main-color3);
+}
+
+.cc-banner .cc-message {
+	color: var(--text-color-2);
+}
+
+.cc-banner a.cc-link {
+	color: var(--links-color);
+}
+
+.cc-banner a.cc-link:hover,
+.cc-banner a.cc-link:focus,
+.cc-banner a.cc-link:active {
+	color: var(--main-color2);
+}
+
+.cc-banner a.cc-btn:hover,
+.cc-banner a.cc-btn:focus,
+.cc-banner a.cc-btn:active {
+	background-color: var(--main-color3);
+}

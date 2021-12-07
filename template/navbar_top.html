@@ -1,0 +1,213 @@
+<div class="navbar" role="navigation">
+	<div class="inner main-width">
+
+	<ul id="nav-main" class="nav-main linklist" role="menubar">
+
+		<li id="quick-links" class="quick-links dropdown-container responsive-menu<!-- IF not S_DISPLAY_QUICK_LINKS and not S_DISPLAY_SEARCH --> hidden<!-- ENDIF -->" data-skip-responsive="true">
+			<a href="#" class="dropdown-trigger">
+				<i class="icon fa-bars fa-fw" aria-hidden="true"></i><span>{L_QUICK_LINKS}</span>
+			</a>
+			<div class="dropdown">
+				<div class="pointer"><div class="pointer-inner"></div></div>
+				<ul class="dropdown-contents" role="menu">
+					<!-- EVENT navbar_header_quick_links_before -->
+
+					<!-- IF S_DISPLAY_SEARCH -->
+						<li class="separator"></li>
+						<!-- IF S_REGISTERED_USER -->
+							<li>
+								<a href="{U_SEARCH_SELF}" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>{L_SEARCH_SELF}</span>
+								</a>
+							</li>
+						<!-- ENDIF -->
+						<!-- IF S_USER_LOGGED_IN -->
+							<li>
+								<a href="{U_SEARCH_NEW}" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-red" aria-hidden="true"></i><span>{L_SEARCH_NEW}</span>
+								</a>
+							</li>
+						<!-- ENDIF -->
+						<!-- IF S_LOAD_UNREADS -->
+							<li>
+								<a href="{U_SEARCH_UNREAD}" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-red" aria-hidden="true"></i><span>{L_SEARCH_UNREAD}</span>
+								</a>
+							</li>
+						<!-- ENDIF -->
+							<li>
+								<a href="{U_SEARCH_UNANSWERED}" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>{L_SEARCH_UNANSWERED}</span>
+								</a>
+							</li>
+							<li>
+								<a href="{U_SEARCH_ACTIVE_TOPICS}" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-blue" aria-hidden="true"></i><span>{L_SEARCH_ACTIVE_TOPICS}</span>
+								</a>
+							</li>
+							<li class="separator"></li>
+							<li>
+								<a href="{U_SEARCH}" role="menuitem">
+									<i class="icon fa-search fa-fw" aria-hidden="true"></i><span>{L_SEARCH}</span>
+								</a>
+							</li>
+					<!-- ENDIF -->
+
+					<!-- IF not S_IS_BOT and (S_DISPLAY_MEMBERLIST or U_TEAM) -->
+						<li class="separator"></li>
+						<!-- IF S_DISPLAY_MEMBERLIST -->
+							<li>
+								<a href="{U_MEMBERLIST}" role="menuitem">
+									<i class="icon fa-group fa-fw" aria-hidden="true"></i><span>{L_MEMBERLIST}</span>
+								</a>
+							</li>
+						<!-- ENDIF -->
+						<!-- IF U_TEAM -->
+							<li>
+								<a href="{U_TEAM}" role="menuitem">
+									<i class="icon fa-shield fa-fw" aria-hidden="true"></i><span>{L_THE_TEAM}</span>
+								</a>
+							</li>
+						<!-- ENDIF -->
+					<!-- ENDIF -->
+					<li class="separator"></li>
+
+					<!-- EVENT navbar_header_quick_links_after -->
+				</ul>
+			</div>
+		</li>
+
+		<!-- EVENT overall_header_navigation_prepend -->
+		<li <!-- IF not S_USER_LOGGED_IN -->data-skip-responsive="true"<!-- ELSE -->data-last-responsive="true"<!-- ENDIF -->>
+			<a href="{U_FAQ}" rel="help" title="{L_FAQ_EXPLAIN}" role="menuitem">
+				<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i><span>{L_FAQ}</span>
+			</a>
+		</li>
+		<!-- EVENT overall_header_navigation_append -->
+		<!-- IF U_ACP -->
+			<li data-last-responsive="true">
+				<a href="{U_ACP}" title="{L_ACP}" role="menuitem">
+					<i class="icon fa-cogs fa-fw" aria-hidden="true"></i><span>{L_ACP_SHORT}</span>
+				</a>
+			</li>
+		<!-- ENDIF -->
+		<!-- IF U_MCP -->
+			<li data-last-responsive="true">
+				<a href="{U_MCP}" title="{L_MCP}" role="menuitem">
+					<i class="icon fa-gavel fa-fw" aria-hidden="true"></i><span>{L_MCP_SHORT}</span>
+				</a>
+			</li>
+		<!-- ENDIF -->
+
+	<!-- IF S_REGISTERED_USER -->
+		<!-- EVENT navbar_header_user_profile_prepend -->
+		<li id="username_logged_in" class="rightside no-bulletin" data-skip-responsive="true">
+			<!-- EVENT navbar_header_username_prepend -->
+			<div class="header-profile dropdown-container">
+				<a href="{U_PROFILE}" class="header-avatar dropdown-trigger"><!-- IF CURRENT_USER_AVATAR -->{CURRENT_USER_AVATAR} <!-- ELSE --><img src="{{ T_THEME_PATH }}/images/no_avatar.gif" class="avatar" alt="" style="width: 16px"><!-- ENDIF --> {CURRENT_USERNAME_SIMPLE}</a>
+				<div class="dropdown">
+					<div class="pointer"><div class="pointer-inner"></div></div>
+					<ul class="dropdown-contents" role="menu">
+						<!-- IF U_RESTORE_PERMISSIONS -->
+							<li>
+								<a href="{U_RESTORE_PERMISSIONS}">
+									<i class="icon fa-refresh fa-fw" aria-hidden="true"></i><span>{L_RESTORE_PERMISSIONS}</span>
+								</a>
+							</li>
+						<!-- ENDIF -->
+
+					<!-- EVENT navbar_header_profile_list_before -->
+
+						<li>
+							<a href="{U_PROFILE}" title="{L_PROFILE}" role="menuitem">
+								<i class="icon fa-sliders fa-fw" aria-hidden="true"></i><span>{L_PROFILE}</span>
+							</a>
+						</li>
+						<!-- IF U_USER_PROFILE -->
+							<li>
+								<a href="{U_USER_PROFILE}" title="{L_READ_PROFILE}" role="menuitem">
+									<i class="icon fa-user fa-fw" aria-hidden="true"></i><span>{L_READ_PROFILE}</span>
+								</a>
+
+							</li>
+						<!-- ENDIF -->
+
+						<!-- EVENT navbar_header_profile_list_after -->
+
+						<li class="separator"></li>
+						<li>
+							<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">
+								<i class="icon fa-power-off fa-fw" aria-hidden="true"></i><span>{L_LOGIN_LOGOUT}</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- EVENT navbar_header_username_append -->
+		</li>
+		<!-- IF S_DISPLAY_PM -->
+			<li class="rightside" data-skip-responsive="true">
+				<a href="{U_PRIVATEMSGS}" role="menuitem">
+					<i class="icon fa-inbox fa-fw" aria-hidden="true"></i><span>{L_PRIVATE_MESSAGES} </span><strong class="badge<!-- IF not PRIVATE_MESSAGE_COUNT --> hidden<!-- ENDIF -->">{PRIVATE_MESSAGE_COUNT}</strong>
+				</a>
+			</li>
+		<!-- ENDIF -->
+		<!-- IF S_NOTIFICATIONS_DISPLAY -->
+			<li class="dropdown-container dropdown-{S_CONTENT_FLOW_END} rightside" data-skip-responsive="true">
+				<a href="{U_VIEW_ALL_NOTIFICATIONS}" id="notification_list_button" class="dropdown-trigger">
+					<i class="icon fa-bell fa-fw" aria-hidden="true"></i><span>{L_NOTIFICATIONS} </span><strong class="badge<!-- IF not NOTIFICATIONS_COUNT --> hidden<!-- ENDIF -->">{NOTIFICATIONS_COUNT}</strong>
+				</a>
+				<!-- INCLUDE notification_dropdown.html -->
+			</li>
+		<!-- ENDIF -->
+		<!-- EVENT navbar_header_user_profile_append -->
+	<!-- ELSE IF not S_IS_BOT -->
+		<li class="rightside"  data-skip-responsive="true">
+			<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem"{% if definition.MODAL_LOGIN %} id="modal-login-trigger"{% endif %}>
+				<i class="icon fa-power-off fa-fw" aria-hidden="true"></i><span>{L_LOGIN_LOGOUT}</span>
+			</a>
+		</li>
+		<!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+			<li class="rightside" data-skip-responsive="true">
+				<a href="{U_REGISTER}" role="menuitem">
+					<i class="icon fa-pencil-square-o  fa-fw" aria-hidden="true"></i><span>{L_REGISTER}</span>
+				</a>
+			</li>
+		<!-- ENDIF -->
+		<!-- EVENT navbar_header_logged_out_content -->
+	<!-- ENDIF -->
+	<!-- IF not S_IS_BOT -->
+		<li class="rightside" data-skip-responsive="true"><a href="#" id="switch-theme" class="switch-theme"><i class="icon fa-fw"></i></a></li>
+		{% if definition.COLOR_PICKER %}
+		<li class="cp-container dropdown-container dropdown-right rightside" data-skip-responsive="true">
+			<a href="#" class="dropdown-trigger"><i class="icon fa-paint-brush fa-fw"></i><span>{L_COLOUR_SWATCH}</span></a>
+			<div class="dropdown">
+				<div class="pointer"><div class="pointer-inner"></div></div>
+				<ul class="dropdown-contents cp-list" role="menu">
+					<li class="cp-list-item">
+						<input type="text" id="color1" class="input-color-picker">
+						<button type="button" id="resetcolor1" class="cp-reset" aria-label="{L_RESET}" disabled>
+							<i class="icon fa-trash-o" aria-hidden="true" title="{L_RESET}"><span>{L_RESET}</span></i>
+						</button>
+					</li>
+					<li class="cp-list-item">
+						<input type="text" id="color2" class="input-color-picker">
+						<button type="button" id="resetcolor2" class="cp-reset" aria-label="{L_RESET}" disabled>
+							<i class="icon fa-trash-o" aria-hidden="true" title="{L_RESET}"><span>{L_RESET}</span></i>
+						</button>
+					</li>
+					<li class="cp-list-item">
+						<input type="text" id="color3" class="input-color-picker">
+						<button type="button" id="resetcolor3" class="cp-reset" aria-label="{L_RESET}" disabled>
+							<i class="icon fa-trash-o" aria-hidden="true" title="{L_RESET}"><span>{L_RESET}</span></i>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</li>
+		{% endif %}
+	<!-- ENDIF -->
+	</ul>
+
+	</div>
+</div>
