@@ -7,4 +7,8 @@ phpBB style
 * Use of LocalStorage to store user preferences.
 * Independently configurable header and footer width (full width or forum width).
 * Username's first letter display as default avatar.
-* Modal login window.
+* Modal login window.  
+
+
+![damaio_dark](https://user-images.githubusercontent.com/6350179/145218506-325d3b07-20a6-4874-96a6-fef8607a2468.png)
+![damaio_light](https://user-images.githubusercontent.com/6350179/145218509-54f3e1a0-4fcd-4ab4-b794-4b1fb7fa79b8.png)
