@@ -245,6 +245,10 @@ blockquote.uncited {
 	padding: 2px 1px;
 }
 
+.format-buttons .button-secondary {
+	padding: 3px 3px 4px;
+}
+
 .tabs .tab, .minitabs .tab {
 	margin-right: 5px;
 }
