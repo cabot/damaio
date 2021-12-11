@@ -207,11 +207,6 @@ input[type="radio"]:not([disabled]):hover {
 	background-color: var(--main-color1);
 }
 
-a:hover .badge,
-.badge:hover {
-	background-color: var(--main-color3);
-}
-
 .online-text {
 	color: var(--main-color2);
 }
