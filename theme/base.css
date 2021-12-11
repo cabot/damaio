@@ -64,12 +64,6 @@ input.button3 {
 	}
 }
 
-@media (max-width: 1220px) {
-	.wrap {
-		margin: 0 auto;
-	}
-}
-
 .headerbar {
 	background-image: none;
 	border-radius: 0;
@@ -339,6 +333,7 @@ input.button1, input.button2 {
 
 a.button1,
 input.button1,
+input.button2,
 input.button3 {
 	background-image: none;
 	-webkit-box-shadow: none;
@@ -778,7 +773,7 @@ table.table1 tbody td {
 	display: none;
 	padding: 0;
 	top: 25%;
-	max-width: 420px;
+	max-width: 350px;
 	margin: 0 auto;
 	border-radius: var(--border-radius-big);
 }
@@ -795,6 +790,33 @@ table.table1 tbody td {
 .modal-quick-login {
 	margin: 0;
 	padding: 10px;
+}
+
+.modal-quick-login dl {
+    text-align: center;
+}
+
+.modal-quick-login dt {
+	display: none;
+}
+
+.modal-quick-login dd {
+    margin: 0;
+}
+
+.modal-quick-login label {
+	padding: 0;
+}
+
+.modal-quick-login .inputbox {
+	width: 95%;
+    margin: 0 auto 8px;
+	padding: 8px 4px;
+	max-width: none;
+}
+
+.modal-quick-login .showpass-btn {
+    top: -4px;
 }
 
 .quick-login input[type="checkbox"],
