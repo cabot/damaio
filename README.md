@@ -1,4 +1,4 @@
-# damaio
+# damaïo
 phpBB style
 
 * Automatic light or dark theme according to the user's preference (OS or browser), with the ability to manually switch between the two modes.
