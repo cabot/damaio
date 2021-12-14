@@ -8,16 +8,6 @@ $(function() {
 		light = "light",
 		dark = "dark";
 
-	$(function() {
-		var storedTheme = localStorage.getItem("sideoftheforce");
-
-		if (storedTheme == dark) {
-			html.attr(dataAttr, dark);
-		} else if (storedTheme == light) {
-			html.attr(dataAttr, light);
-		}
-	});
-
 	switchBtn.click(function(e) {
 		e.preventDefault();
 		$(this).blur();
