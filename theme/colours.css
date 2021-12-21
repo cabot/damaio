@@ -239,14 +239,6 @@ input[type="radio"]:not([disabled]):hover {
     background-color: var(--main-color3);
 }
 
-.cc-banner .cc-message {
-	color: var(--text-color-2);
-}
-
-.cc-banner a.cc-link {
-	color: var(--links-color);
-}
-
 .cc-banner a.cc-link:hover,
 .cc-banner a.cc-link:focus,
 .cc-banner a.cc-link:active {
