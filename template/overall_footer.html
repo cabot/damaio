@@ -92,7 +92,12 @@
 		confirmLang = "{{ lang('CONFIRM') }}";
 	</script>
 {% endif %}
-<script src="{T_TEMPLATE_PATH}/functions.js?assets_version={T_ASSETS_VERSION}"></script>
+{% if definition.SHOWPASSWORD %}
+	<script>
+	var showPassword = true;
+	</script>
+{% endif %}
+<script src="{T_TEMPLATE_PATH}/functions.min.js?assets_version={T_ASSETS_VERSION}"></script>
 
 <!-- IF S_ALLOW_CDN -->
 	<script>
