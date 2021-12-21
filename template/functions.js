@@ -25,7 +25,7 @@ $(function() {
 });
 
 // Show/hide password
-if ($("[type='password']").length) {
+if ( (typeof showPassword !== "undefined") && $("[type='password']").length ) {
 	var passwordInput = $("input[type='password']"),
 		showpassBtn = ("<button type='button' class='showpass-btn fa fa-eye' data-showpass></button>");
 
@@ -35,7 +35,7 @@ if ($("[type='password']").length) {
 
 	$("[data-showpass]").click(function() {
 		var thisPassword = $(this).prev(passwordInput);
-		var typeValue = thisPassword.attr("type") === 'password' ? 'text' : 'password';
+		var typeValue = thisPassword.attr("type") === "password" ? "text" : "password";
 
 		$(this).toggleClass("fa-eye fa-eye-slash").blur();
 		thisPassword.attr("type", typeValue).toggleClass("warning");
@@ -43,7 +43,7 @@ if ($("[type='password']").length) {
 }
 
 // Display first username letter as default avatar
-if ($('.avatar-letter').length) {
+if ($(".avatar-letter").length) {
 	$(".no-avatar").each(function() {
 		var letterContainer = $(this).find(".avatar-letter"),
 			usernameLink = $(this).find("[class*='username']"),
