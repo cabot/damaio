@@ -43,7 +43,8 @@ a.button1,
 input.button1,
 a.button2,
 input.button2,
-input.button3 {
+input.button3,
+fieldset.polls {
 	font-family: 'Rubik', sans-serif;
 }
 
@@ -374,10 +375,6 @@ input.button3:hover {
 	border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
 }
 
-[dir="rtl"] .rtl .search-header.search-box .inputbox {
-	border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
-}
-
 .arrow-left:hover .icon,
 .arrow-right:hover .icon {
 	margin-left: 0;
@@ -411,32 +408,33 @@ select {
 .row-item[class*="_read"]::before,
 .row-item[class*="_unread"]::before,
 .forum_link::before,
-.topic_moved::before {
-	font-family: 'FontAwesome';
-	font-variant: normal;
-	text-rendering: auto;
-    position: absolute;
-	text-align: center;
-	left: 10px;
-	top: 50%;
-	transform: translateY(-50%);
-	line-height: 28px;
-	width: 28px;
-	height: 28px;
-	font-size: 20px;
-	border-radius: var(--border-radius-small);
-}
-
+.topic_moved::before,
 .row-item[class*="_mine"]::after {
 	font-family: 'FontAwesome';
 	font-variant: normal;
 	text-rendering: auto;
-    content: "\f0c8";
     position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.row-item[class*="_read"]::before,
+.row-item[class*="_unread"]::before,
+.forum_link::before,
+.topic_moved::before {
+	left: 10px;
+	line-height: 28px;
+	width: 28px;
+	height: 28px;
+	font-size: 20px;
+	text-align: center;
+	border-radius: var(--border-radius-small);
+}
+
+.row-item[class*="_mine"]::after {
+    content: "\f0c8";
     font-size: 5px;
-    left: 32px;
-    top: 30%;
-    transform: translateY(-30%);
+    left: 4px;
 }
 
 .row-item[class*="global_"]::before,
@@ -467,7 +465,6 @@ select {
 
 .icon.icon-red {
 	font-weight: bold;
-
 }
 
 @media (max-width: 700px) {
@@ -636,7 +633,8 @@ ul.linklist li a {
 
 @media (max-width: 700px) {
 
-	table.responsive.show-header thead, table.responsive.show-header th:first-child {
+	table.responsive.show-header thead,
+	table.responsive.show-header th:first-child {
 		text-align: center !important;
 		text-transform: none;
 		font-size: 1.1em;
@@ -726,16 +724,16 @@ table.table1 tbody td {
 	border-radius: 0;
 }
 
-[dir="rtl"] .rtl dl.row-item dt .list-inner {
+.rtl.damaio li.header dl.row-item dt .list-inner {
+	padding-right: 10px;
+}
+
+.rtl.damaio dl.row-item dt .list-inner {
     padding-right: 55px;
 }
 
 .rtl li.row:hover dd {
 	border-left-color: transparent;
-}
-
-[dir="rtl"] .rtl li.header dl.row-item dt .list-inner {
-	padding-right: 10px;
 }
 
 .rtl .dropdown-extended .notification-block .fa-user {
@@ -765,11 +763,11 @@ table.table1 tbody td {
 	padding: 12px 10px 12px 0;
 }
 
-[dir="rtl"] .rtl .search-box .inputbox {
+.rtl.damaio .search-box .inputbox {
 	border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
 }
 
-[dir="rtl"] .rtl .button-search-end {
+.rtl.damaio .button-search-end {
 	border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
 }
 
@@ -809,7 +807,7 @@ table.table1 tbody td {
 }
 
 .modal-quick-login label {
-	padding: 0;
+	padding: 0 0 4px 2px;
 }
 
 .modal-quick-login .inputbox {
@@ -954,7 +952,7 @@ a.avatar-letter:active {
     text-decoration: none;
 }
 
-.cc-theme-classic .cc-compliance .cc-btn {
+.damaio .cc-compliance .cc-btn {
     border-radius: var(--border-radius-small);
 }
 
@@ -986,4 +984,53 @@ a.avatar-letter:active {
 	100% {
 		transform: scaleY(1);
 	}
+}
+
+/* Tweaks for phpBB official extensions
+**************************************/
+
+/* Collapsible Forum Categories */
+.damaio .collapse-btn {
+    margin: -28px 5px 0 0;
+}
+
+.rtl.damaio .collapse-btn {
+    margin: -28px 0 0 5px;
+}
+
+/* Board Annoucements */
+.damaio #phpbb_announcement {
+	border-radius: var(--border-radius-big);
+}
+
+.damaio #phpbb_announcement .close {
+	width: auto;
+	height: auto;
+	background-image: none;
+}
+
+#phpbb_announcement .close::before {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 14px;
+    line-height: 1;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	content: "\f057";
+}
+
+.notouch.damaio #phpbb_announcement:hover .close {
+	opacity: 1;
+}
+
+/* Board Rules */
+.damaio .highlight {
+	color: inherit;
+	border: 1px dotted;
+	scroll-margin-top: 0.5em;
+	border-radius: var(--border-radius-small);
 }
