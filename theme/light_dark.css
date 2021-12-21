@@ -17,8 +17,8 @@ html, [data-theme="light"] {
 	--border-color-1:		#b8b5b5;
 	--border-color-2:		#c7c3bf;
 	--border-color-3:		var(--color-1);
-	--color-warning:		hsl(46, 100%, 80%);
-	--color-error:			hsl(342, 92%, 47%);
+	--color-warning:		#ffe799;
+	--color-error:			#e60a4c;
 	--filter-1:				none;
 	--filter-2:				none;
 	--switch-light-dark:	"\f186";
@@ -43,8 +43,8 @@ html, [data-theme="light"] {
 		--border-color-1:		#333333;
 		--border-color-2:		#777f85;
 		--border-color-3:		var(--color-1);
-		--color-warning:		hsl(46, 100%, 80%);
-		--color-error:			hsl(342, 92%, 41%);
+		--color-warning:		#ffe799;
+		--color-error:			#c90842;
 		--filter-1:				saturate(150%);
 		--filter-2:				brightness(160%);
 		--switch-light-dark:	"\f0eb";
@@ -68,8 +68,8 @@ html, [data-theme="light"] {
 	--border-color-1:		#333333;
 	--border-color-2:		#777f85;
 	--border-color-3:		var(--color-1);
-	--color-warning:		hsl(46, 100%, 80%);
-	--color-error:			hsl(342, 92%, 41%);
+	--color-warning:		#ffe799;
+	--color-error:			#c90842;
 	--filter-1:				saturate(150%);
 	--filter-2:				brightness(160%);
 	--switch-light-dark:	"\f0eb";
@@ -342,6 +342,15 @@ code::selection {
 
 .postprofile strong {
 	color: var(--text-color-3);
+}
+
+fieldset.polls dl {
+    border-top-color: var(--border-color-1);
+    color: var(--text-color-2);
+}
+
+fieldset.polls dl.voted {
+    color: var(--text-color-3);
 }
 
 .button {
@@ -680,3 +689,22 @@ a.avatar-letter:hover, a.avatar-letter:focus, a.avatar-letter:active {
 	border: 1px solid var(--border-color-1) !important;
 }
 
+.damaio .cc-message {
+	color: var(--text-color-2);
+}
+
+.damaio .cc-banner .cc-link {
+	color: var(--links-color);
+}
+
+/* Tweaks for phpBB official extensions
+**************************************/
+/* Board Annoucements */
+.damaio #phpbb_announcement {
+    background-color: var(--color-1);
+}
+
+/* Board Rules */
+.damaio .highlight {
+	background-color: var(--color-2);
+}
