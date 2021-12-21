@@ -32,20 +32,17 @@
 
 {% INCLUDE 'config.html' %}
 <link href="{T_FONT_AWESOME_LINK}" rel="stylesheet">
-<link rel="preload" href="{T_THEME_PATH}/fonts/rubik-regular.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="{T_THEME_PATH}/fonts/rubik-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link href="{ROOT_PATH}styles/prosilver/theme/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
-
 <script>if (localStorage.sideoftheforce) document.documentElement.setAttribute("data-theme", localStorage.sideoftheforce);</script>
 {% if definition.COLOR_PICKER %}
-	<link rel="preload" href="{T_THEME_PATH}/spectrum/spectrum.min.css?v=2.0.8" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="{T_THEME_PATH}/spectrum/spectrum.min.css?v=2.0.8"></noscript>
 	<script>
 		if (localStorage.maincolor1) document.documentElement.style.setProperty("--main-color1", localStorage.maincolor1);
 		if (localStorage.maincolor2) document.documentElement.style.setProperty("--main-color2", localStorage.maincolor2);
 		if (localStorage.maincolor3) document.documentElement.style.setProperty("--main-color3", localStorage.maincolor3);
 	</script>
+	<link href="{T_THEME_PATH}/spectrum/spectrum.min.css?v=2.0.8" rel="stylesheet">
 {% endif %}
-
 <link href="{T_THEME_PATH}/base.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
 <link href="{T_THEME_PATH}/light_dark.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
 <link href="{T_THEME_PATH}/colours.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
