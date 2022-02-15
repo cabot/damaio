@@ -76,13 +76,13 @@ $(function() {
 
 		let $colPickItem = $(this).find("input"),
 			itemId = $colPickItem.prop("id"),
-			originalColor = $("#getcolors").css(cssVar + itemId),
-			$buttonReset = $(this).find("button");
+			$buttonReset = $(this).find("button"),
+			originalColor = $("#getcolors").css(cssVar + itemId);
 	
 		if (localStorage.getItem("main" + itemId)) {
 			let storedColor = localStorage.getItem("main" + itemId);
 			$("#" + itemId).attr("value", storedColor);
-			$("#reset" + itemId).removeAttr("disabled");
+			$buttonReset.removeAttr("disabled");
 		} else {
 			$("#" + itemId).attr("value", originalColor);
 		}			
