@@ -1,6 +1,5 @@
 // Switch light/dark style
 $(function() {
-
 	let $switchBtn = $("#switch-theme"),
 		osDarkscheme = window.matchMedia("(prefers-color-scheme: dark)"),
 		$html = $("html"),
@@ -73,7 +72,6 @@ $(function() {
 		cssVar = "--main-";
 	
 	$(".cp-list-item").each(function() {
-
 		let $colPickItem = $(this).find("input"),
 			itemId = $colPickItem.prop("id"),
 			$buttonReset = $(this).find("button"),
