@@ -77,7 +77,6 @@
 </div>
 
 <a href="#top" class="scrolltop"><span class="fa fa-arrow-up"></span></a>
-<span id="getcolors"></span>
 
 <script src="{T_JQUERY_LINK}"></script>
 <!-- IF S_ALLOW_CDN --><script>window.jQuery || document.write('\x3Cscript src="{T_ASSETS_PATH}/javascript/jquery-3.6.0.min.js?assets_version={T_ASSETS_VERSION}">\x3C/script>');</script><!-- ENDIF -->
@@ -86,6 +85,7 @@
 <!-- INCLUDEJS ajax.js -->
 
 {% if definition.COLOR_PICKER %}
+	<span id="getcolors"></span>
 	<script src="{T_THEME_PATH}/spectrum/spectrum.min.js?v=2.0.8"></script>
 	<script>
 	var cancelLang = "{{ lang('CANCEL') }}",
