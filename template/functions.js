@@ -176,6 +176,6 @@ $(function() {
 		$($phpbbWrapper + ", " + $form + " .alert_close").click(function(e) {
 			e.preventDefault();
 			$($phpbbWrapper + ", " + $form).fadeOut(300);
-		})
+		});
 	}
 });
