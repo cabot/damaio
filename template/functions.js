@@ -1,4 +1,4 @@
-// Switch light/dark style
+// Switch light/dark theme
 $(function() {
 	let $switchBtn = $("#switch-theme"),
 		osDarkscheme = window.matchMedia("(prefers-color-scheme: dark)"),
@@ -161,6 +161,7 @@ $(function() {
 	});
 });
 
+/* Modal Login Window */
 $(function() {
 	let $loginLink = $("#modal-login-trigger"),
 		$form = "#modal-login",
