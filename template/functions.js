@@ -116,7 +116,6 @@ $(function() {
 		});
 
 		$buttonReset.click(function() {
-
 			$colPickItem.spectrum("destroy");
 			$root.css(cssVar + itemId, "");
 			$(this).blur().prop("disabled", true);
