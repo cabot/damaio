@@ -178,7 +178,7 @@ dl.row-item dt {
 }
 
 dl.row-item dt[style*="background-image"],
-dd.lastpost span :not(dfn) {
+dd.lastpost > span > *:not(dfn) {
 	position: relative;
 }
 
