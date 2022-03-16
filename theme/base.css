@@ -177,9 +177,10 @@ dl.row-item dt {
 	min-height: 45px;
 }
 
-dl.row-item dt[style*="background-image"] {
+dl.row-item dt[style*="background-image"],
+dd.lastpost span :not(dfn) {
 	position: relative;
-} 
+}
 
 .postbody .content {
     font-size: 1.2em;
