@@ -788,6 +788,7 @@ table.table1 tbody td {
 .modal-login h3 {
 	margin-top: 10px;
     text-align: center;
+	border: 0;
 }
 
 .modal-quick-login {
