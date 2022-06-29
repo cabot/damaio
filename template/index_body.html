@@ -22,7 +22,7 @@
 		</li>
 	</ul>
 
-	<!-- EVENT index_body_stat_blocks_before -->
+	<div class="stat-block"><!-- EVENT index_body_stat_blocks_before --></div>
 
 	{% if not definition.MODAL_LOGIN and (not S_USER_LOGGED_IN and not S_IS_BOT) %}
 	<form method="post" action="{S_LOGIN_ACTION}" class="stat-block" id="login-block">
@@ -59,7 +59,7 @@
 	</div>
 	<!-- ENDIF -->
 
-	<!-- EVENT index_body_birthday_block_before -->
+	<div class="stat-block"><!-- EVENT index_body_birthday_block_before --></div>
 
 	<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
 	<div class="stat-block birthday-list" id="birthday-block">
@@ -85,7 +85,7 @@
 	</div>
 	<!-- ENDIF -->
 
-	<!-- EVENT index_body_stat_blocks_after -->
+	<div class="stat-block"><!-- EVENT index_body_stat_blocks_after --></div>
 	</div>
 </div>
 
