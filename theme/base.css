@@ -736,7 +736,7 @@ table.table1 tbody td {
 }
 
 .rtl.damaio dl.row-item dt .list-inner {
-    padding-right: 55px;
+	padding-right: 55px;
 }
 
 .rtl li.row:hover dd {
@@ -788,12 +788,12 @@ table.table1 tbody td {
 }
 
 .modal-login .alert_close {
-    margin-right: -10px;
+	margin-right: -10px;
 }
 
 .modal-login h3 {
 	margin-top: 10px;
-    text-align: center;
+	text-align: center;
 	border: 0;
 }
 
@@ -811,7 +811,7 @@ table.table1 tbody td {
 }
 
 .modal-quick-login dd {
-    margin: 0;
+	margin: 0;
 }
 
 .modal-quick-login label {
@@ -820,13 +820,13 @@ table.table1 tbody td {
 
 .modal-quick-login .inputbox {
 	width: 95%;
-    margin: 0 auto 8px;
+	margin: 0 auto 8px;
 	padding: 8px 4px;
 	max-width: none;
 }
 
 .modal-quick-login .showpass-btn {
-    top: -4px;
+	top: -4px;
 }
 
 .quick-login input[type="checkbox"],
