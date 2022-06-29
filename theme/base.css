@@ -687,6 +687,10 @@ ul.linklist li a {
 	padding: 12px 10px;
 }
 
+.stat-block:empty {
+	display: none;
+}
+
 .stat-block h3 {
 	font-size: 1em;
 	margin: 0;
