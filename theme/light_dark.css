@@ -1,347 +1,365 @@
 @charset "utf-8";
 
-html, [data-theme="light"] {
-	--color-1:				#f5f5f5;
-	--color-2:				#e5e5e5;
-	--color-3:				#ffffff;
-	--text-color-1:			#444444;
-	--text-color-2:			#3d3d3d;
-	--text-color-3:			#000000;
-	--links-color:			var(--text-color-1);
-	--h2-color:				var(--text-color-1);
-	--bg1-color:			var(--color-1);
-	--bg2-color:			var(--color-1);
-	--bg3-color:			var(--color-1);
-	--input-bg:				#ffffff;
-	--input-txt-color:		#333333;
-	--border-color-1:		#b8b5b5;
-	--border-color-2:		#c7c3bf;
-	--border-color-3:		var(--color-1);
-	--color-warning:		#ffe799;
-	--color-error:			#e60a4c;
-	--filter-1:				none;
-	--filter-2:				none;
-	--switch-light-dark:	"\f186";
+html,
+[data-theme="light"] {
+    --color-1: #f5f5f5;
+    --color-2: #e5e5e5;
+    --color-3: #ffffff;
+    --text-color-1: #444444;
+    --text-color-2: #3d3d3d;
+    --text-color-3: #000000;
+    --links-color: var(--text-color-1);
+    --h2-color: var(--text-color-1);
+    --bg1-color: var(--color-1);
+    --bg2-color: var(--color-1);
+    --bg3-color: var(--color-1);
+    --input-bg: #ffffff;
+    --input-txt-color: #333333;
+    --border-color-1: #b8b5b5;
+    --border-color-2: #c7c3bf;
+    --border-color-3: var(--color-1);
+    --color-warning: #ffe799;
+    --color-error: #e60a4c;
+    --filter-1: none;
+    --filter-2: none;
+    --switch-light-dark: "\f186";
 }
 
 @media (prefers-color-scheme: dark) {
-	html {
-		--color-1:				#1d232e;
-		--color-2:				#242b36;
-		--color-3:				#131a24;
-		--color-bg:				#424851;
-		--text-color-1:			#d9e2e4;
-		--text-color-2:			#cccccc;
-		--text-color-3:			#ffffff;
-		--links-color:			var(--text-color-1);
-		--h2-color:				var(--text-color-1);
-		--bg1-color:			var(--color-1);
-		--bg2-color:			var(--color-1);
-		--bg3-color:			var(--color-1);
-		--input-bg:				#131a24;
-		--input-txt-color:		#ffffff;
-		--border-color-1:		#333333;
-		--border-color-2:		#777f85;
-		--border-color-3:		var(--color-1);
-		--color-warning:		#ffe799;
-		--color-error:			#c90842;
-		--filter-1:				saturate(150%);
-		--filter-2:				brightness(160%);
-		--switch-light-dark:	"\f0eb";
-	}
-} 
-
-[data-theme="dark"] {
-	--color-1:				#1d232e;
-	--color-2:				#242b36;
-	--color-3:				#131a24;
-	--text-color-1:			#d9e2e4;
-	--text-color-2:			#cccccc;
-	--text-color-3:			#ffffff;
-	--links-color:			var(--text-color-1);
-	--h2-color:				var(--text-color-1);
-	--bg1-color:			var(--color-1);
-	--bg2-color:			var(--color-1);
-	--bg3-color:			var(--color-1);
-	--input-bg:				#131a24;
-	--input-txt-color:		#ffffff;
-	--border-color-1:		#333333;
-	--border-color-2:		#777f85;
-	--border-color-3:		var(--color-1);
-	--color-warning:		#ffe799;
-	--color-error:			#c90842;
-	--filter-1:				saturate(150%);
-	--filter-2:				brightness(160%);
-	--switch-light-dark:	"\f0eb";
+    html {
+        --color-1: #1d232e;
+        --color-2: #242b36;
+        --color-3: #131a24;
+        --color-bg: #424851;
+        --text-color-1: #d9e2e4;
+        --text-color-2: #cccccc;
+        --text-color-3: #ffffff;
+        --links-color: var(--text-color-1);
+        --h2-color: var(--text-color-1);
+        --bg1-color: var(--color-1);
+        --bg2-color: var(--color-1);
+        --bg3-color: var(--color-1);
+        --input-bg: #131a24;
+        --input-txt-color: #ffffff;
+        --border-color-1: #333333;
+        --border-color-2: #777f85;
+        --border-color-3: var(--color-1);
+        --color-warning: #ffe799;
+        --color-error: #c90842;
+        --filter-1: saturate(150%);
+        --filter-2: brightness(160%);
+        --switch-light-dark: "\f0eb";
+    }
 }
 
-html, body {
-	background-color: var(--color-3);
-	color: var(--text-color-2);
+[data-theme="dark"] {
+    --color-1: #1d232e;
+    --color-2: #242b36;
+    --color-3: #131a24;
+    --text-color-1: #d9e2e4;
+    --text-color-2: #cccccc;
+    --text-color-3: #ffffff;
+    --links-color: var(--text-color-1);
+    --h2-color: var(--text-color-1);
+    --bg1-color: var(--color-1);
+    --bg2-color: var(--color-1);
+    --bg3-color: var(--color-1);
+    --input-bg: #131a24;
+    --input-txt-color: #ffffff;
+    --border-color-1: #333333;
+    --border-color-2: #777f85;
+    --border-color-3: var(--color-1);
+    --color-warning: #ffe799;
+    --color-error: #c90842;
+    --filter-1: saturate(150%);
+    --filter-2: brightness(160%);
+    --switch-light-dark: "\f0eb";
+}
+
+html,
+body {
+    background-color: var(--color-3);
+    color: var(--text-color-2);
 }
 
 h2 {
-	color: var(--text-color-1);
+    color: var(--text-color-1);
 }
 
 h3 {
-	border-bottom-color: var(--border-color-2);
-	color: var(--text-color-2);
+    border-bottom-color: var(--border-color-2);
+    color: var(--text-color-2);
 }
 
 hr {
-	border-color: var(--color-3);
-	border-top-color: var(--border-color-2);
+    border-color: var(--color-3);
+    border-top-color: var(--border-color-2);
 }
 
 a {
-	color: var(--links-color);
+    color: var(--links-color);
 }
 
 .switch-theme i::before {
-	content: var(--switch-light-dark);
+    content: var(--switch-light-dark);
 }
 
 .forumbg .header a:hover,
 .forabg .header a:hover,
 th a:hover {
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .dropdown-extended a.mark_read {
-	background-color: var(--color-1);
+    background-color: var(--color-1);
 }
 
-.postlink, .postlink:visited {
-	border-bottom-color: var(--links-color);
-	color: var(--links-color);
+.postlink,
+.postlink:visited {
+    border-bottom-color: var(--links-color);
+    color: var(--links-color);
 }
 
 .postlink:hover {
-	background-color: var(--color-1);
+    background-color: var(--color-1);
 }
 
 .wrap {
-	background-color: var(--color-3);
+    background-color: var(--color-3);
 }
 
 .navbar {
-	background-color: var(--color-2);
+    background-color: var(--color-2);
 }
 
 .post:target .content {
-	color: var(--text-color-3);
+    color: var(--text-color-3);
 }
 
-.post h3 a.first-unread, .post:target h3 a {
-	color: var(--text-color-3);
+.post h3 a.first-unread,
+.post:target h3 a {
+    color: var(--text-color-3);
 }
 
-.bg1, .bg1:hover {
-	background-color: var(--bg1-color);
+.bg1,
+.bg1:hover {
+    background-color: var(--bg1-color);
 }
 
 table.zebra-list tr:nth-child(odd) td,
 ul.zebra-list li:nth-child(odd) {
-	background-color: var(--bg1-color);
+    background-color: var(--bg1-color);
 }
 
-.bg2, .bg2:hover {
-	background-color: var(--bg2-color);
+.bg2,
+.bg2:hover {
+    background-color: var(--bg2-color);
 }
 
 table.zebra-list tr:nth-child(even) td,
 ul.zebra-list li:nth-child(even) {
-	background-color: var(--bg2-color);
+    background-color: var(--bg2-color);
 }
 
 .bg3 {
-	background-color: var(--bg3-color);
+    background-color: var(--bg3-color);
 }
 
 .panel {
-	color: var(--text-color-1);
-	background-color: var(--color-1);
+    color: var(--text-color-1);
+    background-color: var(--color-1);
 }
 
-.username-coloured, .group-coloured {
-	filter: var(--filter-1);
+.username-coloured,
+.group-coloured {
+    filter: var(--filter-1);
 }
 
 table.table1 td {
-	color: var(--text-color-1);
+    color: var(--text-color-1);
 }
 
 table.table1 tbody td {
-	border-bottom-color: var(--input-bg);
+    border-bottom-color: var(--input-bg);
 }
 
 table.table1 tbody tr {
-	border-color: var(--input-bg);
+    border-color: var(--input-bg);
 }
 
-table.table1 tbody tr:hover, table.table1 tbody tr:hover, table.table1 td:hover {
-	background-color: var(--color-3);
-	color: var(--text-color-1);
+table.table1 tbody tr:hover,
+table.table1 tbody tr:hover,
+table.table1 td:hover {
+    background-color: var(--color-3);
+    color: var(--text-color-1);
 }
 
 dl.details dt {
-	color: var(--text-color-3);
+    color: var(--text-color-3);
 }
 
 dl.details dd {
-	color: var(--text-color-1);
+    color: var(--text-color-1);
 }
 
-.icon.icon-blue, a:hover .icon.icon-blue,
-.icon.icon-green, a:hover .icon.icon-green,
-.icon.icon-red, a:hover .icon.icon-red,
-.icon.icon-orange, a:hover .icon.icon-orange,
-.icon.icon-bluegray, a:hover .icon.icon-bluegray,
-.icon.icon-gray, a:hover .icon.icon-gray,
-.icon.icon-lightgray, a:hover .icon.icon-lightgray {
-	color: var(--links-color);
+.icon.icon-blue,
+a:hover .icon.icon-blue,
+.icon.icon-green,
+a:hover .icon.icon-green,
+.icon.icon-red,
+a:hover .icon.icon-red,
+.icon.icon-orange,
+a:hover .icon.icon-orange,
+.icon.icon-bluegray,
+a:hover .icon.icon-bluegray,
+.icon.icon-gray,
+a:hover .icon.icon-gray,
+.icon.icon-lightgray,
+a:hover .icon.icon-lightgray {
+    color: var(--links-color);
 }
 
-.icon.icon-black, a:hover .icon.icon-black{
-	color: var(--text-color-2);
+.icon.icon-black,
+a:hover .icon.icon-black {
+    color: var(--text-color-2);
 }
 
 .jumpbox-forum-link {
-	background-color: var(--color-1);
+    background-color: var(--color-1);
 }
 
 .jumpbox-forum-link:hover {
-	background-color: var(--color-1);
+    background-color: var(--color-1);
 }
 
 .jumpbox .dropdown .pointer-inner {
-	border-color: var(--color-1) transparent;
+    border-color: var(--color-1) transparent;
 }
 
 .jumpbox-sub-link {
-	background-color: var(--color-1 );
+    background-color: var(--color-1);
 }
 
 .jumpbox-sub-link:hover {
-	background-color: var(--color-2);
+    background-color: var(--color-2);
 }
 
 .error {
-	background-color: var(--color-warning);
+    background-color: var(--color-warning);
 }
 
 li.reported:hover {
-	background-color: var(--color-2) !important;
+    background-color: var(--color-2) !important;
 }
 
 div.rules {
-	background-color: var(--border-color-3);
-	color: var(--text-color-1);
+    background-color: var(--border-color-3);
+    color: var(--text-color-1);
 }
 
 p.post-notice {
-	background-color: var(--border-color-3);
+    background-color: var(--border-color-3);
 }
 
 ul.forums {
-	background-color: var(--color-1);
+    background-color: var(--color-1);
 }
 
 ul.topiclist li {
-	color: var(--text-color-1);
+    color: var(--text-color-1);
 }
 
 ul.topiclist dd {
-	border-left-color: var(--color-3);
+    border-left-color: var(--color-3);
 }
 
 .rtl ul.topiclist dd {
-	border-right-color: var(--color-3);
+    border-right-color: var(--color-3);
 }
 
 li.row {
-	border-bottom-color: var(--color-2);
+    border-bottom-color: var(--color-2);
 }
 
 li.row strong {
-	color: var(--text-color-3);
+    color: var(--text-color-3);
 }
 
 li.row:hover {
-	background-color: var(--color-2);
+    background-color: var(--color-2);
 }
 
 li.row:hover dd {
-	border-left-color: var(--color-2);
+    border-left-color: var(--color-2);
 }
 
 .row-item[class*="_unread"]::before {
-	color: #fff;
+    color: #fff;
 }
 
 .postbody {
-	color: var(--text-color-2);
+    color: var(--text-color-2);
 }
 
 .content {
-	color: var(--text-color-2);
+    color: var(--text-color-2);
 }
 
-.content h2, .panel h2 {
-	color: var(--text-color-1);
-	border-bottom-color: var(--border-color-3);
+.content h2,
+.panel h2 {
+    color: var(--text-color-1);
+    border-bottom-color: var(--border-color-3);
 }
 
 dl.faq dt {
-	color: var(--text-color-2);
+    color: var(--text-color-2);
 }
 
 .signature {
-	border-top-color: var(--border-color-3);
+    border-top-color: var(--border-color-3);
 }
 
 blockquote {
-	background-color: var(--color-3);
-	border-color: var(--color-2);
+    background-color: var(--color-3);
+    border-color: var(--color-2);
 }
 
 blockquote blockquote {
-	background-color:var(--color-1);
+    background-color: var(--color-1);
 }
-												
+
 blockquote blockquote blockquote {
-	background-color: var(--color-3);
+    background-color: var(--color-3);
 }
 
 .codebox {
-	background-color: var(--color-3);
-	border-color: var(--border-color-1);
+    background-color: var(--color-3);
+    border-color: var(--border-color-1);
 }
 
 .codebox p {
-	border-bottom-color: var(--border-color-1);
+    border-bottom-color: var(--border-color-1);
 }
 
 .codebox code {
-	filter: var(--filter-2);
+    filter: var(--filter-2);
 }
 
 code::selection {
-	background-color: var(--color-3);	
+    background-color: var(--color-3);
 }
 
 .postprofile {
-	color: var(--text-color-2);
-	border-color: var(--color-3);
+    color: var(--text-color-2);
+    border-color: var(--color-3);
 }
 
 .pm .postprofile {
-	border-color: var(--color-2);
+    border-color: var(--color-2);
 }
 
 .postprofile strong {
-	color: var(--text-color-3);
+    color: var(--text-color-3);
 }
 
 fieldset.polls dl {
@@ -354,255 +372,270 @@ fieldset.polls dl.voted {
 }
 
 .button {
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .button:hover,
 .button:focus {
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .button .icon,
 .button-secondary {
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .button-secondary:focus,
 .button-secondary:hover,
-.button:focus .icon, 
+.button:focus .icon,
 .button:hover .icon {
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .caret {
-	border-color: #ffffff;
+    border-color: #ffffff;
 }
 
 [dir="rtl"] .rtl .caret {
-	border-right-color: #ffffff;
+    border-right-color: #ffffff;
 }
 
-.contact-icons a	{
-	background-color: var(--color-3);
+.contact-icons a {
+    background-color: var(--color-3);
 }
 
 .contact-icons a:hover {
-	background-color: var(--color-3);
+    background-color: var(--color-3);
 }
 
 .pagination li a {
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .pagination li.ellipsis span {
-	color:	var(--text-color-1);
+    color: var(--text-color-1);
 }
 
 .search-box .inputbox,
 .search-box .inputbox:hover,
 .search-box .inputbox:focus {
-	border-color: var(--border-color-2);
+    border-color: var(--border-color-2);
 }
 
 
-.panel-container h3, .panel-container hr, .cp-menu hr {
-	border-color: var(--border-color-2);
+.panel-container h3,
+.panel-container hr,
+.cp-menu hr {
+    border-color: var(--border-color-2);
 }
 
 .panel-container .panel li.row {
-	border-bottom-color: var(--color-1);
-	border-top-color: transparent;
+    border-bottom-color: var(--color-1);
+    border-top-color: transparent;
 }
 
 ul.cplist {
-	border-top-color: var(--color-1);
+    border-top-color: var(--color-1);
 }
 
-.panel-container .panel li.header dd, .panel-container .panel li.header dt {
-	color: var(--text-color-3);
+.panel-container .panel li.header dd,
+.panel-container .panel li.header dt {
+    color: var(--text-color-3);
 }
 
 .panel-container table.table1 thead th {
-	color: var(--text-color-2);
-	border-bottom-color: var(--text-color-2);
+    color: var(--text-color-2);
+    border-bottom-color: var(--text-color-2);
 }
 
 .cp-main .pm-message {
-	border-color: #212121;
-	background-color: var(--color-1);
+    border-color: #212121;
+    background-color: var(--color-1);
 }
 
 .current {
-	color: var(--text-color-3) !important;
+    color: var(--text-color-3) !important;
 }
 
-.tabs .tab > a {
-	color: #ffffff;
+.tabs .tab>a {
+    color: #ffffff;
 }
 
-.tabs .tab > a:hover {
-	color: #ffffff;
+.tabs .tab>a:hover {
+    color: #ffffff;
 }
 
-.tabs .activetab > a,
-.tabs .activetab > a:hover {
-	color: #ffffff;
+.tabs .activetab>a,
+.tabs .activetab>a:hover {
+    color: #ffffff;
 }
 
-.minitabs .tab > a {
-	color: #ffffff;
+.minitabs .tab>a {
+    color: #ffffff;
 }
 
-.minitabs .tab > a:hover,
-.minitabs .activetab > a,
-.minitabs .activetab > a:hover {
-	color: #ffffff;
+.minitabs .tab>a:hover,
+.minitabs .activetab>a,
+.minitabs .activetab>a:hover {
+    color: #ffffff;
 }
 
 .responsive-tab .responsive-tab-link:before,
 .responsive-tab .responsive-tab-link:hover:before {
-	border-color: #ffffff;
+    border-color: #ffffff;
 }
 
-.navigation a, .rtl .navigation a,
-.navigation a:hover, .navigation a:active,
+.navigation a,
+.rtl .navigation a,
+.navigation a:hover,
+.navigation a:active,
 .navigation .active-subsection a,
-.navigation .active-subsection a:hover, .navigation .active-subsection a:active {
-	color: #ffffff;
+.navigation .active-subsection a:hover,
+.navigation .active-subsection a:active {
+    color: #ffffff;
 }
 
 @media (max-width: 900px) {
-	.navigation a:hover,
-	.navigation .active-subsection a,
-	.navigation .active-subsection a:hover {
-		color: #ffffff;
-	}
+
+    .navigation a:hover,
+    .navigation .active-subsection a,
+    .navigation .active-subsection a:hover {
+        color: #ffffff;
+    }
 }
 
 .panel-container .panel {
-	background-color: var(--color-2);
+    background-color: var(--color-2);
 }
 
 .cp-main .pm {
-	background-color: var(--color-3);
+    background-color: var(--color-3);
 }
 
 .cp-mini {
-	background-color: var(--color-1);
+    background-color: var(--color-1);
 }
 
 dl.mini dt {
-	color: var(--text-color-1);
+    color: var(--text-color-1);
 }
 
 label {
-	color: var(--text-color-2);
+    color: var(--text-color-2);
 }
 
 select {
-	border-color: #464646;
-	background-color: var(--input-bg);
-	color: var(--input-txt-color);
+    border-color: #464646;
+    background-color: var(--input-bg);
+    color: var(--input-txt-color);
 }
 
 dd label {
-	color: var(--text-color-2);
+    color: var(--text-color-2);
 }
 
 fieldset dl:hover dt label {
-	color: var(--text-color-3);
+    color: var(--text-color-3);
 }
 
 fieldset.quick-login input.inputbox {
-	background-color: var(--input-bg);
+    background-color: var(--input-bg);
 }
 
-input[type="checkbox"], input[type="radio"] {
-	color: #ffffff;
+input[type="checkbox"],
+input[type="radio"] {
+    color: #ffffff;
     background-color: var(--input-bg);
     border: 1px solid var(--border-color-2);
 }
 
 .message-box textarea {
-	color: var(--input-txt-color);
+    color: var(--input-txt-color);
 }
 
-.inputbox, input {
-	background-color: var(--input-bg);
-	border-color: var(--border-color-2);
-	color: var(--input-txt-color);
+.inputbox,
+input {
+    background-color: var(--input-bg);
+    border-color: var(--border-color-2);
+    color: var(--input-txt-color);
 }
 
 .inputbox::placeholder {
-	color: var(--text-color-2);
+    color: var(--text-color-2);
 }
 
-.warning, .inputbox.warning:hover {
-	border-color: var(--color-warning);
+.warning,
+.inputbox.warning:hover {
+    border-color: var(--color-warning);
 }
 
-a.button1, input.button1, input.button3, a.button2, input.button2 {
-	color: #ffffff;
+a.button1,
+a.button2,
+input.button1,
+input.button2,
+input.button3 {
+    color: #ffffff;
 }
 
-a.button1, a.button2 {
-	color: #ffffff;
-}
-
-a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover {
-	color: #ffffff;
-}
-
-input.button1:focus, input.button2:focus, input.button3:focus {
-	color: #ffffff;
+a.button1:hover,
+a.button2:hover,
+input.button1:hover,
+input.button1:focus,
+input.button2:hover,
+input.button2:focus,
+input.button3:hover,
+input.button3:focus {
+    color: #ffffff;
 }
 
 .dropdown-extended ul li {
-	border-top-color: var(--border-color-3);
+    border-top-color: var(--border-color-3);
 }
 
 .dropdown-extended ul li:hover {
-	background-color: var(--color-1);
-	color: #e5e5e5;
+    background-color: var(--color-1);
+    color: #e5e5e5;
 }
 
-.dropdown-extended .header, .dropdown-extended .footer {
-	border-color: var(--border-color-3);
+.dropdown-extended .header,
+.dropdown-extended .footer {
+    border-color: var(--border-color-3);
 }
 
 .dropdown-extended .header {
-	background: var(--color-1);
+    background: var(--color-1);
 }
 
 .dropdown-extended .pointer-inner {
-	border-color: var(--color-1) transparent;
+    border-color: var(--color-1) transparent;
 }
 
 .dropdown .pointer {
-	border-color: var(--border-color-2) transparent;
+    border-color: var(--border-color-2) transparent;
 }
 
 .dropdown .pointer-inner {
-	border-color: var(--color-3) transparent;
+    border-color: var(--color-3) transparent;
 }
 
 .dropdown-extended .pointer-inner {
-	border-color: var(--color-1) transparent;
+    border-color: var(--color-1) transparent;
 }
 
 .dropdown .dropdown-contents {
-	background: var(--color-3);
-	border-color: var(--border-color-2);
-	box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+    background: var(--color-3);
+    border-color: var(--border-color-2);
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown li.separator {
-	border-color: var(--border-color-2);
+    border-color: var(--border-color-2);
 
 }
 
-li.notification-reported strong, li.notification-disapproved strong {
-	color: var(--color-error);
+li.notification-reported strong,
+li.notification-disapproved strong {
+    color: var(--color-error);
 }
 
 .notification_list p.notification-time {
@@ -614,87 +647,93 @@ li.notification-reported strong, li.notification-disapproved strong {
 .footerbar a:hover,
 .footerbar a:focus,
 .footerbar a:active {
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .dropdown-extended .notification-block .fa-user {
-	color:#444444;
+    color: #444444;
 }
 
 fieldset.quick-login {
-	background-color: var(--color-1);
-	border-bottom: 1px solid var(--color-1);
+    background-color: var(--color-1);
+    border-bottom: 1px solid var(--color-1);
 }
 
 fieldset.quick-login:hover {
-	background-color: var(--color-1);
+    background-color: var(--color-1);
 }
 
 .stat-block {
-	background-color: var(--color-1);
-	border-bottom: 1px solid var(--color-2);
+    background-color: var(--color-1);
+    border-bottom: 1px solid var(--color-2);
 }
 
-.stat-block h3, .stat-block h3 a {
-	color: var(--text-color-3);
+.stat-block h3,
+.stat-block h3 a {
+    color: var(--text-color-3);
 }
 
 @media (prefers-color-scheme: dark) {
-	.stat-content em a[style*="color:"] {
-		filter: var(--filter-1);
-	}
+    .stat-content em a[style*="color:"] {
+        filter: var(--filter-1);
+    }
 }
-[data-theme="dark"] .stat-content em a[style*="color:"]  {
-	filter: var(--filter-1);
+
+[data-theme="dark"] .stat-content em a[style*="color:"] {
+    filter: var(--filter-1);
 }
 
 .socialinks-list-item {
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .phpbb_alert {
-	background-color: var(--color-1);
-	border-color: var(--border-color-1);
+    background-color: var(--color-1);
+    border-color: var(--border-color-1);
 }
 
 .rtl li.row:hover dd {
-	border-right-color: var(--color-1);
+    border-right-color: var(--color-1);
 }
 
 #showpass-btn {
-	color: var(--input-txt-color);
+    color: var(--input-txt-color);
 }
 
-.scrolltop, .scrolltop:hover, .scrolltop:focus, .scrolltop:hover {
-	color: #fff;
+.scrolltop,
+.scrolltop:hover,
+.scrolltop:focus {
+    color: #fff;
 }
 
 .avatar-letter {
-	background-color: var(--color-2);
+    background-color: var(--color-2);
 }
 
-a.avatar-letter:hover, a.avatar-letter:focus, a.avatar-letter:active {
-	color: var(--links-color);
+a.avatar-letter:hover,
+a.avatar-letter:focus,
+a.avatar-letter:active {
+    color: var(--links-color);
 }
 
 .sp-container {
-	background-color: var(--color-3);
-	border: 1px solid var(--border-color-2);
-	box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-3);
+    border: 1px solid var(--border-color-2);
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .sp-container .sp-input {
-	background-color: var(--input-bg);
-	color: var(--input-txt-color);
-	border: 1px solid var(--border-color-1) !important;
+    background-color: var(--input-bg);
+    color: var(--input-txt-color);
+    border: 1px solid var(--border-color-1) !important;
 }
 
 .damaio .cc-message {
-	color: var(--text-color-2);
+    color: var(--text-color-2);
 }
 
 .damaio .cc-banner .cc-link {
-	color: var(--links-color);
+    color: var(--links-color);
 }
 
 /* Tweaks for phpBB official extensions
@@ -706,5 +745,5 @@ a.avatar-letter:hover, a.avatar-letter:focus, a.avatar-letter:active {
 
 /* Board Rules */
 .damaio .highlight {
-	background-color: var(--color-2);
+    background-color: var(--color-2);
 }
