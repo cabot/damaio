@@ -73,7 +73,7 @@
 
 <div>
 	<a id="bottom" class="anchor" accesskey="z"></a>
-	<!-- IF not S_IS_BOT --><span class="cron">{RUN_CRON_TASK}</span><!-- ENDIF -->
+	{% if not S_IS_BOT %}{{ RUN_CRON_TASK }}{% endif %}
 </div>
 
 <a href="#top" class="scrolltop"><span class="fa fa-arrow-up"></span></a>
