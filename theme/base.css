@@ -157,8 +157,10 @@ a.arrow-right 	{ padding-right: 0;  }
 
 li.header dt,
 li.header dd {
-	padding-top: 13px;
+	font-size: 0.833em;
 	padding-bottom: 9px;
+	padding-top: 13px;
+	word-wrap: normal;
 }
 
 li.row {
