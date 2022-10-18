@@ -84,45 +84,11 @@ $(function() {
 		} else {
 			$("#" + itemId).attr("value", originalColor);
 		}			
-				
-		$colPickItem.spectrum({
-			type: "color",
-			showPalette: false,
-			showInput: true,
-			showAlpha: false,
-			clickoutFiresChange: false,
-			allowEmpty: false,
-			containerClassName: "dropdown",
-			cancelText: cancelLang,
-			chooseText: confirmLang,
-			move: function (thisColor) {
-				$root.css(cssVar + itemId, thisColor.toHexString());
-			},
-			show: function (thisColor) {
-				changed = false;
-				currentColor = thisColor;
-			},
-			hide: function () {
-				if (!changed && currentColor) {
-					$root.css(cssVar + itemId, currentColor.toHexString());
-				}
-			},
-			change: function (thisColor) {
-				changed = true;
-				$root.css(cssVar + itemId, thisColor.toHexString());
-				$buttonReset.prop("disabled", false);
-				localStorage.setItem("main" + itemId, thisColor.toHexString());
-			}
-		});
-
-		$buttonReset.click(function() {
-			$colPickItem.spectrum("destroy");
-			$root.css(cssVar + itemId, "");
-			$(this).blur().prop("disabled", true);
-			
+	
+		function spectrumize(colorOption) {
 			$colPickItem.spectrum({
 				type: "color",
-				color: originalColor,
+				color: colorOption,
 				showPalette: false,
 				showInput: true,
 				showAlpha: false,
@@ -150,6 +116,15 @@ $(function() {
 					localStorage.setItem("main" + itemId, thisColor.toHexString());
 				}
 			});
+		}
+		spectrumize();
+
+		$buttonReset.click(function() {
+			$colPickItem.spectrum("destroy");
+			$root.css(cssVar + itemId, "");
+			$(this).blur().prop("disabled", true);
+			
+			spectrumize(originalColor);
 
 			let removeEachItem = ["main" + itemId];
 			for (key of removeEachItem) {
