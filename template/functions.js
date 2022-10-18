@@ -130,7 +130,6 @@ $(function() {
 			for (key of removeEachItem) {
 				localStorage.removeItem(key);
 			}
-
 		});
 
 	});
