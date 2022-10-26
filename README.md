@@ -1,7 +1,7 @@
 # damaïo
 phpBB style
 
-![phpBB 3.3.x Compatible](https://img.shields.io/badge/phpBB-3.3.x%20Compatible-blue)
+![phpBB 3.3.x Compatible](https://user-images.githubusercontent.com/6350179/197977802-45b72d13-2bff-412a-8ea4-f5d199a93952.svg)
 
 * Automatic light/dark theme according to the user's preference (OS or browser), with the ability to manually switch between the two modes.
 * [Spectrum 2](https://github.com/seballot/spectrum) based color picker, allowing users to modify the 3 main colors of the style.
