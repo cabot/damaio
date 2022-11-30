@@ -85,17 +85,11 @@
 <!-- INCLUDEJS ajax.js -->
 
 {% if definition.COLOR_PICKER %}
-	<span id="getcolors"></span>
+	<span id="getcolors" data-cancel="{{ lang('CANCEL')|e('html') }}" data-confirm="{{ lang('CONFIRM')|e('html') }}"></span>
 	<script src="{T_THEME_PATH}/spectrum/spectrum.min.js?v=2.0.8"></script>
-	<script>
-	var cancelLang = "{{ lang('CANCEL') }}",
-		confirmLang = "{{ lang('CONFIRM') }}";
-	</script>
 {% endif %}
 {% if definition.SHOWPASSWORD %}
-	<script>
-	var showPassword = true;
-	</script>
+	<script>let showPassword = true;</script>
 {% endif %}
 <script src="{T_TEMPLATE_PATH}/functions.min.js?assets_version={T_ASSETS_VERSION}"></script>
 
