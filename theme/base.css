@@ -463,6 +463,11 @@ select {
 	left: 4px;
 }
 
+.rtl .row-item[class*="_mine"]::after {
+	left: auto;
+	right: 4px;
+}
+
 .row-item[class*="global_"]::before,
 .row-item[class*="announce_"]::before {
 	content: "\f0a1";
