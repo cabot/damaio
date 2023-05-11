@@ -179,29 +179,20 @@
 	<!-- IF not S_IS_BOT -->
 		<li class="rightside" data-skip-responsive="true"><a href="#" id="switch-theme" class="switch-theme"><i class="icon fa-fw"></i></a></li>
 		{% if definition.COLOR_PICKER %}
-		<li class="cp-container dropdown-container dropdown-right rightside" data-skip-responsive="true">
-			<a href="#" class="dropdown-trigger"><i class="icon fa-paint-brush fa-fw"></i><span>{L_COLOUR_SWATCH}</span></a>
+		<li class="cp-container dropdown-container dropdown-{{ S_CONTENT_FLOW_END }} rightside" data-skip-responsive="true">
+			<a href="#" class="dropdown-trigger"><i class="icon fa-paint-brush fa-fw" aria-hidden="true"></i><span>{{ lang('COLOUR_SWATCH') }}</span></a>
 			<div class="dropdown">
 				<div class="pointer"><div class="pointer-inner"></div></div>
 				<ul class="dropdown-contents cp-list" role="menu">
+					{% for icolor in 1..3 %}
 					<li class="cp-list-item">
-						<input type="text" id="color1" class="input-color-picker">
-						<button type="button" id="resetcolor1" class="cp-reset" aria-label="{L_RESET}" disabled>
-							<i class="icon fa-trash-o" aria-hidden="true" title="{L_RESET}"><span>{L_RESET}</span></i>
+						<input type="text" id="color{{ icolor }}" class="input-color-picker">
+						<button type="button" id="resetcolor{{ icolor }}" class="cp-reset" aria-label="{{ lang('RESET') }}" disabled>
+							<i class="icon fa-trash-o" aria-hidden="true" title="{{ lang('RESET') }}"></i>
+							<span clas="sr-only">{{ lang('RESET') }}</span>
 						</button>
 					</li>
-					<li class="cp-list-item">
-						<input type="text" id="color2" class="input-color-picker">
-						<button type="button" id="resetcolor2" class="cp-reset" aria-label="{L_RESET}" disabled>
-							<i class="icon fa-trash-o" aria-hidden="true" title="{L_RESET}"><span>{L_RESET}</span></i>
-						</button>
-					</li>
-					<li class="cp-list-item">
-						<input type="text" id="color3" class="input-color-picker">
-						<button type="button" id="resetcolor3" class="cp-reset" aria-label="{L_RESET}" disabled>
-							<i class="icon fa-trash-o" aria-hidden="true" title="{L_RESET}"><span>{L_RESET}</span></i>
-						</button>
-					</li>
+					{% endfor %}
 				</ul>
 			</div>
 		</li>
