@@ -752,6 +752,10 @@ ul.linklist li a {
 	padding: 12px 10px;
 }
 
+.stat-block .stat-block {
+	padding: 0;
+}
+
 .stat-block:empty {
 	display: none;
 }
