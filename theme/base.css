@@ -201,6 +201,10 @@ dd.lastpost>span>*:not(dfn) {
 	position: relative;
 }
 
+a.subforum {
+	margin-left: 0.1em;
+}
+
 .postbody .content {
 	font-size: 1.2em;
 }
