@@ -73,6 +73,10 @@ only screen and (max-device-width: 1220px) {
 	line-height: 1;
 }
 
+.logo {
+	padding: 6px 14px 4px 6px;
+}
+
 .site_logo {
 	background-image: url("./images/logo.svg");
 	width: 153px;
