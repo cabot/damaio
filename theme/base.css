@@ -79,6 +79,7 @@ only screen and (max-device-width: 1220px) {
 
 .site_logo {
 	background-image: url("./images/logo.svg");
+	background-size: contain;
 	width: 153px;
 	height: 57px;
 }
