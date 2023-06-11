@@ -85,7 +85,7 @@
 <!-- INCLUDEJS ajax.js -->
 
 {% if definition.COLOR_PICKER %}
-	<span id="getcolors" data-cancel="{{ lang('CANCEL')|e('html') }}" data-confirm="{{ lang('CONFIRM')|e('html') }}"></span>
+	<span id="getcolors" data-cancel="{{ lang('CANCEL')|e('html_attr') }}" data-confirm="{{ lang('CONFIRM')|e('html_attr') }}"></span>
 	<script src="{T_THEME_PATH}/spectrum/spectrum.min.js?v=2.0.8"></script>
 {% endif %}
 {% if definition.SHOWPASSWORD %}
