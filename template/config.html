@@ -1,39 +1,84 @@
+{# ----------------------------------------------------------------------------
+	In this file, you can define the style parameters.
+	Please note that there is an extension that allows you to set these
+	parameters from the ACP without having to modify the file.
+	The extension also allows you to modify the style's logo and colors.
+---------------------------------------------------------------------------- #}
+
 {# Display color-picker
-    0 = no
-    1 = yes
+	0 = no
+	1 = yes
 #}
 {% DEFINE COLOR_PICKER = 1 %}
 
 
-
 {# Display login modal box
-    0 = no
-    1 = yes
+	0 = no
+	1 = yes
 #}
 {% DEFINE MODAL_LOGIN = 1 %}
 
 
 
 {# Display header full width
-    0 = no
-    1 = yes
+	0 = no
+	1 = yes
 #}
 {% DEFINE H_FULL_WIDTH = 1 %}
 
 
 
 {# Display footer full width
-    0 = no
-    1 = yes
+	0 = no
+	1 = yes
 #}
 {% DEFINE F_FULL_WIDTH = 0 %}
 
 
 
 {# Display button for show/hide passwords
-    0 = no
-    1 = yes
+	0 = no
+	1 = yes
 #}
 {% DEFINE SHOWPASSWORD = 1 %}
 
+
+
+{# ----------------------------------------------------------------------------
+	To configure the footer icons, see below.
+---------------------------------------------------------------------------- #}
+
+{#
+	Enter the URL of your social network in front of the corresponding name, using single quotes ('').
+	Leave blank with single quotes if you don't want to display the icon.
+#}
+
+{% DEFINE DAMAIO_DEVIANTART = '' %}
+{% DEFINE DAMAIO_FACEBOOK = 'https://www.facebook.com/' %}
+{% DEFINE DAMAIO_FLICKR = '' %}
+{% DEFINE DAMAIO_GITHUB = 'https://github.com/' %}
+{% DEFINE DAMAIO_INSTAGRAM = '' %}
+{% DEFINE DAMAIO_LINKEDIN = '' %}
+{% DEFINE DAMAIO_PINTEREST = '' %}
+{% DEFINE DAMAIO_REDDIT = '' %}
+{% DEFINE DAMAIO_SKYPE = '' %}
+{% DEFINE DAMAIO_SNAPCHAT = '' %}
+{% DEFINE DAMAIO_SOUNDCLOUD = '' %}
+{% DEFINE DAMAIO_STEAM = '' %}
+{% DEFINE DAMAIO_TUMBLR = '' %}
+{% DEFINE DAMAIO_TWITTER = 'https://twitter.com/' %}
+{% DEFINE DAMAIO_WHATSAPP = '' %}
+{% DEFINE DAMAIO_YOUTUBE = 'https://www.youtube.com/' %}
+
+{# Display feed icon
+	0 = no
+	1 = yes
+#}
+{% DEFINE DAMAIO_FEED = 1 %}
+
+
+
+{# ----------------------------------------------------------------------------
+	Don't change anything below this line unless you know what you're doing
+---------------------------------------------------------------------------- #}
 {% EVENT damaio_config %}
