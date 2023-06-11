@@ -178,7 +178,7 @@
 	<!-- ENDIF -->
 	<!-- IF not S_IS_BOT -->
 		<li class="rightside" data-skip-responsive="true"><a href="#" id="switch-theme" class="switch-theme"><i class="icon fa-fw"></i></a></li>
-		{% if definition.COLOR_PICKER %}
+		{% if definition.COLOR_PICKER eq 1 %}
 		<li class="cp-container dropdown-container dropdown-{{ S_CONTENT_FLOW_END }} rightside" data-skip-responsive="true">
 			<a href="#" class="dropdown-trigger"><i class="icon fa-paint-brush fa-fw" aria-hidden="true"></i><span>{{ lang('COLOUR_SWATCH') }}</span></a>
 			<div class="dropdown">
