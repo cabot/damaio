@@ -118,7 +118,7 @@ ul.navlinks {
 	border-radius: var(--border-radius-big);
 }
 
-.forumbg-table>.inner {
+.forumbg-table > .inner {
 	margin: 0;
 }
 
@@ -198,7 +198,7 @@ dl.row-item dt {
 }
 
 dl.row-item dt[style*="background-image"],
-dd.lastpost>span>*:not(dfn) {
+dd.lastpost > span > *:not(dfn) {
 	position: relative;
 }
 
@@ -216,7 +216,6 @@ blockquote.uncited {
 
 .button {
 	background-image: none;
-	-webkit-box-shadow: none;
 	box-shadow: none;
 	border-radius: var(--border-radius-small);
 	padding: 5px 8px;
@@ -288,22 +287,22 @@ blockquote.uncited {
 	margin: 20px 0 5px 5px;
 }
 
-.tabs .tab>a {
+.tabs .tab > a {
 	border-radius: 0;
 	margin: 0;
 }
 
-.tabs .tab>a,
-.minitabs .tab>a {
+.tabs .tab > a,
+.minitabs .tab > a {
 	padding: 9px;
 }
 
-.tabs .activetab>a {
+.tabs .activetab > a {
 	padding-bottom: 9px;
 }
 
-.tabs .activetab>a,
-.tabs .activetab>a:hover {
+.tabs .activetab > a,
+.tabs .activetab > a:hover {
 	background-image: none;
 	box-shadow: none;
 }
@@ -319,7 +318,7 @@ blockquote.uncited {
 	margin: 15px 5px 5px 0;
 }
 
-.minitabs .tab>a {
+.minitabs .tab > a {
 	border-radius: 0;
 	margin: 0;
 }
@@ -374,7 +373,6 @@ input.button1,
 input.button2,
 input.button3 {
 	background-image: none;
-	-webkit-box-shadow: none;
 	box-shadow: none;
 	padding: 0.5em 2em 0.7em;
 	border-radius: var(--border-radius-small);
@@ -751,6 +749,7 @@ ul.linklist li a {
 	font-size: 2.2em;
 	padding: 5px;
 	opacity: 0.75;
+	transition: opacity 0.25s;
 }
 
 .socialinks-list-item .icon:hover {
@@ -834,7 +833,7 @@ table.table1 tbody td {
 	left: 8px;
 }
 
-.rtl blockquote cite>div {
+.rtl blockquote cite > div {
 	float: left;
 }
 
