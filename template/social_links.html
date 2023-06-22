@@ -1,61 +1,65 @@
+{# ----------------------------------------------------------------------------
+	Don't change this file unless you know what you're doing.
+	Use the config.html file to modify icon settings.
+---------------------------------------------------------------------------- #}
 {% if definition.DAMAIO_DEVIANTART || definition.DAMAIO_FACEBOOK || definition.DAMAIO_FLICKR || definition.DAMAIO_GITHUB || definition.DAMAIO_INSTAGRAM || definition.DAMAIO_LINKEDIN || definition.DAMAIO_PINTEREST || definition.DAMAIO_REDDIT || definition.DAMAIO_SKYPE || definition.DAMAIO_SNAPCHAT || definition.DAMAIO_SOUNDCLOUD || definition.DAMAIO_STEAM || definition.DAMAIO_TUMBLR || definition.DAMAIO_TWITTER || definition.DAMAIO_WHATSAPP || definition.DAMAIO_YOUTUBE || definition.DAMAIO_FEED %}
 <div class="socialinks">
 	<ul>
-		{% macro menuitem(href, name) %}
+		{% macro menuitem(href, title, customtitle) %}
 		<li class="socialinks-list-item">
-			<a href="{{ href }}" title="{{ name }}">
-				<i class="icon icon-xl fa-{{ name|lower }}"></i>
+			<a href="{{ href }}" title="{{ customtitle|default(title) }}">
+				<i class="icon icon-xl fa-{{ title|lower }}"></i>
 			</a>
 		</li>
 		{% endmacro %}
 		{% import _self as items %}
 		{% if definition.DAMAIO_DEVIANTART %}
-			{{ items.menuitem(definition.DAMAIO_DEVIANTART, 'DeviantArt') }}
+			{{ items.menuitem(definition.DAMAIO_DEVIANTART, 'DeviantArt', definition.DAMAIO_DEVIANTART_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_FACEBOOK %}
-			{{ items.menuitem(definition.DAMAIO_FACEBOOK, 'Facebook') }}
+			{{ items.menuitem(definition.DAMAIO_FACEBOOK, 'Facebook', definition.DAMAIO_FACEBOOK_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_FLICKR %}
-			{{ items.menuitem(definition.DAMAIO_FLICKR, 'Flickr') }}
+			{{ items.menuitem(definition.DAMAIO_FLICKR, 'Flickr', definition.DAMAIO_FLICKR_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_GITHUB %}
-			{{ items.menuitem(definition.DAMAIO_GITHUB, 'GitHub') }}
+			{{ items.menuitem(definition.DAMAIO_GITHUB, 'GitHub', definition.DAMAIO_GITHUB_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_INSTAGRAM %}
-			{{ items.menuitem(definition.DAMAIO_INSTAGRAM, 'Instagram') }}
+			{{ items.menuitem(definition.DAMAIO_INSTAGRAM, 'Instagram', definition.DAMAIO_INSTAGRAM_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_LINKEDIN %}
-			{{ items.menuitem(definition.DAMAIO_LINKEDIN, 'LinkedIn') }}
+			{{ items.menuitem(definition.DAMAIO_LINKEDIN, 'LinkedIn', definition.DAMAIO_LINKEDIN_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_PINTEREST %}
-			{{ items.menuitem(definition.DAMAIO_PINTEREST, 'Pinterest') }}
+			{{ items.menuitem(definition.DAMAIO_PINTEREST, 'Pinterest', definition.DAMAIO_PINTEREST_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_REDDIT %}
-			{{ items.menuitem(definition.DAMAIO_REDDIT, 'Reddit') }}
+			{{ items.menuitem(definition.DAMAIO_REDDIT, 'Reddit', definition.DAMAIO_REDDIT_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_SKYPE %}
-			{{ items.menuitem(definition.DAMAIO_SKYPE, 'Skype') }}
+			{{ items.menuitem(definition.DAMAIO_SKYPE, 'Skype', definition.DAMAIO_SKYPE_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_SNAPCHAT %}
-			{{ items.menuitem(definition.DAMAIO_SNAPCHAT, 'Snapchat') }}
+			{{ items.menuitem(definition.DAMAIO_SNAPCHAT, 'Snapchat', definition.DAMAIO_SNAPCHAT_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_SOUNDCLOUD %}
-			{{ items.menuitem(definition.DAMAIO_SOUNDCLOUD, 'SoundCloud') }}
+			{{ items.menuitem(definition.DAMAIO_SOUNDCLOUD, 'SoundCloud', definition.DAMAIO_SOUNDCLOUD_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_STEAM %}
-			{{ items.menuitem(definition.DAMAIO_STEAM, 'Steam') }}
+			{{ items.menuitem(definition.DAMAIO_STEAM, 'Steam', definition.DAMAIO_STEAM_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_TUMBLR %}
-			{{ items.menuitem(definition.DAMAIO_TUMBLR, 'Tumblr') }}
+			{{ items.menuitem(definition.DAMAIO_TUMBLR, 'Tumblr', definition.DAMAIO_TUMBLR_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_TWITTER %}
-			{{ items.menuitem(definition.DAMAIO_TWITTER, 'Twitter') }}
+			{{ items.menuitem(definition.DAMAIO_TWITTER, 'Twitter', definition.DAMAIO_TWITTER_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_WHATSAPP %}
-			{{ items.menuitem(definition.DAMAIO_WHATSAPP, 'WhatsApp') }}
+			{{ items.menuitem(definition.DAMAIO_WHATSAPP, 'WhatsApp', definition.DAMAIO_WHATSAPP_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_YOUTUBE %}
-			{{ items.menuitem(definition.DAMAIO_YOUTUBE, 'YouTube') }}
+			{{ items.menuitem(definition.DAMAIO_YOUTUBE, 'YouTube', definition.DAMAIO_YOUTUBE_NAME) }}
 		{% endif %}
 		{% if definition.DAMAIO_FEED eq '1' && S_ENABLE_FEEDS %}
 		<li class="socialinks-list-item">
