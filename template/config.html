@@ -4,6 +4,7 @@
 	parameters from the ACP without having to modify the file.
 	The extension also lets you modify the logo and style colors,
 	as well as the board width.
+	https://github.com/cabot/damaioconfiguration
 ---------------------------------------------------------------------------- #}
 
 {# Display color-picker
@@ -11,6 +12,7 @@
 	1 = yes
 #}
 {% DEFINE COLOR_PICKER = 1 %}
+
 
 
 {# Display login modal box
@@ -50,26 +52,72 @@
 ---------------------------------------------------------------------------- #}
 
 {#
-	Enter the URL of your social network in front of the corresponding name, using single quotes ('').
-	Leave blank with single quotes if you don't want to display the icon.
+	Each social icon can receive two parameters:
+
+	  - The first one is the URL of the social network.
+	    Leave it empty if you don't want to display the icon.
+
+	  - The second parameter is optional and allows you to modify the title attribute.
+	    (information displayed in a tooltip when hovering the icon)
+		Useful if you want to translate it into the language of your board.
+		Leave it empty to display the icon default name.
+
+	To display an icon, only the first parameter is mandatory.
+
+	Some characters you may want to copy&paste:
+	’ « » “ ” …
+
+	Important: each parameter must be enclosed with single quotes (''),
+	even if it is left empty.
 #}
 
 {% DEFINE DAMAIO_DEVIANTART = '' %}
+{% DEFINE DAMAIO_DEVIANTART_NAME = '' %}
+
 {% DEFINE DAMAIO_FACEBOOK = 'https://www.facebook.com/' %}
+{% DEFINE DAMAIO_FACEBOOK_NAME = '' %}
+
 {% DEFINE DAMAIO_FLICKR = '' %}
-{% DEFINE DAMAIO_GITHUB = 'https://github.com/' %}
+{% DEFINE DAMAIO_FLICKR_NAME = '' %}
+
+{% DEFINE DAMAIO_GITHUB = 'https://github.com/cabot/damaio' %}
+{% DEFINE DAMAIO_GITHUB_NAME = '' %}
+
 {% DEFINE DAMAIO_INSTAGRAM = '' %}
+{% DEFINE DAMAIO_INSTAGRAM_NAME = '' %}
+
 {% DEFINE DAMAIO_LINKEDIN = '' %}
+{% DEFINE DAMAIO_LINKEDIN_NAME = '' %}
+
 {% DEFINE DAMAIO_PINTEREST = '' %}
+{% DEFINE DAMAIO_PINTEREST_NAME = '' %}
+
 {% DEFINE DAMAIO_REDDIT = '' %}
+{% DEFINE DAMAIO_REDDIT_NAME = '' %}
+
 {% DEFINE DAMAIO_SKYPE = '' %}
+{% DEFINE DAMAIO_SKYPE_NAME = '' %}
+
 {% DEFINE DAMAIO_SNAPCHAT = '' %}
+{% DEFINE DAMAIO_SNAPCHAT_NAME = '' %}
+
 {% DEFINE DAMAIO_SOUNDCLOUD = '' %}
+{% DEFINE DAMAIO_SOUNDCLOUD_NAME = '' %}
+
 {% DEFINE DAMAIO_STEAM = '' %}
+{% DEFINE DAMAIO_STEAM_NAME = '' %}
+
 {% DEFINE DAMAIO_TUMBLR = '' %}
+{% DEFINE DAMAIO_TUMBLR_NAME = '' %}
+
 {% DEFINE DAMAIO_TWITTER = 'https://twitter.com/' %}
+{% DEFINE DAMAIO_TWITTER_NAME = '' %}
+
 {% DEFINE DAMAIO_WHATSAPP = '' %}
+{% DEFINE DAMAIO_WHATSAPP_NAME = '' %}
+
 {% DEFINE DAMAIO_YOUTUBE = 'https://www.youtube.com/' %}
+{% DEFINE DAMAIO_YOUTUBE_NAME = '' %}
 
 {# Display feed icon
 	0 = no
@@ -80,6 +128,6 @@
 
 
 {# ----------------------------------------------------------------------------
-	Don't change anything below this line unless you know what you're doing
+	Don't change anything below this line unless you know what you're doing.
 ---------------------------------------------------------------------------- #}
 {% EVENT damaio_config %}
