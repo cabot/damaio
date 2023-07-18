@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* https://google-webfonts-helper.herokuapp.com/fonts/rubik */
+/* https://gwfh.mranftl.com/fonts/rubik */
 @font-face {
 	font-family: 'Rubik';
 	font-style: normal;
@@ -736,7 +736,14 @@ ul.linklist li a {
 }
 
 .footer-row {
+	color: #dedede;
 	line-height: 1.5em;
+	opacity: 0.6;
+	transition: opacity 0.3s;
+}
+
+.copyright:hover .footer-row {
+	opacity: 1;
 }
 
 .socialinks-list-item {
@@ -1009,6 +1016,10 @@ a.avatar-letter:active {
 .sp-replacer.sp-active,
 .sp-replacer:hover {
 	border: 0;
+}
+
+.cp-list-item button:focus-visible {
+	outline: 3px ridge blue;
 }
 
 .sp-dd {
