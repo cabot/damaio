@@ -1,69 +1,47 @@
-{% if definition.DAMAIO_DEVIANTART || definition.DAMAIO_FACEBOOK || definition.DAMAIO_FLICKR || definition.DAMAIO_GITHUB || definition.DAMAIO_INSTAGRAM || definition.DAMAIO_LINKEDIN || definition.DAMAIO_PINTEREST || definition.DAMAIO_REDDIT || definition.DAMAIO_SKYPE || definition.DAMAIO_SNAPCHAT || definition.DAMAIO_SOUNDCLOUD || definition.DAMAIO_STEAM || definition.DAMAIO_TUMBLR || definition.DAMAIO_TWITTER || definition.DAMAIO_WHATSAPP || definition.DAMAIO_YOUTUBE || definition.DAMAIO_FEED %}
+{# ----------------------------------------------------------------------------
+Don't change this file unless you know what you're doing.
+Use the config.html file to modify icon settings, or install the
+Damaïo Configuration extension:
+https://github.com/cabot/damaioconfiguration
+---------------------------------------------------------------------------- #}
+
+{% set socialLinks = [
+	{'href': definition.DAMAIO_DEVIANTART, 'title': 'DeviantArt', 'customtitle': definition.DAMAIO_DEVIANTART_NAME},
+	{'href': definition.DAMAIO_FACEBOOK, 'title': 'Facebook', 'customtitle': definition.DAMAIO_FACEBOOK_NAME},
+	{'href': definition.DAMAIO_FLICKR, 'title': 'Flickr', 'customtitle': definition.DAMAIO_FLICKR_NAME},
+	{'href': definition.DAMAIO_GITHUB, 'title': 'GitHub', 'customtitle': definition.DAMAIO_GITHUB_NAME},
+	{'href': definition.DAMAIO_INSTAGRAM, 'title': 'Instagram', 'customtitle': definition.DAMAIO_INSTAGRAM_NAME},
+	{'href': definition.DAMAIO_LINKEDIN, 'title': 'LinkedIn', 'customtitle': definition.DAMAIO_LINKEDIN_NAME},
+	{'href': definition.DAMAIO_PINTEREST, 'title': 'Pinterest', 'customtitle': definition.DAMAIO_PINTEREST_NAME},
+	{'href': definition.DAMAIO_REDDIT, 'title': 'Reddit', 'customtitle': definition.DAMAIO_REDDIT_NAME},
+	{'href': definition.DAMAIO_SKYPE, 'title': 'Skype', 'customtitle': definition.DAMAIO_SKYPE_NAME},
+	{'href': definition.DAMAIO_SNAPCHAT, 'title': 'Snapchat', 'customtitle': definition.DAMAIO_SNAPCHAT_NAME},
+	{'href': definition.DAMAIO_SOUNDCLOUD, 'title': 'SoundCloud', 'customtitle': definition.DAMAIO_SOUNDCLOUD_NAME},
+	{'href': definition.DAMAIO_STEAM, 'title': 'Steam', 'customtitle': definition.DAMAIO_STEAM_NAME},
+	{'href': definition.DAMAIO_TUMBLR, 'title': 'Tumblr', 'customtitle': definition.DAMAIO_TUMBLR_NAME},
+	{'href': definition.DAMAIO_TWITTER, 'title': 'Twitter', 'customtitle': definition.DAMAIO_TWITTER_NAME},
+	{'href': definition.DAMAIO_WHATSAPP, 'title': 'WhatsApp', 'customtitle': definition.DAMAIO_WHATSAPP_NAME},
+	{'href': definition.DAMAIO_YOUTUBE, 'title': 'YouTube', 'customtitle': definition.DAMAIO_YOUTUBE_NAME}
+] %}
+
+{% set menuItems = [] %}
+
+{% for socialLink in socialLinks %}
+{% if socialLink.href %}
+	{% set menuItem = '<li class="socialinks-list-item damaio-footer-' ~ socialLink.title|lower ~ '"><a href="' ~ socialLink.href ~ '" title="' ~ socialLink.customtitle|default(socialLink.title) ~ '"><i class="icon icon-xl fa-' ~ socialLink.title|lower ~ '"></i></a></li>' %}
+	{% set menuItems = menuItems|merge([menuItem]) %}
+{% endif %}
+{% endfor %}
+
+{% if definition.DAMAIO_FEED and S_ENABLE_FEEDS %}
+	{% set feedItem = '<li class="socialinks-list-item damaio-footer-rss"><a type="application/rss+xml" href="' ~ U_FEED ~ '"><i class="icon icon-xl fa-rss" title="' ~ lang('FEED') ~ ' - ' ~ SITENAME ~ '"></i></a></li>' %}
+	{% set menuItems = menuItems|merge([feedItem]) %}
+{% endif %}
+
+{% if menuItems|length > 0 %}
 <div class="socialinks">
 	<ul>
-		{% macro menuitem(href, name) %}
-		<li class="socialinks-list-item">
-			<a href="{{ href }}" title="{{ name }}">
-				<i class="icon icon-xl fa-{{ name|lower }}"></i>
-			</a>
-		</li>
-		{% endmacro %}
-		{% import _self as items %}
-		{% if definition.DAMAIO_DEVIANTART %}
-			{{ items.menuitem(definition.DAMAIO_DEVIANTART, 'DeviantArt') }}
-		{% endif %}
-		{% if definition.DAMAIO_FACEBOOK %}
-			{{ items.menuitem(definition.DAMAIO_FACEBOOK, 'Facebook') }}
-		{% endif %}
-		{% if definition.DAMAIO_FLICKR %}
-			{{ items.menuitem(definition.DAMAIO_FLICKR, 'Flickr') }}
-		{% endif %}
-		{% if definition.DAMAIO_GITHUB %}
-			{{ items.menuitem(definition.DAMAIO_GITHUB, 'GitHub') }}
-		{% endif %}
-		{% if definition.DAMAIO_INSTAGRAM %}
-			{{ items.menuitem(definition.DAMAIO_INSTAGRAM, 'Instagram') }}
-		{% endif %}
-		{% if definition.DAMAIO_LINKEDIN %}
-			{{ items.menuitem(definition.DAMAIO_LINKEDIN, 'LinkedIn') }}
-		{% endif %}
-		{% if definition.DAMAIO_PINTEREST %}
-			{{ items.menuitem(definition.DAMAIO_PINTEREST, 'Pinterest') }}
-		{% endif %}
-		{% if definition.DAMAIO_REDDIT %}
-			{{ items.menuitem(definition.DAMAIO_REDDIT, 'Reddit') }}
-		{% endif %}
-		{% if definition.DAMAIO_SKYPE %}
-			{{ items.menuitem(definition.DAMAIO_SKYPE, 'Skype') }}
-		{% endif %}
-		{% if definition.DAMAIO_SNAPCHAT %}
-			{{ items.menuitem(definition.DAMAIO_SNAPCHAT, 'Snapchat') }}
-		{% endif %}
-		{% if definition.DAMAIO_SOUNDCLOUD %}
-			{{ items.menuitem(definition.DAMAIO_SOUNDCLOUD, 'SoundCloud') }}
-		{% endif %}
-		{% if definition.DAMAIO_STEAM %}
-			{{ items.menuitem(definition.DAMAIO_STEAM, 'Steam') }}
-		{% endif %}
-		{% if definition.DAMAIO_TUMBLR %}
-			{{ items.menuitem(definition.DAMAIO_TUMBLR, 'Tumblr') }}
-		{% endif %}
-		{% if definition.DAMAIO_TWITTER %}
-			{{ items.menuitem(definition.DAMAIO_TWITTER, 'Twitter') }}
-		{% endif %}
-		{% if definition.DAMAIO_WHATSAPP %}
-			{{ items.menuitem(definition.DAMAIO_WHATSAPP, 'WhatsApp') }}
-		{% endif %}
-		{% if definition.DAMAIO_YOUTUBE %}
-			{{ items.menuitem(definition.DAMAIO_YOUTUBE, 'YouTube') }}
-		{% endif %}
-		{% if definition.DAMAIO_FEED eq '1' && S_ENABLE_FEEDS %}
-		<li class="socialinks-list-item">
-			<a type="application/rss+xml" href="{{ U_FEED }}">
-				<i class="icon icon-xl fa-rss" title="{{ lang('FEED') }} - {{ SITENAME }}"></i>
-			</a>
-		</li>
-		{% endif %}
+		{{ menuItems|join }}
 	</ul>
 </div>
 {% endif %}
