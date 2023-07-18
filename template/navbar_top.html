@@ -163,7 +163,7 @@
 		<!-- EVENT navbar_header_user_profile_append -->
 	<!-- ELSE IF not S_IS_BOT -->
 		<li class="rightside"  data-skip-responsive="true">
-			<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem"{% if definition.MODAL_LOGIN %} id="modal-login-trigger"{% endif %}>
+			<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" role="menuitem"{% if definition.MODAL_LOGIN %} id="modal-login-trigger"{% endif %}>
 				<i class="icon fa-power-off fa-fw" aria-hidden="true"></i><span>{L_LOGIN_LOGOUT}</span>
 			</a>
 		</li>
@@ -178,16 +178,16 @@
 	<!-- ENDIF -->
 	<!-- IF not S_IS_BOT -->
 		<li class="rightside" data-skip-responsive="true"><a href="#" id="switch-theme" class="switch-theme"><i class="icon fa-fw"></i></a></li>
-		{% if definition.COLOR_PICKER eq 1 %}
+		{% if definition.COLOR_PICKER %}
 		<li class="cp-container dropdown-container dropdown-{{ S_CONTENT_FLOW_END }} rightside" data-skip-responsive="true">
-			<a href="#" class="dropdown-trigger"><i class="icon fa-paint-brush fa-fw" aria-hidden="true"></i><span>{{ lang('COLOUR_SWATCH') }}</span></a>
+			<a href="#" id="spectrum-dropdown-trigger" class="dropdown-trigger"><i class="icon fa-paint-brush fa-fw" aria-hidden="true"></i><span>{{ lang('COLOUR_SWATCH') }}</span></a>
 			<div class="dropdown">
 				<div class="pointer"><div class="pointer-inner"></div></div>
 				<ul class="dropdown-contents cp-list" role="menu">
-					{% for icolor in 1..3 %}
+					{% for colorId in 1..3 %}
 					<li class="cp-list-item">
-						<input type="text" id="color{{ icolor }}" class="input-color-picker">
-						<button type="button" id="resetcolor{{ icolor }}" class="cp-reset" aria-label="{{ lang('RESET') }}" disabled>
+						<input type="text" id="color{{ colorId }}" class="input-color-picker">
+						<button type="button" id="resetcolor{{ colorId }}" class="cp-reset" aria-label="{{ lang('RESET') }}" disabled>
 							<i class="icon fa-trash-o" aria-hidden="true" title="{{ lang('RESET') }}"></i>
 							<span class="sr-only">{{ lang('RESET') }}</span>
 						</button>
