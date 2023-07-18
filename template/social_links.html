@@ -24,24 +24,24 @@ https://github.com/cabot/damaioconfiguration
 	{'href': definition.DAMAIO_YOUTUBE, 'title': 'YouTube', 'customtitle': definition.DAMAIO_YOUTUBE_NAME}
 ] %}
 
-{% set menuItems = [] %}
+{% set footerListItems = [] %}
 
 {% for socialLink in socialLinks %}
 {% if socialLink.href %}
-	{% set menuItem = '<li class="socialinks-list-item damaio-footer-' ~ socialLink.title|lower ~ '"><a href="' ~ socialLink.href ~ '" title="' ~ socialLink.customtitle|default(socialLink.title) ~ '"><i class="icon icon-xl fa-' ~ socialLink.title|lower ~ '"></i></a></li>' %}
-	{% set menuItems = menuItems|merge([menuItem]) %}
+	{% set socialItem = '<li class="socialinks-list-item damaio-footer-' ~ socialLink.title|lower ~ '"><a href="' ~ socialLink.href ~ '" title="' ~ socialLink.customtitle|default(socialLink.title) ~ '"><i class="icon icon-xl fa-' ~ socialLink.title|lower ~ '"></i></a></li>' %}
+	{% set footerListItems = footerListItems|merge([socialItem]) %}
 {% endif %}
 {% endfor %}
 
 {% if definition.DAMAIO_FEED and S_ENABLE_FEEDS %}
 	{% set feedItem = '<li class="socialinks-list-item damaio-footer-rss"><a type="application/rss+xml" href="' ~ U_FEED ~ '"><i class="icon icon-xl fa-rss" title="' ~ lang('FEED') ~ ' - ' ~ SITENAME ~ '"></i></a></li>' %}
-	{% set menuItems = menuItems|merge([feedItem]) %}
+	{% set footerListItems = footerListItems|merge([feedItem]) %}
 {% endif %}
 
-{% if menuItems|length > 0 %}
+{% if footerListItems|length > 0 %}
 <div class="socialinks">
 	<ul>
-		{{ menuItems|join }}
+		{{ footerListItems|join }}
 	</ul>
 </div>
 {% endif %}
