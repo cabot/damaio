@@ -95,7 +95,7 @@ $(function () {
 				showAlpha: false,
 				clickoutFiresChange: false,
 				allowEmpty: false,
-				containerClassName: "dropdown",
+				containerClassName: "dropdown damaiopicker main" + itemId,
 				cancelText: cancelLang,
 				chooseText: confirmLang,
 				move: function (thisColor) {
@@ -131,9 +131,12 @@ $(function () {
 			for (key of removeEachItem) {
 				localStorage.removeItem(key);
 			}
-
 		});
 
+	});
+
+	$("#spectrum-dropdown-trigger").on("click", function () {
+		$(this).next().find("li").first().find("button").first().focus();
 	});
 });
 
@@ -144,14 +147,23 @@ $(function () {
 		$phpbbWrapper = "#darkenwrapper";
 
 	if ($($form).length) {
-		$loginLink.click(function (e) {
+		$loginLink.on("click", function (e) {
 			e.preventDefault();
 			$($phpbbWrapper + ", " + $form).fadeIn(300);
+			$("#username").focus();
 		});
 
-		$($phpbbWrapper + ", " + $form + " .alert_close").click(function (e) {
+		$($phpbbWrapper + ", " + $form + " .alert_close").on("click", function (e) {
 			e.preventDefault();
 			$($phpbbWrapper + ", " + $form).fadeOut(300);
+			$loginLink.focus();
+		});
+
+		$(document).on("keydown", function (e) {
+			if (e.keyCode === 27 && $($form).is(":visible")) {
+				$($phpbbWrapper + ", " + $form).fadeOut(300);
+				$loginLink.focus();
+			}
 		});
 	}
 });
