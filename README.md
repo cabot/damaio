@@ -13,10 +13,8 @@ phpBB style
 * Social icons in footer.
 * Parameters can be set in the config.html file.
 * Please note that an extension allows you to set the parameters from the ACP without having to modify the file.
-
     The extension also lets you modify the logo and style colors, as well as the board width.
-  
-    https://github.com/cabot/damaioconfiguration
+	https://github.com/cabot/damaioconfiguration
 
 
 ![damaio_dark](https://user-images.githubusercontent.com/6350179/145218506-325d3b07-20a6-4874-96a6-fef8607a2468.png)
