@@ -1,92 +1,92 @@
- <!-- INCLUDE overall_header.html -->
+ {% include 'overall_header.html' %}
 
-<!-- EVENT index_body_markforums_before -->
-<!-- IF U_MARK_FORUMS -->
+{% EVENT index_body_markforums_before %}
+{% if U_MARK_FORUMS %}
 <div class="action-bar compact">
-	<a href="{U_MARK_FORUMS}" class="mark-read rightside" accesskey="m" data-ajax="mark_forums_read">{L_MARK_FORUMS_READ}</a>
+	<a href="{{ U_MARK_FORUMS }}" class="mark-read rightside" accesskey="m" data-ajax="mark_forums_read">{{ lang('MARK_FORUMS_READ') }}</a>
 </div>
-<!-- ENDIF -->
-<!-- EVENT index_body_markforums_after -->
+{% endif %}
+{% EVENT index_body_markforums_after %}
 
-<!-- INCLUDE forumlist_body.html -->
+{% include 'forumlist_body.html' %}
 
-<!-- EVENT index_body_forumlist_body_after -->
+{% EVENT index_body_forumlist_body_after %}
 
 <div class="forabg headerspace damaio-stat">
 	<div class="inner">
 	<ul class="topiclist">
 		<li class="header">
 			<dl class="row-item">
-				<dt><div class="list-inner">{L_INFORMATION}</div></dt><dd></dd>
+				<dt><div class="list-inner">{{ lang('INFORMATION') }}</div></dt><dd></dd>
 			</dl>
 		</li>
 	</ul>
 
-	<!-- EVENT index_body_stat_blocks_before -->
+	{% EVENT index_body_stat_blocks_before %}
 
 	{% if not definition.MODAL_LOGIN and (not S_USER_LOGGED_IN and not S_IS_BOT) %}
-	<form method="post" action="{S_LOGIN_ACTION}" class="stat-block" id="login-block">
-		<h3><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a><!-- IF S_REGISTER_ENABLED -->&nbsp; &bull; &nbsp;<a href="{U_REGISTER}">{L_REGISTER}</a><!-- ENDIF --></h3>
+	<form method="post" action="{{ S_LOGIN_ACTION }}" class="stat-block" id="login-block">
+		<h3><a href="{{ U_LOGIN_LOGOUT }}">{{ lang('LOGIN_LOGOUT') }}</a>{% if S_REGISTER_ENABLED %}&nbsp; &bull; &nbsp;<a href="{{ U_REGISTER }}">{{ lang('REGISTER') }}</a>{% endif %}</h3>
 		<fieldset class="quick-login">
-			<label for="username"><span>{L_USERNAME}{L_COLON}</span> <input type="text" tabindex="1" name="username" id="username" size="10" class="inputbox" title="{L_USERNAME}" /></label>
-			<label for="password"><span>{L_PASSWORD}{L_COLON}</span> <input type="password" tabindex="2" name="password" id="password" size="10" class="inputbox" title="{L_PASSWORD}" autocomplete="off" /></label>
-			<!-- IF U_SEND_PASSWORD -->
-				<a href="{U_SEND_PASSWORD}">{L_FORGOT_PASS}</a>
-			<!-- ENDIF -->
-			<!-- IF S_AUTOLOGIN_ENABLED -->
-				<span class="responsive-hide">|</span> <label for="autologin">{L_LOG_ME_IN} <input type="checkbox" tabindex="4" name="autologin" id="autologin" /></label>
-			<!-- ENDIF -->
-			<input type="submit" tabindex="5" name="login" value="{L_LOGIN}" class="button2" />
-			{S_LOGIN_REDIRECT}
-			{S_FORM_TOKEN_LOGIN}
+			<label for="username"><span>{{ lang('USERNAME') ~ lang('COLON') }}</span> <input type="text" tabindex="1" name="username" id="username" size="10" class="inputbox" title="{{ lang('USERNAME') }}" /></label>
+			<label for="password"><span>{{ lang('PASSWORD') ~ lang('COLON') }}</span> <input type="password" tabindex="2" name="password" id="password" size="10" class="inputbox" title="{{ lang('PASSWORD') }}" autocomplete="off" /></label>
+			{% if U_SEND_PASSWORD %}
+				<a href="{{ U_SEND_PASSWORD }}">{{ lang('FORGOT_PASS') }}</a>
+			{% endif %}
+			{% if S_AUTOLOGIN_ENABLED %}
+				<span class="responsive-hide">|</span> <label for="autologin">{{ lang('LOG_ME_IN') }} <input type="checkbox" tabindex="4" name="autologin" id="autologin" /></label>
+			{% endif %}
+			<input type="submit" tabindex="5" name="login" value="{{ lang('LOGIN') }}" class="button2" />
+			{{ S_LOGIN_REDIRECT }}
+			{{ S_FORM_TOKEN_LOGIN }}
 		</fieldset>
 	</form>
 	{% endif %}
 
-	<!-- IF S_DISPLAY_ONLINE_LIST -->
+	{% if S_DISPLAY_ONLINE_LIST %}
 	<div class="stat-block online-list" id="online-block">
-		<!-- IF U_VIEWONLINE --><h3><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h3><!-- ELSE --><h3>{L_WHO_IS_ONLINE}</h3><!-- ENDIF -->
+		{% if U_VIEWONLINE %}<h3><a href="{{ U_VIEWONLINE }}">{{ lang('WHO_IS_ONLINE') }}</a></h3>{% else %}<h3>{{ lang('WHO_IS_ONLINE') }}</h3>{% endif %}
 		<p class="stat-content icon-online-list">
-			<!-- EVENT index_body_block_online_prepend -->
-			<!-- IF S_USER_LOGGED_IN -->{CURRENT_TIME}<br /><!-- ENDIF -->
-			{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />
-			<!-- IF U_VIEWONLINE -->
-				<br />{LOGGED_IN_USER_LIST}
-				<!-- IF LEGEND --><br /><em>{L_LEGEND}{L_COLON} {LEGEND}</em><!-- ENDIF -->
-			<!-- ENDIF -->
-			<!-- EVENT index_body_block_online_append -->
+			{% EVENT index_body_block_online_prepend %}
+			{% if S_USER_LOGGED_IN %}{{ CURRENT_TIME }}<br>{% endif %}
+			{{ TOTAL_USERS_ONLINE }} ({{ lang('ONLINE_EXPLAIN') }})<br>
+			{% if U_VIEWONLINE %}
+				<br>{{ LOGGED_IN_USER_LIST }}
+				{% if LEGEND %}<br><em>{{ lang('LEGEND') ~ lang('COLON') }} {{ LEGEND }}</em>{% endif %}
+			{% endif %}
+			{% EVENT index_body_block_online_append %}
 		</p>
 	</div>
-	<!-- ENDIF -->
+	{% endif %}
 
-	<!-- EVENT index_body_birthday_block_before -->
+	{% EVENT index_body_birthday_block_before %}
 
-	<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
+	{% if S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST %}
 	<div class="stat-block birthday-list" id="birthday-block">
-		<h3>{L_BIRTHDAYS}</h3>
+		<h3>{{ lang('BIRTHDAYS') }}</h3>
 		<p class="stat-content icon-birthday-list">
-			<!-- EVENT index_body_block_birthday_prepend -->
-			<!-- IF .birthdays -->{L_CONGRATULATIONS}{L_COLON} <strong><!-- BEGIN birthdays -->{birthdays.USERNAME}<!-- IF birthdays.AGE !== '' --> ({birthdays.AGE})<!-- ENDIF --><!-- IF not birthdays.S_LAST_ROW -->, <!-- ENDIF --><!-- END birthdays --></strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF -->
-			<!-- EVENT index_body_block_birthday_append -->
+			{% EVENT index_body_block_birthday_prepend %}
+			{% if birthdays|length > 0 %}{{ lang('CONGRATULATIONS') ~ lang('COLON') }} <strong>{% for birthday in birthdays %}{{ birthday.USERNAME }}{% if birthday.AGE !== '' %} ({{ birthday.AGE }}){% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</strong>{% else %}{{ lang('NO_BIRTHDAYS') }}{% endif %}
+			{% EVENT index_body_block_birthday_append %}
 		</p>
 	</div>
-	<!-- ENDIF -->
+	{% endif %}
 
-	<!-- IF NEWEST_USER -->
+	{% if NEWEST_USER %}
 	<div class="stat-block statistics" id="statistics-block">
-		<h3>{L_STATISTICS}</h3>
+		<h3>{{ lang('STATISTICS') }}</h3>
 		<p class="stat-content icon-statistics">
-			<!-- EVENT index_body_block_stats_prepend -->
-			<!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<br /><!-- ELSE -->{CURRENT_TIME}<br /><!-- ENDIF -->
-			{RECORD_USERS}<br /><br />
-			{TOTAL_POSTS} &bull; {TOTAL_TOPICS} &bull; {TOTAL_USERS} &bull; {NEWEST_USER}
-			<!-- EVENT index_body_block_stats_append -->
+			{% EVENT index_body_block_stats_prepend %}
+			{% if S_USER_LOGGED_IN %}{{ LAST_VISIT_DATE }}<br>{% else %}{{ CURRENT_TIME }}<br>{% endif %}
+			{{ RECORD_USERS }}<br><br>
+			{{ TOTAL_POSTS }} &bull; {{ TOTAL_TOPICS }} &bull; {{ TOTAL_USERS }} &bull; {{ NEWEST_USER }}
+			{% EVENT index_body_block_stats_append %}
 		</p>
 	</div>
-	<!-- ENDIF -->
+	{% endif %}
 
-	<!-- EVENT index_body_stat_blocks_after -->
+	{% EVENT index_body_stat_blocks_after %}
 	</div>
 </div>
 
-<!-- INCLUDE overall_footer.html -->
+{% include 'overall_footer.html' %}

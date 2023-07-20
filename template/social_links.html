@@ -26,11 +26,9 @@ https://github.com/cabot/damaioconfiguration
 
 {% set footerListItems = [] %}
 
-{% for socialLink in socialLinks %}
-{% if socialLink.href %}
+{% for socialLink in socialLinks if socialLink.href %}
 	{% set socialItem = '<li class="socialinks-list-item damaio-footer-' ~ socialLink.title|lower ~ '"><a href="' ~ socialLink.href ~ '" title="' ~ socialLink.customtitle|default(socialLink.title) ~ '"><i class="icon icon-xl fa-' ~ socialLink.title|lower ~ '"></i></a></li>' %}
 	{% set footerListItems = footerListItems|merge([socialItem]) %}
-{% endif %}
 {% endfor %}
 
 {% if definition.DAMAIO_FEED and S_ENABLE_FEEDS %}
