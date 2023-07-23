@@ -88,6 +88,19 @@ only screen and (max-device-width: 1220px) {
 	border-radius: 0 0 var(--border-radius-big) var(--border-radius-big);
 }
 
+.sticky-nav {
+	padding: 3px 0;
+	position: -webkit-sticky;
+	position: sticky;
+	top: -1px;
+	z-index: 1;
+}
+
+.sticky-nav .main-width {
+	box-sizing: border-box;
+	padding: 0 10px;
+}
+
 .page-footer .navbar {
 	padding-bottom: 0;
 	border-radius: var(--border-radius-big) var(--border-radius-big) 0 0;

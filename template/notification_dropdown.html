@@ -3,44 +3,44 @@
 	<div class="dropdown-contents">
 		<div class="header">
 
-				<a href="{U_NOTIFICATION_SETTINGS}">{L_SETTINGS}</a>
-				<!-- IF NOTIFICATIONS_COUNT -->
-					<span id="mark_all_notifications"> &bull; <a href="{U_MARK_ALL_NOTIFICATIONS}" data-ajax="notification.mark_all_read">{L_MARK_ALL_READ}</a></span>
-				<!-- ENDIF -->
+				<a href="{{ U_NOTIFICATION_SETTINGS }}">{{ lang('SETTINGS') }}</a>
+				{% if NOTIFICATIONS_COUNT %}
+					<span id="mark_all_notifications"> &bull; <a href="{{ U_MARK_ALL_NOTIFICATIONS }}" data-ajax="notification.mark_all_read">{{ lang('MARK_ALL_READ') }}</a></span>
+				{% endif %}
 
 		</div>
 
 		<ul>
-			<!-- IF not .notifications -->
+			{% if not notifications|length > 0 %}
 				<li class="no_notifications">
-					{L_NO_NOTIFICATIONS}
+					{{ lang('NO_NOTIFICATIONS') }}
 				</li>
-			<!-- ENDIF -->
-			<!-- BEGIN notifications -->
-				<li class="<!-- IF notifications.UNREAD --> bg2<!-- ENDIF --><!-- IF notifications.STYLING --> {notifications.STYLING}<!-- ENDIF --><!-- IF not notifications.URL --> no-url<!-- ENDIF -->">
-					<!-- IF notifications.URL -->
-						<a class="notification-block" href="<!-- IF notifications.UNREAD -->{notifications.U_MARK_READ}" data-real-url="{notifications.URL}<!-- ELSE -->{notifications.URL}<!-- ENDIF -->">
-					<!-- ENDIF -->
-						<!-- IF notifications.AVATAR -->{notifications.AVATAR}<!-- ELSE --><i class="icon fa-fw fa-user"></i><!-- ENDIF -->
+			{% endif %}
+			{% for notification in notifications %}
+				<li class="{% if notification.UNREAD %} bg2{% endif %}{% if notification.STYLING %} {{ notification.STYLING }}{% endif %}{% if not notification.URL %} no-url{% endif %}">
+					{% if notification.URL %}
+						<a class="notification-block" href="{% if notification.UNREAD %}{{ notification.U_MARK_READ }}" data-real-url="{{ notification.URL }}{% else %}{{ notification.URL }}{% endif %}">
+					{% endif %}
+						{% if notification.AVATAR %}{{ notification.AVATAR }}{% else %}<i class="icon fa-fw fa-user"></i>{% endif %}
 						<div class="notification_text">
-							<p class="notification-title">{notifications.FORMATTED_TITLE}</p>
-							<!-- IF notifications.REFERENCE --><p class="notification-reference">{notifications.REFERENCE}</p><!-- ENDIF -->
-							<!-- IF notifications.FORUM --><p class="notification-forum">{notifications.FORUM}</p><!-- ENDIF -->
-							<!-- IF notifications.REASON --><p class="notification-reason">{notifications.REASON}</p><!-- ENDIF -->
-							<p class="notification-time">{notifications.TIME}</p>
+							<p class="notification-title">{{ notification.FORMATTED_TITLE }}</p>
+							{% if notification.REFERENCE %}<p class="notification-reference">{{ notification.REFERENCE }}</p>{% endif %}
+							{% if notification.FORUM %}<p class="notification-forum">{{ notification.FORUM }}</p>{% endif %}
+							{% if notification.REASON %}<p class="notification-reason">{{ notification.REASON }}</p>{% endif %}
+							<p class="notification-time">{{ notification.TIME }}</p>
 						</div>
-					<!-- IF notifications.URL --></a><!-- ENDIF -->
-					<!-- IF notifications.UNREAD -->
-						<a href="{notifications.U_MARK_READ}" class="mark_read icon-mark" data-ajax="notification.mark_read" title="{L_MARK_READ}">
-							 <i class="icon fa-check-circle icon-xl fa-fw" aria-hidden="true"></i><span class="sr-only">{L_MARK_READ}</span>
+					{% if notification.URL %}</a>{% endif %}
+					{% if notification.UNREAD %}
+						<a href="{{ notification.U_MARK_READ }}" class="mark_read icon-mark" data-ajax="notification.mark_read" title="{{ lang('MARK_READ') }}">
+							 <i class="icon fa-check-circle icon-xl fa-fw" aria-hidden="true"></i><span class="sr-only">{{ lang('MARK_READ') }}</span>
 						</a>
-					<!-- ENDIF -->
+					{% endif %}
 				</li>
-			<!-- END notifications -->
+			{% endfor %}
 		</ul>
 
 		<div class="footer">
-			<a href="{U_VIEW_ALL_NOTIFICATIONS}"><span>{L_SEE_ALL}</span></a>
+			<a href="{{ U_VIEW_ALL_NOTIFICATIONS }}"><span>{{ lang('SEE_ALL') }}</span></a>
 		</div>
 	</div>
 </div>

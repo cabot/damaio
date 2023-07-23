@@ -1,49 +1,49 @@
 <!DOCTYPE html>
-<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
+<html dir="{{ S_CONTENT_DIRECTION }}" lang="{{ S_USER_LANG }}">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light dark">
-{META}
-<title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
+{{ META }}
+<title>{{ SITENAME }} &bull; {% if S_IN_MCP %}{{ lang('MCP') }} &bull; {% elseif S_IN_UCP %}{{ lang('UCP') }} &bull; {% endif %}{{ PAGE_TITLE }}</title>
 
-<link href="{T_FONT_AWESOME_LINK}" rel="stylesheet">
-<link rel="preload" href="{T_THEME_PATH}/fonts/rubik-regular.woff2" as="font" type="font/woff2" crossorigin="">
-<link href="{ROOT_PATH}styles/prosilver/theme/stylesheet.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
-<script>if (localStorage.darksideornot) document.documentElement.setAttribute("data-theme", localStorage.darksideornot);</script>
+<link href="{{ T_FONT_AWESOME_LINK }}" rel="stylesheet">
+<link rel="preload" href="{{ T_THEME_PATH }}/fonts/rubik-regular.woff2" as="font" type="font/woff2" crossorigin="">
+<link href="{{ ROOT_PATH }}styles/prosilver/theme/stylesheet.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
+<script>if (localStorage.sideoftheforce) document.documentElement.setAttribute("data-theme", localStorage.sideoftheforce);</script>
 {% if definition.COLOR_PICKER %}
 <script>
 	if (localStorage.maincolor1) document.documentElement.style.setProperty("--main-color1", localStorage.maincolor1);
 	if (localStorage.maincolor2) document.documentElement.style.setProperty("--main-color2", localStorage.maincolor2);
 	if (localStorage.maincolor3) document.documentElement.style.setProperty("--main-color3", localStorage.maincolor3);
-</script>	
+</script>
 {% endif %}
-<link href="{T_THEME_PATH}/base.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
-<link href="{T_THEME_PATH}/light_dark.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
-<link href="{T_THEME_PATH}/colours.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
+<link href="{{ T_THEME_PATH }}/base.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
+<link href="{{ T_THEME_PATH }}/light_dark.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
+<link href="{{ T_THEME_PATH }}/colours.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
 
-<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
-	<link href="{ROOT_PATH}styles/prosilver/theme/bidi.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
-<!-- ENDIF -->
+{% if S_CONTENT_DIRECTION eq 'rtl' %}
+	<link href="{{ ROOT_PATH }}styles/prosilver/theme/bidi.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
+{% endif %}
 
 <!--[if lte IE 8]>
-	<link href="{T_THEME_PATH}/tweaks.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
+	<link href="{{ T_THEME_PATH }}/tweaks.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
 <![endif]-->
 
-<!-- DEFINE $POPUP = 1 -->
+{% DEFINE POPUP = 1 %}
 
-<!-- EVENT simple_header_head_append -->
+{% EVENT simple_header_head_append %}
 
-{$STYLESHEETS}
+{{ definition.STYLESHEETS }}
 
-<!-- EVENT simple_header_stylesheets_after -->
+{% EVENT simple_header_stylesheets_after %}
 
 </head>
 
-<body id="phpbb" class="nojs {S_CONTENT_DIRECTION} {BODY_CLASS}">
+<body id="phpbb" class="nojs {{ S_CONTENT_DIRECTION }} {{ BODY_CLASS }}">
 
-<!-- EVENT simple_header_body_before -->
+{% EVENT simple_header_body_before %}
 
 <div id="wrap" class="wrap">
-	<a id="top" class="top-anchor" accesskey="t"></a>
+	<a id="top" class="top-anchor"></a>
 	<div id="page-body" class="page-body" role="main">
