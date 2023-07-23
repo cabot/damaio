@@ -167,3 +167,15 @@ $(function () {
 		});
 	}
 });
+
+/* Add class to sticky navbar when scrolling down */
+function checkStickyNav(selector) {
+	const stickyNav = document.querySelector(selector);
+	if (stickyNav) {
+		const observer = new IntersectionObserver(
+			([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1),
+			{ threshold: [1] }
+		);
+		observer.observe(stickyNav);
+	}
+}
