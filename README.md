@@ -7,8 +7,9 @@ phpBB style
 * [Spectrum 2](https://github.com/seballot/spectrum) based color picker, allowing users to modify the 3 main colors of the style.
 * The first selector allows you to change the color of the main blocks, the second is for the hover state of links and input tags, and the third for the hover state of buttons. Each color can be reset individually.
 * Use of LocalStorage to store user preferences.
-* Independently configurable header and footer width (full width or forum width).
+* Independently configurable header and footer width (full width or content width).
 * Username's first letter display as default avatar in viewtopic's miniprofile.
+* Sticky top navbar.
 * Modal login window.
 * Social icons in footer.
 * Parameters can be set in the config.html file.
