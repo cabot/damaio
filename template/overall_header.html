@@ -74,9 +74,9 @@
 
 {% EVENT overall_header_body_before %}
 
-	<a id="top" class="top-anchor" accesskey="t"></a>
+	<a id="top" class="top-anchor"></a>
+	{% include 'navbar_top.html' %}
 	<div id="page-header" class="page-header{% if not definition.H_FULL_WIDTH %} main-width{% endif %}">
-		{% include 'navbar_top.html' %}
 		<div class="headerbar" role="banner">
 		<div class="main-width">
 		{% EVENT overall_header_headerbar_before %}
