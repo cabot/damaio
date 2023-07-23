@@ -23,6 +23,7 @@ html,
 	--filter-1: none;
 	--filter-2: none;
 	--switch-light-dark: "\f186";
+	--shadowcolor: rgba(0, 0, 0, 0.35);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,6 +50,7 @@ html,
 		--filter-1: saturate(150%);
 		--filter-2: brightness(160%);
 		--switch-light-dark: "\f0eb";
+		--shadowcolor: rgba(0, 0, 0, 0.55);
 	}
 }
 
@@ -74,6 +76,7 @@ html,
 	--filter-1: saturate(150%);
 	--filter-2: brightness(160%);
 	--switch-light-dark: "\f0eb";
+	--shadowcolor: rgba(0, 0, 0, 0.55);
 }
 
 html,
@@ -130,6 +133,10 @@ th a:hover {
 
 .navbar {
 	background-color: var(--color-2);
+}
+
+.is-pinned {
+	box-shadow: 0 2px 4px -1px var(--shadowcolor);
 }
 
 .post:target .content {
