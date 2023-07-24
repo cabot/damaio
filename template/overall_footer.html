@@ -92,7 +92,7 @@
 {% endif %}
 <script src="{{ T_TEMPLATE_PATH }}/functions.min.js?assets_version={{ T_ASSETS_VERSION }}"></script>
 {% if definition.STICKYNAV %}
-	<script>checkStickyNav(".sticky-nav");</script>
+	<script>initScrollHandler();</script>
 {% endif %}
 
 {% if S_ALLOW_CDN %}
