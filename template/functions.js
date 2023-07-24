@@ -168,14 +168,64 @@ $(function () {
 	}
 });
 
-/* Add class to sticky navbar when scrolling down */
-function checkStickyNav(selector) {
-	const stickyNav = document.querySelector(selector);
-	if (stickyNav) {
-		const observer = new IntersectionObserver(
-			([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1),
-			{ threshold: [1] }
-		);
-		observer.observe(stickyNav);
+/* Add class on body when scrolling under #page-header */
+function initScrollHandler() {
+	let pageHeader = $("#page-header").height();
+
+	function addScrolledClass() {
+		$("body").addClass("scrolled");
+	}
+
+	function removeScrolledClass() {
+		$("body").removeClass("scrolled");
+	}
+
+	function handleScroll() {
+		var nowScrollTop = $(this).scrollTop();
+		if (nowScrollTop > pageHeader) {
+			addScrolledClass();
+		} else {
+			removeScrolledClass();
+		}
+	}
+
+	// Handler for scrolling
+	$(window).scroll(handleScroll);
+
+	// Handler for anchor links
+	$(document).on("click", 'a[href^="#"]', function () {
+		// Get the target element's offset
+		const target = $(this).attr("href");
+		const offset = $(target).offset().top - 40;
+
+		// Animate the scroll to the target element
+		$("html, body").animate({ scrollTop: offset }, 500, function () {
+			// After scrolling, add or remove the "scrolled" class based on the scroll position
+			var nowScrollTop = $(window).scrollTop();
+			if (nowScrollTop > pageHeader) {
+				addScrolledClass();
+			} else {
+				removeScrolledClass();
+			}
+		});
+	});
+
+	// Handler for window resize
+	$(window).resize(function () {
+		// Update the value of pageHeader when the window is resized and the height of #page-header changes
+		pageHeader = $("#page-header").height();
+
+		// Check if the page is already scrolled (in case of anchor link usage on page load)
+		var nowScrollTop = $(window).scrollTop();
+		if (nowScrollTop > pageHeader) {
+			addScrolledClass();
+		} else {
+			removeScrolledClass();
+		}
+	});
+
+	// Initially check if the page is already scrolled (in case of anchor link usage on page load)
+	if ($(window).scrollTop() > pageHeader) {
+		addScrolledClass();
 	}
 }
