@@ -1,4 +1,4 @@
-<div class="navbar" role="navigation">
+<div class="navbar{% if not definition.H_FULL_WIDTH %} main-width{% endif %}{% if definition.STICKYNAV %} sticky-nav{% endif %}" role="navigation">
 	<div class="inner main-width">
 
 	<ul id="nav-main" class="nav-main linklist" role="menubar">
@@ -136,7 +136,7 @@
 
 						<li class="separator"></li>
 						<li>
-							<a href="{{ U_LOGIN_LOGOUT }}" title="{{ lang('LOGIN_LOGOUT') }}" accesskey="x" role="menuitem">
+							<a href="{{ U_LOGIN_LOGOUT }}" title="{{ lang('LOGIN_LOGOUT') }}" role="menuitem">
 								<i class="icon fa-power-off fa-fw" aria-hidden="true"></i><span>{{ lang('LOGIN_LOGOUT') }}</span>
 							</a>
 						</li>
