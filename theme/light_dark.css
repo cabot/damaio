@@ -135,7 +135,7 @@ th a:hover {
 	background-color: var(--color-2);
 }
 
-.is-pinned {
+.scrolled .sticky-nav {
 	box-shadow: 0 2px 4px -1px var(--shadowcolor);
 }
 
@@ -464,26 +464,26 @@ ul.cplist {
 	color: var(--text-color-3) !important;
 }
 
-.tabs .tab>a {
+.tabs .tab > a {
 	color: #ffffff;
 }
 
-.tabs .tab>a:hover {
+.tabs .tab > a:hover {
 	color: #ffffff;
 }
 
-.tabs .activetab>a,
-.tabs .activetab>a:hover {
+.tabs .activetab > a,
+.tabs .activetab > a:hover {
 	color: #ffffff;
 }
 
-.minitabs .tab>a {
+.minitabs .tab > a {
 	color: #ffffff;
 }
 
-.minitabs .tab>a:hover,
-.minitabs .activetab>a,
-.minitabs .activetab>a:hover {
+.minitabs .tab > a:hover,
+.minitabs .activetab > a,
+.minitabs .activetab > a:hover {
 	color: #ffffff;
 }
 
@@ -744,7 +744,8 @@ a.avatar-letter:active {
 }
 
 /* Tweaks for phpBB official extensions
-**************************************/
+--------------------------------------------------------------------------- */
+
 /* Board Annoucements */
 .damaio #phpbb_announcement {
 	background-color: var(--color-1);
