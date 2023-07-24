@@ -70,7 +70,7 @@
 {% EVENT overall_header_stylesheets_after %}
 
 </head>
-<body id="phpbb" class="nojs notouch section-{{ SCRIPT_NAME }} {{ S_CONTENT_DIRECTION }} {{ BODY_CLASS }} damaio">
+<body id="phpbb" class="nojs notouch section-{{ SCRIPT_NAME }} {{ S_CONTENT_DIRECTION }} {{ BODY_CLASS }}{% if definition.STICKYNAV %} has-sticky-nav{% endif %} damaio">
 
 {% EVENT overall_header_body_before %}
 
