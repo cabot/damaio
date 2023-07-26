@@ -66,7 +66,7 @@
 		<h3>{{ lang('BIRTHDAYS') }}</h3>
 		<p class="stat-content icon-birthday-list">
 			{% EVENT index_body_block_birthday_prepend %}
-			{% if birthdays|length > 0 %}{{ lang('CONGRATULATIONS') ~ lang('COLON') }} <strong>{% for birthday in birthdays %}{{ birthday.USERNAME }}{% if birthday.AGE !== '' %} ({{ birthday.AGE }}){% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</strong>{% else %}{{ lang('NO_BIRTHDAYS') }}{% endif %}
+			{% if birthdays|length %}{{ lang('CONGRATULATIONS') ~ lang('COLON') }} <strong>{% for birthday in birthdays %}{{ birthday.USERNAME }}{% if birthday.AGE !== '' %} ({{ birthday.AGE }}){% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</strong>{% else %}{{ lang('NO_BIRTHDAYS') }}{% endif %}
 			{% EVENT index_body_block_birthday_append %}
 		</p>
 	</div>
