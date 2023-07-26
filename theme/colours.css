@@ -136,6 +136,10 @@ li.row a:hover strong {
 	background-color: var(--main-color3);
 }
 
+.member-search strong a:hover {
+	border-color: var(--main-color2);
+}
+
 @media (max-width: 900px) {
 
 	#navigation a,
