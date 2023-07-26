@@ -36,7 +36,7 @@ https://github.com/cabot/damaioconfiguration
 	{% set footerListItems = footerListItems|merge([feedItem]) %}
 {% endif %}
 
-{% if footerListItems|length > 0 %}
+{% if footerListItems|length %}
 <div class="socialinks">
 	<ul>
 		{{ footerListItems|join }}
