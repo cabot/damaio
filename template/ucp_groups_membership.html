@@ -9,7 +9,7 @@
 
 	<p>{{ lang('GROUPS_EXPLAIN') }}</p>
 	{% DEFINE SHOW_BUTTONS = 0 %}
-	{% if loops.leader|length %}
+	{% if leader|length %}
 		<ul class="topiclist two-columns">
 			<li class="header">
 				<dl>
@@ -20,7 +20,7 @@
 		</ul>
 		<ul class="topiclist cplist two-columns">
 
-		{% for leader in loops.leader %}
+		{% for leader in leader %}
 		{% if not leader.GROUP_SPECIAL %}
 			{% DEFINE SHOW_BUTTONS = 1 %}
 		{% endif %}
@@ -41,7 +41,7 @@
 		</ul>
 	{% endif %}
 
-	{% if loops.member|length %}
+	{% if member|length %}
 		<ul class="topiclist two-columns">
 			<li class="header">
 				<dl>
@@ -52,7 +52,7 @@
 		</ul>
 		<ul class="topiclist cplist two-columns">
 
-		{% for member in loops.member %}
+		{% for member in member %}
 		{% if not member.GROUP_SPECIAL %}
 			{% DEFINE SHOW_BUTTONS = 1 %}
 		{% endif %}
@@ -75,7 +75,7 @@
 	</div>
 </div>
 
-{% if loops.pending|length %}
+{% if pending|length %}
 <div class="panel">
 	<div class="inner">
 		<ul class="topiclist two-columns">
@@ -88,7 +88,7 @@
 		</ul>
 		<ul class="topiclist cplist two-columns">
 
-		{% for pending in loops.pending %}
+		{% for pending in pending %}
 		{% if not pending.GROUP_SPECIAL %}
 			{% DEFINE SHOW_BUTTONS = 1 %}
 		{% endif %}
@@ -109,7 +109,7 @@
 	</div>
 </div>
 {% endif %}
-{% if loops.nonmember|length %}
+{% if nonmember|length %}
 <div class="panel">
 	<div class="inner">
 		<ul class="topiclist two-columns">
@@ -122,7 +122,7 @@
 		</ul>
 		<ul class="topiclist cplist two-columns">
 
-		{% for nonmember in loops.nonmember %}
+		{% for nonmember in nonmember %}
 		{% if nonmember.S_CAN_JOIN %}
 			{% DEFINE SHOW_BUTTONS = 1 %}
 		{% endif %}
