@@ -178,7 +178,8 @@ ul.zebra-list li:nth-child(even) {
 }
 
 .username-coloured,
-.group-coloured {
+.group-coloured,
+.is-colored {
 	filter: var(--filter-1);
 }
 
@@ -678,6 +679,10 @@ fieldset.quick-login:hover {
 .stat-block h3,
 .stat-block h3 a {
 	color: var(--text-color-3);
+}
+
+.member-search .current-search {
+	border-color: var(--links-color);
 }
 
 @media (prefers-color-scheme: dark) {
