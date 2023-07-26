@@ -40,17 +40,6 @@ if ((typeof showPassword !== "undefined") && $("[type='password']").length) {
 	});
 }
 
-// Display first username letter as default avatar in viewtopic mini-profile
-if ($(".avatar-letter").length) {
-	$(".no-avatar").each(function () {
-		let $letterContainer = $(this).find(".avatar-letter"),
-			$usernameLink = $(this).find("[class*='username']"),
-			firstLetter = $usernameLink.text().slice(0, 1);
-
-		$letterContainer.append(firstLetter);
-	});
-}
-
 /* Animate scroll to top */
 $(window).scroll(function () {
 	if ($(this).scrollTop() > 250) {
@@ -227,5 +216,20 @@ function initScrollHandler() {
 	// Initially check if the page is already scrolled (in case of anchor link usage on page load)
 	if ($(window).scrollTop() > pageHeader) {
 		addScrolledClass();
+	}
+}
+
+// Add class to current member search link (memberlist_body.html)
+function getMemberSearchParam() {
+	const defaultSearch = $('.member-search > strong a').first();
+	const memberlistSearch = new URL(document.location).searchParams;
+	const firstChar = memberlistSearch.get('first_char');
+
+	if (firstChar) {
+		const charLink = $('.member-search').find('[href*="memberlist.php?first_char=' + firstChar + '"]');
+		defaultSearch.removeClass('current-search');
+		charLink.addClass('current-search');
+	} else {
+		defaultSearch.addClass('current-search');
 	}
 }
