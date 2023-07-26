@@ -5,7 +5,6 @@
 	</div>
 </div>
 
-
 {% if S_DISPLAY_HISTORY and (U_VIEW_PREVIOUS_HISTORY or U_VIEW_NEXT_HISTORY) %}
 	<fieldset class="display-options clearfix">
 		{% if U_VIEW_PREVIOUS_HISTORY %}
@@ -20,7 +19,6 @@
 		{% endif %}
 	</fieldset>
 {% endif %}
-
 
 <div id="post-{{ MESSAGE_ID }}" class="post pm has-profile{% if S_POST_UNAPPROVED or S_POST_REPORTED %} reported{% endif %}">
 <div class="inner">
@@ -45,7 +43,7 @@
 		{% if AUTHOR_JOINED %}<dd class="profile-joined"><strong>{{ lang('JOINED') ~ lang('COLON') }}</strong> {{ AUTHOR_JOINED }}</dd>{% endif %}
 
 		{% EVENT ucp_pm_viewmessage_custom_fields_before %}
-		{% for custom_fields in loops.custom_fields %}
+		{% for custom_fields in custom_fields %}
 			{% if not custom_fields.S_PROFILE_CONTACT %}
 				<dd class="profile-custom-field profile-{{ custom_fields.PROFILE_FIELD_IDENT }}"><strong>{{ custom_fields.PROFILE_FIELD_NAME ~ lang('COLON') }}</strong> {{ custom_fields.PROFILE_FIELD_VALUE }}</dd>
 			{% endif %}
@@ -53,7 +51,7 @@
 		{% EVENT ucp_pm_viewmessage_custom_fields_after %}
 
 		{% EVENT ucp_pm_viewmessage_contact_fields_before %}
-		{% if loops.contact|length %}
+		{% if contact|length %}
 			<dd class="profile-contact">
 				<strong>{{ lang('CONTACT') ~ lang('COLON') }}</strong>
 				<div class="dropdown-container dropdown-left">
@@ -61,7 +59,7 @@
 					<div class="dropdown">
 						<div class="pointer"><div class="pointer-inner"></div></div>
 						<div class="dropdown-contents contact-icons">
-							{% for contact in loops.contact %}
+							{% for contact in contact %}
 								{% set REMAINDER = contact.S_ROW_COUNT % 4 %}
 								{% DEFINE S_LAST_CELL = ((REMAINDER eq 3) or (contact.S_LAST_ROW and contact.S_NUM_ROWS < 4)) %}
 								{% if REMAINDER eq 0 %}
@@ -126,10 +124,9 @@
 		<p class="author">
 			<strong>{{ lang('SENT_AT') ~ lang('COLON') }}</strong> {{ SENT_DATE }}
 			<br><strong>{{ lang('PM_FROM') ~ lang('COLON') }}</strong> {{ MESSAGE_AUTHOR_FULL }}
-			{% if S_TO_RECIPIENT %}<br><strong>{{ lang('TO') ~ lang('COLON') }}</strong> {% for to_recipient in loops.to_recipient %}{% if to_recipient.NAME_FULL %}{{ to_recipient.NAME_FULL }}{% else %}<a href="{{ to_recipient.U_VIEW }}"{% if to_recipient.COLOUR %} style="color:{{ to_recipient.COLOUR }};"{% endif %}><strong>{{ to_recipient.NAME }}</strong></a>{% endif %}&nbsp;{% endfor %}{% endif %}
-			{% if S_BCC_RECIPIENT %}<br><strong>{{ lang('BCC') ~ lang('COLON') }}</strong> {% for bcc_recipient in loops.bcc_recipient %}{% if bcc_recipient.NAME_FULL %}{{ bcc_recipient.NAME_FULL }}{% else %}<a href="{{ bcc_recipient.U_VIEW }}"{% if bcc_recipient.COLOUR %} style="color:{{ bcc_recipient.COLOUR }};"{% endif %}><strong>{{ bcc_recipient.NAME }}</strong></a>{% endif %}&nbsp;{% endfor %}{% endif %}
+			{% if S_TO_RECIPIENT %}<br><strong>{{ lang('TO') ~ lang('COLON') }}</strong> {% for to_recipient in to_recipient %}{% if to_recipient.NAME_FULL %}{{ to_recipient.NAME_FULL }}{% else %}<a href="{{ to_recipient.U_VIEW }}"{% if to_recipient.COLOUR %} style="color:{{ to_recipient.COLOUR }};"{% endif %}><strong>{{ to_recipient.NAME }}</strong></a>{% endif %}&nbsp;{% endfor %}{% endif %}
+			{% if S_BCC_RECIPIENT %}<br><strong>{{ lang('BCC') ~ lang('COLON') }}</strong> {% for bcc_recipient in bcc_recipient %}{% if bcc_recipient.NAME_FULL %}{{ bcc_recipient.NAME_FULL }}{% else %}<a href="{{ bcc_recipient.U_VIEW }}"{% if bcc_recipient.COLOUR %} style="color:{{ bcc_recipient.COLOUR }};"{% endif %}><strong>{{ bcc_recipient.NAME }}</strong></a>{% endif %}&nbsp;{% endfor %}{% endif %}
 		</p>
-
 
 		<div class="content">{{ MESSAGE }}</div>
 
@@ -138,7 +135,7 @@
 				<dt>
 					{{ lang('ATTACHMENTS') }}
 				</dt>
-				{% for attachment in loops.attachment %}
+				{% for attachment in attachment %}
 					<dd>{{ attachment.DISPLAY_ATTACHMENT }}</dd>
 				{% endfor %}
 			</dl>
