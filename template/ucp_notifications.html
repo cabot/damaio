@@ -13,13 +13,13 @@
 				<thead>
 					<tr>
 						<th>{{ lang('NOTIFICATION_TYPE') }}</th>
-						{% for notification_methods in loops.notification_methods %}
+						{% for notification_methods in notification_methods %}
 							<th class="mark">{{ notification_methods.NAME }}</th>
 						{% endfor %}
 					</tr>
 				</thead>
 				<tbody>
-				{% for notification_types in loops.notification_types %}
+				{% for notification_types in notification_types %}
 					{% if notification_types.GROUP_NAME %}
 						<tr class="bg3">
 							<td colspan="{{ NOTIFICATION_TYPES_COLS }}">{{ notification_types.GROUP_NAME }}</td>
@@ -39,12 +39,12 @@
 				</tbody>
 			</table>
 		{% else %}
-			{% if loops.notification_list|length %}
+			{% if notification_list|length %}
 				<div class="action-bar bar-top">
 					<div class="pagination">
 						{% if U_MARK_ALL %}<a href="{{ U_MARK_ALL }}" class="mark">{{ lang('NOTIFICATIONS_MARK_ALL_READ') }}</a> &bull; {% endif %}
 						{{ lang('NOTIFICATIONS') }} [<strong>{{ TOTAL_COUNT }}</strong>]
-						{% if loops.pagination|length %}
+						{% if pagination|length %}
 							{% include 'pagination.html' %}
 						{% else %}
 							 &bull; {{ PAGE_NUMBER }}
@@ -62,7 +62,7 @@
 					</li>
 				</ul>
 				<ul class="topiclist cplist two-columns">
-					{% for notification_list in loops.notification_list %}
+					{% for notification_list in notification_list %}
 						<li class="row{% if notification_list.UNREAD %} bg3{% else %}{% if notification_list.S_ROW_COUNT is odd %} bg1{% else %} bg2{% endif %}{% endif %}{% if notification_list.STYLING %} {{ notification_list.STYLING }}{% endif %}">
 							<dl>
 								<dt>
@@ -89,7 +89,7 @@
 			<div class="action-bar bar-bottom">
 				<div class="pagination">
 					{{ lang('NOTIFICATIONS') }} [<strong>{{ TOTAL_COUNT }}</strong>]
-					{% if loops.pagination|length %}
+					{% if pagination|length %}
 						{% include 'pagination.html' %}
 					{% else %}
 						  &bull; {{ PAGE_NUMBER }}
@@ -105,7 +105,7 @@
 	</div>
 </div>
 
-{% if loops.notification_types|length or loops.notification_list|length %}
+{% if notification_types|length or notification_list|length %}
 <fieldset class="display-actions">
 	<input type="hidden" name="form_time" value="{{ FORM_TIME }}" />
 	{{ S_HIDDEN_FIELDS }}
