@@ -752,7 +752,7 @@ a.avatar-letter:active {
 --------------------------------------------------------------------------- */
 
 /* Board Annoucements */
-.damaio #phpbb_announcement {
+.damaio .phpbb_announcement {
 	background-color: var(--color-1);
 }
 
