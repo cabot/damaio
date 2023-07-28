@@ -1108,17 +1108,17 @@ only screen and (max-device-width: 1220px) {
 }
 
 /* Board Annoucements */
-.damaio #phpbb_announcement {
+.damaio .phpbb_announcement {
 	border-radius: var(--border-radius-big);
 }
 
-.damaio #phpbb_announcement .close {
+.damaio .phpbb_announcement .close {
 	width: auto;
 	height: auto;
 	background-image: none;
 }
 
-#phpbb_announcement .close::before {
+.phpbb_announcement .close::before {
 	display: inline-block;
 	font-family: FontAwesome;
 	font-weight: normal;
@@ -1132,7 +1132,7 @@ only screen and (max-device-width: 1220px) {
 	content: "\f057";
 }
 
-.notouch.damaio #phpbb_announcement:hover .close {
+.notouch.damaio .phpbb_announcement:hover .close {
 	opacity: 1;
 }
 
