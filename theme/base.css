@@ -1112,26 +1112,6 @@ only screen and (max-device-width: 1220px) {
 	border-radius: var(--border-radius-big);
 }
 
-.damaio .phpbb_announcement .close {
-	width: auto;
-	height: auto;
-	background-image: none;
-}
-
-.phpbb_announcement .close::before {
-	display: inline-block;
-	font-family: FontAwesome;
-	font-weight: normal;
-	font-style: normal;
-	font-variant: normal;
-	font-size: 14px;
-	line-height: 1;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	content: "\f057";
-}
-
 .notouch.damaio .phpbb_announcement:hover .close {
 	opacity: 1;
 }
