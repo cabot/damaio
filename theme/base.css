@@ -1103,7 +1103,7 @@ only screen and (max-device-width: 1220px) {
 	margin: -28px 5px 0 0;
 }
 
-.rtl.damaio .collapse-btn {
+.damaio .rtl .collapse-btn {
 	margin: -28px 0 0 5px;
 }
 
@@ -1112,7 +1112,7 @@ only screen and (max-device-width: 1220px) {
 	border-radius: var(--border-radius-big);
 }
 
-.notouch.damaio .phpbb_announcement:hover .close {
+.damaio .notouch .phpbb_announcement:hover .close {
 	opacity: 1;
 }
 
