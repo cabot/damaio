@@ -1025,7 +1025,36 @@ a.avatar-letter:active {
 	scroll-margin-top: 2.5rem;
 }
 
-/* Media queries
+/* Tweaks for phpBB official extensions
+--------------------------------------------------------------------------- */
+
+/* Collapsible Forum Categories */
+.damaio .collapse-btn {
+	margin: -28px 5px 0 0;
+}
+
+.damaio .rtl .collapse-btn {
+	margin: -28px 0 0 5px;
+}
+
+/* Board Annoucements */
+.damaio .phpbb_announcement {
+	border-radius: var(--border-radius-big);
+}
+
+.damaio .notouch .phpbb_announcement:hover .close {
+	opacity: 1;
+}
+
+/* Board Rules */
+.damaio .highlight {
+	color: inherit;
+	border: 1px dotted;
+	scroll-margin-top: 0.5em;
+	border-radius: var(--border-radius-small);
+}
+
+/* || Media queries
 --------------------------------------------------------------------------- */
 @media (max-width: 700px) {
 	.headerbar,
@@ -1088,43 +1117,25 @@ a.avatar-letter:active {
 	}
 }
 
-@media only screen and (max-width: 1220px),
-only screen and (max-device-width: 1220px) {
+@media only screen and (max-width: 926px) and (orientation: landscape) {
+	.sticky-nav {
+		position: static;
+	}
+
+	.has-sticky-nav .post,
+	.has-sticky-nav .faq dt,
+	.has-sticky-nav .boardrules-rules li {
+		scroll-margin-top: 0;
+	}
+}
+
+@media only screen and (max-width: 1220px) {
 	.wrap {
 		margin: 0 auto;
 	}
 }
 
-/* Tweaks for phpBB official extensions
---------------------------------------------------------------------------- */
-
-/* Collapsible Forum Categories */
-.damaio .collapse-btn {
-	margin: -28px 5px 0 0;
-}
-
-.damaio .rtl .collapse-btn {
-	margin: -28px 0 0 5px;
-}
-
-/* Board Annoucements */
-.damaio .phpbb_announcement {
-	border-radius: var(--border-radius-big);
-}
-
-.damaio .notouch .phpbb_announcement:hover .close {
-	opacity: 1;
-}
-
-/* Board Rules */
-.damaio .highlight {
-	color: inherit;
-	border: 1px dotted;
-	scroll-margin-top: 0.5em;
-	border-radius: var(--border-radius-small);
-}
-
-/* Keyframes
+/* || Keyframes
 --------------------------------------------------------------------------- */
 @keyframes unfold {
 	0% {
