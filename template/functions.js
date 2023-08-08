@@ -7,7 +7,7 @@ $(function () {
 		light = "light",
 		dark = "dark";
 
-	$switchBtn.click(function (e) {
+	$switchBtn.on("click", function (e) {
 		let theme = "";
 
 		if (osDarkscheme.matches) {
@@ -19,19 +19,20 @@ $(function () {
 		}
 		localStorage.setItem("sideoftheforce", theme);
 		e.preventDefault();
+		e.stopPropagation();
 	});
 });
 
 // Show/hide password
 if ((typeof showPassword !== "undefined") && $("[type='password']").length) {
 	let $passwordInput = $("input[type='password']"),
-		showpassBtn = ("<button type='button' class='showpass-btn fa fa-eye' data-showpass></button>");
+		showpassBtn = ('<button type="button" class="showpass-btn fa fa-eye" data-showpass></button>');
 
 	$passwordInput.each(function () {
 		$(this).after(showpassBtn);
 	});
 
-	$("[data-showpass]").click(function () {
+	$("[data-showpass]").on("click", function () {
 		let thisPassword = $(this).prev($passwordInput),
 			typeValue = thisPassword.attr("type") === "password" ? "text" : "password";
 
@@ -49,7 +50,7 @@ $(window).scroll(function () {
 	}
 });
 
-$(".scrolltop, .top").click(function () {
+$(".scrolltop, .top").on("click", function () {
 	$("html, body").animate({ scrollTop: 0 }, "fast");
 	return false;
 });
@@ -109,7 +110,7 @@ $(function () {
 		}
 		spectrumize();
 
-		$buttonReset.click(function () {
+		$buttonReset.on("click", function () {
 			$colPickItem.spectrum("destroy");
 			$root.css(cssVar + itemId, "");
 			$(this).prop("disabled", true);
@@ -182,21 +183,25 @@ function initScrollHandler() {
 	$(window).scroll(handleScroll);
 
 	// Handler for anchor links
-	$(document).on("click", 'a[href^="#"]', function () {
+	$(document).on("click", 'a[href^="#"]', function (e) {
+		e.preventDefault();
 		// Get the target element's offset
 		const target = $(this).attr("href");
-		const offset = $(target).offset().top - 40;
 
-		// Animate the scroll to the target element
-		$("html, body").animate({ scrollTop: offset }, 500, function () {
-			// After scrolling, add or remove the "scrolled" class based on the scroll position
-			var nowScrollTop = $(window).scrollTop();
-			if (nowScrollTop > pageHeader) {
-				addScrolledClass();
-			} else {
-				removeScrolledClass();
-			}
-		});
+		if (target !== "#" && target !== "") {
+			const offset = $(target).offset().top - 40;
+
+			// Animate the scroll to the target element
+			$("html, body").animate({ scrollTop: offset }, 500, function () {
+				// After scrolling, add or remove the "scrolled" class based on the scroll position
+				var nowScrollTop = $(window).scrollTop();
+				if (nowScrollTop > pageHeader) {
+					addScrolledClass();
+				} else {
+					removeScrolledClass();
+				}
+			});
+		}
 	});
 
 	// Handler for window resize
@@ -221,15 +226,15 @@ function initScrollHandler() {
 
 // Add class to current member search link (memberlist_body.html)
 function getMemberSearchParam() {
-	const defaultSearch = $('.member-search > strong a').first();
+	const defaultSearch = $(".member-search > strong a").first();
 	const memberlistSearch = new URL(document.location).searchParams;
-	const firstChar = memberlistSearch.get('first_char');
+	const firstChar = memberlistSearch.get("first_char");
 
 	if (firstChar) {
-		const charLink = $('.member-search').find('[href*="memberlist.php?first_char=' + firstChar + '"]');
-		defaultSearch.removeClass('current-search');
-		charLink.addClass('current-search');
+		const charLink = $(".member-search").find('[href*="memberlist.php?first_char=' + firstChar + '"]');
+		defaultSearch.removeClass("current-search");
+		charLink.addClass("current-search");
 	} else {
-		defaultSearch.addClass('current-search');
+		defaultSearch.addClass("current-search");
 	}
 }
