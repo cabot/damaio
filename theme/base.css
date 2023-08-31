@@ -1011,7 +1011,8 @@ a.avatar-letter:active {
 	transform-origin: bottom center;
 }
 
-.sticky-nav {
+.sticky-nav,
+.rtl .navbar.sticky-nav {
 	padding: 3px 0;
 	position: -webkit-sticky;
 	position: sticky;
