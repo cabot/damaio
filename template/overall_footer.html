@@ -3,7 +3,7 @@
 
 {% EVENT overall_footer_page_body_after %}
 
-</div> <!-- wrap -->
+</div> {# wrap #}
 
 <div id="page-footer" class="page-footer{% if not definition.F_FULL_WIDTH %} main-width{% endif %}" role="contentinfo">
 	{% include 'navbar_footer.html' %}
@@ -92,7 +92,10 @@
 {% endif %}
 <script src="{{ T_TEMPLATE_PATH }}/functions.min.js?assets_version={{ T_ASSETS_VERSION }}"></script>
 {% if definition.STICKYNAV %}
-	<script>checkStickyNav(".sticky-nav");</script>
+	<script>initScrollHandler();</script>
+{% endif %}
+{% if SCRIPT_NAME eq 'memberlist' and U_FIND_MEMBER %}
+	<script>getMemberSearchParam();</script>
 {% endif %}
 
 {% if S_ALLOW_CDN %}

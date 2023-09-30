@@ -59,13 +59,6 @@ fieldset.polls {
 	padding: 0 5px;
 }
 
-@media only screen and (max-width: 1220px),
-only screen and (max-device-width: 1220px) {
-	.wrap {
-		margin: 0 auto;
-	}
-}
-
 .headerbar {
 	background-image: none;
 	border-radius: 0;
@@ -86,19 +79,7 @@ only screen and (max-device-width: 1220px) {
 
 .navbar {
 	border-radius: 0 0 var(--border-radius-big) var(--border-radius-big);
-}
-
-.sticky-nav {
-	padding: 3px 0;
-	position: -webkit-sticky;
-	position: sticky;
-	top: -1px;
-	z-index: 1;
-}
-
-.sticky-nav .main-width {
 	box-sizing: border-box;
-	padding: 0 10px;
 }
 
 .page-footer .navbar {
@@ -350,18 +331,6 @@ blockquote.uncited {
 	margin: 5px 5px 0 0;
 }
 
-@media (max-width: 900px) {
-	.navigation li:first-child a {
-		border-top-left-radius: 0;
-		border-top-right-radius: 0;
-	}
-
-	.navigation li:last-child a {
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-}
-
 .center {
 	text-align: center;
 }
@@ -520,31 +489,6 @@ select {
 
 .icon.icon-red {
 	font-weight: bold;
-}
-
-@media (max-width: 700px) {
-
-	.headerbar,
-	.navbar,
-	.forabg,
-	.forumbg,
-	.post,
-	.panel,
-	.stat-block {
-		margin-left: -5px;
-		margin-right: -5px;
-	}
-
-	.cp-main .forabg,
-	.cp-main .forumdb,
-	.cp-main .post,
-	.cp-main .panel {
-		border-radius: 0;
-	}
-
-	.has-profile .post-buttons {
-		right: 2px;
-	}
 }
 
 .agreement {
@@ -716,22 +660,6 @@ ul.linklist li a {
 	float: right;
 }
 
-@media (max-width: 700px) {
-
-	table.responsive.show-header thead,
-	table.responsive.show-header th:first-child {
-		text-align: center !important;
-		text-transform: none;
-		font-size: 1.1em;
-	}
-
-	.online-text {
-		font-size: 0.6em;
-		right: 5px;
-		top: 3px;
-	}
-}
-
 .footerbar {
 	clear: both;
 	overflow: hidden;
@@ -811,10 +739,13 @@ table.table1 tbody td {
 	padding: 5px 10px
 }
 
-@media (min-width: 701px) {
-	table.table1 thead tr {
-		height: 38px;
-	}
+.member-search strong a {
+	border: 1px solid transparent;
+	padding: 0.2em 0.4em;
+}
+
+.member-search a:hover {
+	text-decoration: none;
 }
 
 .loading_indicator {
@@ -925,10 +856,13 @@ input[type="radio"] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	width: 1.5em;
-	height: 1.5em;
+	width: 1.3em;
+	height: 1.3em;
 	line-height: 1.3em;
 	transform: translateY(-0.075em);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 }
 
 input[type="radio"][disabled] {
@@ -958,7 +892,7 @@ input[type="checkbox"]:checked::before {
 
 input[type="radio"]:checked::before {
 	content: "\f111";
-	font-size: 0.9em;
+	font-size: 0.8em;
 }
 
 .showpass-btn {
@@ -981,19 +915,17 @@ input[type="radio"]:checked::before {
 	border-radius: var(--border-radius-small);
 }
 
+.rtl .scrolltop {
+	left: 20px;
+	right: auto;
+}
+
 .avatar-letter {
 	margin-bottom: 0;
-	padding: 0.6em 0.5em;
+	padding: 0.3em;
 	font-size: large;
 	text-transform: uppercase;
 	border-radius: var(--border-radius-small);
-}
-
-@media (min-width: 701px) {
-	.avatar-letter {
-		margin-bottom: 3px;
-		font-size: xx-large;
-	}
 }
 
 a.avatar-letter:hover,
@@ -1079,54 +1011,44 @@ a.avatar-letter:active {
 	transform-origin: bottom center;
 }
 
-@keyframes unfold {
-	0% {
-		transform: scaleY(0);
-	}
-
-	100% {
-		transform: scaleY(1);
-	}
+.sticky-nav,
+.rtl .navbar.sticky-nav {
+	padding: 3px 0;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 1;
 }
 
-/* Tweaks for phpBB official extensions
-**************************************/
+.sticky-nav .main-width {
+	box-sizing: border-box;
+	padding: 0 10px;
+}
+
+.has-sticky-nav .post,
+.has-sticky-nav .faq dt,
+.has-sticky-nav .boardrules-rules li {
+	scroll-margin-top: 2.5rem;
+}
+
+/* || Tweaks for phpBB official extensions
+--------------------------------------------------------------------------- */
 
 /* Collapsible Forum Categories */
 .damaio .collapse-btn {
 	margin: -28px 5px 0 0;
 }
 
-.rtl.damaio .collapse-btn {
+.damaio .rtl .collapse-btn {
 	margin: -28px 0 0 5px;
 }
 
 /* Board Annoucements */
-.damaio #phpbb_announcement {
+.damaio .phpbb_announcement {
 	border-radius: var(--border-radius-big);
 }
 
-.damaio #phpbb_announcement .close {
-	width: auto;
-	height: auto;
-	background-image: none;
-}
-
-#phpbb_announcement .close::before {
-	display: inline-block;
-	font-family: FontAwesome;
-	font-weight: normal;
-	font-style: normal;
-	font-variant: normal;
-	font-size: 14px;
-	line-height: 1;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	content: "\f057";
-}
-
-.notouch.damaio #phpbb_announcement:hover .close {
+.damaio .notouch .phpbb_announcement:hover .close {
 	opacity: 1;
 }
 
@@ -1136,4 +1058,97 @@ a.avatar-letter:active {
 	border: 1px dotted;
 	scroll-margin-top: 0.5em;
 	border-radius: var(--border-radius-small);
+}
+
+/* || Media queries
+--------------------------------------------------------------------------- */
+@media (max-width: 700px) {
+	.headerbar,
+	.navbar,
+	.forabg,
+	.forumbg,
+	.post,
+	.panel,
+	.stat-block {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.cp-main .forabg,
+	.cp-main .forumdb,
+	.cp-main .post,
+	.cp-main .panel {
+		border-radius: 0;
+	}
+
+	.has-profile .post-buttons {
+		right: 2px;
+	}
+
+	table.responsive.show-header thead,
+	table.responsive.show-header th:first-child {
+		text-align: center !important;
+		text-transform: none;
+		font-size: 1.1em;
+	}
+
+	.online-text {
+		font-size: 0.6em;
+		right: 5px;
+		top: 3px;
+	}
+}
+
+@media (max-width: 900px) {
+	.navigation li:first-child a {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+
+	.navigation li:last-child a {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+
+@media (min-width: 701px) {
+	.avatar-letter {
+		font-size: xx-large;
+		margin-bottom: 3px;
+		padding: 0.6em 0.5em;
+	}
+
+	table.table1 thead tr {
+		height: 38px;
+	}
+}
+
+@media only screen and (max-width: 926px) and (orientation: landscape) {
+	.sticky-nav {
+		position: static;
+	}
+
+	.has-sticky-nav .post,
+	.has-sticky-nav .faq dt,
+	.has-sticky-nav .boardrules-rules li {
+		scroll-margin-top: 0;
+	}
+}
+
+@media only screen and (max-width: 1220px) {
+	.wrap {
+		margin: 0 auto;
+	}
+}
+
+/* || Keyframes
+--------------------------------------------------------------------------- */
+@keyframes unfold {
+	0% {
+		transform: scaleY(0);
+	}
+
+	100% {
+		transform: scaleY(1);
+	}
 }

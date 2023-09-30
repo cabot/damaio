@@ -135,7 +135,7 @@ th a:hover {
 	background-color: var(--color-2);
 }
 
-.is-pinned {
+.scrolled .sticky-nav {
 	box-shadow: 0 2px 4px -1px var(--shadowcolor);
 }
 
@@ -178,7 +178,8 @@ ul.zebra-list li:nth-child(even) {
 }
 
 .username-coloured,
-.group-coloured {
+.group-coloured,
+.is-colored {
 	filter: var(--filter-1);
 }
 
@@ -464,26 +465,26 @@ ul.cplist {
 	color: var(--text-color-3) !important;
 }
 
-.tabs .tab>a {
+.tabs .tab > a {
 	color: #ffffff;
 }
 
-.tabs .tab>a:hover {
+.tabs .tab > a:hover {
 	color: #ffffff;
 }
 
-.tabs .activetab>a,
-.tabs .activetab>a:hover {
+.tabs .activetab > a,
+.tabs .activetab > a:hover {
 	color: #ffffff;
 }
 
-.minitabs .tab>a {
+.minitabs .tab > a {
 	color: #ffffff;
 }
 
-.minitabs .tab>a:hover,
-.minitabs .activetab>a,
-.minitabs .activetab>a:hover {
+.minitabs .tab > a:hover,
+.minitabs .activetab > a,
+.minitabs .activetab > a:hover {
 	color: #ffffff;
 }
 
@@ -680,6 +681,10 @@ fieldset.quick-login:hover {
 	color: var(--text-color-3);
 }
 
+.member-search .current-search {
+	border-color: var(--links-color);
+}
+
 @media (prefers-color-scheme: dark) {
 	.stat-content em a[style*="color:"] {
 		filter: var(--filter-1);
@@ -743,10 +748,11 @@ a.avatar-letter:active {
 	color: var(--links-color);
 }
 
-/* Tweaks for phpBB official extensions
-**************************************/
+/* || Tweaks for phpBB official extensions
+--------------------------------------------------------------------------- */
+
 /* Board Annoucements */
-.damaio #phpbb_announcement {
+.damaio .phpbb_announcement {
 	background-color: var(--color-1);
 }
 

@@ -101,27 +101,27 @@ li.row a:hover strong {
 	border-color: var(--main-color3);
 }
 
-.tabs .tab>a {
+.tabs .tab > a {
 	background-color: var(--main-color1);
 }
 
-.tabs .tab>a:hover {
+.tabs .tab > a:hover {
 	background: var(--main-color3);
 }
 
-.tabs .activetab>a,
-.tabs .activetab>a:hover {
+.tabs .activetab > a,
+.tabs .activetab > a:hover {
 	background: var(--main-color3);
 	border-color: var(--main-color3);
 }
 
-.minitabs .tab>a {
+.minitabs .tab > a {
 	background-color: var(--main-color1);
 }
 
-.minitabs .tab>a:hover,
-.minitabs .activetab>a,
-.minitabs .activetab>a:hover {
+.minitabs .tab > a:hover,
+.minitabs .activetab > a,
+.minitabs .activetab > a:hover {
 	background-color: var(--main-color3);
 }
 
@@ -134,6 +134,10 @@ li.row a:hover strong {
 .navigation .active-subsection a,
 .navigation .active-subsection a:hover {
 	background-color: var(--main-color3);
+}
+
+.member-search strong a:hover {
+	border-color: var(--main-color2);
 }
 
 @media (max-width: 900px) {

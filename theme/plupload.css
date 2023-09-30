@@ -32,7 +32,8 @@
 	width: 5%;
 }
 
-.attach-filesize, .attach-status {
+.attach-filesize,
+.attach-status {
 	text-align: center;
 }
 
@@ -54,12 +55,13 @@
 
 .file-progress {
 	background-color: #CCCCCC;
-	display:inline-block;
+	display: inline-block;
 	height: 8px;
 	width: 50px;
 }
 
-.file-progress-bar, .file-total-progress-bar {
+.file-progress-bar,
+.file-total-progress-bar {
 	background-color: green;
 	display: block;
 	height: 100%;

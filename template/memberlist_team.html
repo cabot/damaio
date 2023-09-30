@@ -11,7 +11,7 @@
 	<table class="table1" id="team">
 	<thead>
 	<tr>
-		<th class="name" data-dfn="{{ lang('RANK') }}{{ lang('COMMA_SEPARATOR') }}{{ lang('USERNAME') }}"><span class="rank-img">{{ lang('RANK') }}&nbsp;</span>{% if group.U_GROUP %}<a href="{{ group.U_GROUP }}">{{ group.GROUP_NAME }}</a>{% else %}{{ group.GROUP_NAME }}{% endif %}</th>
+		<th class="name" data-dfn="{{ lang('RANK') ~ lang('COMMA_SEPARATOR') ~ lang('USERNAME') }}"><span class="rank-img">{{ lang('RANK') }}&nbsp;</span>{% if group.U_GROUP %}<a href="{{ group.U_GROUP }}">{{ group.GROUP_NAME }}</a>{% else %}{{ group.GROUP_NAME }}{% endif %}</th>
 		<th class="info">{{ lang('PRIMARY_GROUP') }}</th>
 		{% if S_DISPLAY_MODERATOR_FORUMS %}<th class="info">{{ lang('MODERATOR') }}</th>{% endif %}
 	</tr>

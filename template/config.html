@@ -8,50 +8,50 @@
 ---------------------------------------------------------------------------- #}
 
 {# Display color-picker
-	0 = no
-	1 = yes
+	true = yes
+	false = no
 #}
-{% DEFINE COLOR_PICKER = 1 %}
+{% DEFINE COLOR_PICKER = true %}
 
 
 
 {# Display login modal box
-	0 = no
-	1 = yes
+	true = yes
+	false = no
 #}
-{% DEFINE MODAL_LOGIN = 1 %}
+{% DEFINE MODAL_LOGIN = true %}
 
 
 
 {# Display header full width
-	0 = no
-	1 = yes
+	true = yes
+	false = no
 #}
-{% DEFINE H_FULL_WIDTH = 1 %}
+{% DEFINE H_FULL_WIDTH = true %}
 
 
 
 {# Display footer full width
-	0 = no
-	1 = yes
+	true = yes
+	false = no
 #}
-{% DEFINE F_FULL_WIDTH = 0 %}
+{% DEFINE F_FULL_WIDTH = false %}
 
 
 
 {# Display button for show/hide passwords
-	0 = no
-	1 = yes
+	true = yes
+	false = no
 #}
-{% DEFINE SHOWPASSWORD = 1 %}
+{% DEFINE SHOWPASSWORD = true %}
 
 
 
 {# Sticky top navbar
-	0 = no
-	1 = yes
+	true = yes
+	false = no
 #}
-{% DEFINE STICKYNAV = 0 %}
+{% DEFINE STICKYNAV = false %}
 
 
 
@@ -59,8 +59,14 @@
 	To configure the footer icons, see below.
 ---------------------------------------------------------------------------- #}
 
+{# Display feed icon
+	true = yes
+	false = no
+#}
+{% DEFINE DAMAIO_FEED = true %}
+
 {#
-	Each social icon can receive two parameters:
+	Each social icon below can be assigned two parameters:
 
 	  - The first one is the URL of the social network.
 	    Leave it empty if you don't want to display the icon.
@@ -70,7 +76,7 @@
 		Useful if you want to translate it into the language of your board.
 		Leave it empty to display the icon default name.
 
-	To display an icon, only the first parameter (URL) is mandatory.
+	To display an icon, only the first parameter (URL) is required.
 
 	Some characters you may want to copy&paste:
 	’ « » “ ” …
@@ -126,12 +132,6 @@
 
 {% DEFINE DAMAIO_YOUTUBE = 'https://www.youtube.com/' %}
 {% DEFINE DAMAIO_YOUTUBE_NAME = '' %}
-
-{# Display feed icon
-	0 = no
-	1 = yes
-#}
-{% DEFINE DAMAIO_FEED = 1 %}
 
 
 
