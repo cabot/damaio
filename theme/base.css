@@ -189,6 +189,7 @@ dl.row-item dt .list-inner {
 }
 
 dl.row-item dt {
+	background-position: 5px calc(50% + 14px);
 	min-height: 45px;
 }
 
