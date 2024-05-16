@@ -360,6 +360,15 @@ code::selection {
 	background-color: var(--color-2);
 }
 
+.attachbox {
+	background-color: transparent;
+	border-color: inherit;
+}
+
+.attachbox dd {
+	border-top-color: var(--border-color-2);
+}
+
 .postprofile {
 	color: var(--text-color-2);
 	border-color: var(--color-3);
