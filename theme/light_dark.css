@@ -24,6 +24,7 @@ html,
 	--filter-2: none;
 	--switch-light-dark: "\f186";
 	--shadowcolor: rgba(0, 0, 0, 0.35);
+	color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,6 +52,7 @@ html,
 		--filter-2: brightness(160%);
 		--switch-light-dark: "\f0eb";
 		--shadowcolor: rgba(0, 0, 0, 0.55);
+		color-scheme: dark;
 	}
 }
 
@@ -77,6 +79,7 @@ html,
 	--filter-2: brightness(160%);
 	--switch-light-dark: "\f0eb";
 	--shadowcolor: rgba(0, 0, 0, 0.55);
+	color-scheme: dark;
 }
 
 html,
@@ -354,7 +357,16 @@ blockquote blockquote blockquote {
 }
 
 code::selection {
-	background-color: var(--color-3);
+	background-color: var(--color-2);
+}
+
+.attachbox {
+	background-color: transparent;
+	border-color: inherit;
+}
+
+.attachbox dd {
+	border-top-color: var(--border-color-2);
 }
 
 .postprofile {
