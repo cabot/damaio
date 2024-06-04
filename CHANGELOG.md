@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.9
+
+* Updated phpBB 3.3.12
+* Some CSS adjustments
+
 ## 1.0.8
 
 * [Spectrum](https://github.com/seballot/spectrum) plugin updated to the latest version (2.0.10).
