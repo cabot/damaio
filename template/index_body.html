@@ -28,15 +28,15 @@
 	<form method="post" action="{{ S_LOGIN_ACTION }}" class="stat-block" id="login-block">
 		<h3><a href="{{ U_LOGIN_LOGOUT }}">{{ lang('LOGIN_LOGOUT') }}</a>{% if S_REGISTER_ENABLED %}&nbsp; &bull; &nbsp;<a href="{{ U_REGISTER }}">{{ lang('REGISTER') }}</a>{% endif %}</h3>
 		<fieldset class="quick-login">
-			<label for="username"><span>{{ lang('USERNAME') ~ lang('COLON') }}</span> <input type="text" tabindex="1" name="username" id="username" size="10" class="inputbox" title="{{ lang('USERNAME') }}" /></label>
-			<label for="password"><span>{{ lang('PASSWORD') ~ lang('COLON') }}</span> <input type="password" tabindex="2" name="password" id="password" size="10" class="inputbox" title="{{ lang('PASSWORD') }}" autocomplete="off" /></label>
+			<label for="username"><span>{{ lang('USERNAME') ~ lang('COLON') }}</span> <input type="text" tabindex="1" name="username" id="username" size="10" class="inputbox" title="{{ lang('USERNAME') }}" autocomplete="username"></label>
+			<label for="password"><span>{{ lang('PASSWORD') ~ lang('COLON') }}</span> <input type="password" tabindex="2" name="password" id="password" size="10" class="inputbox" title="{{ lang('PASSWORD') }}" autocomplete="current-password"></label>
 			{% if U_SEND_PASSWORD %}
 				<a href="{{ U_SEND_PASSWORD }}">{{ lang('FORGOT_PASS') }}</a>
 			{% endif %}
 			{% if S_AUTOLOGIN_ENABLED %}
-				<span class="responsive-hide">|</span> <label for="autologin">{{ lang('LOG_ME_IN') }} <input type="checkbox" tabindex="4" name="autologin" id="autologin" /></label>
+				<span class="responsive-hide">|</span> <label for="autologin">{{ lang('LOG_ME_IN') }} <input type="checkbox" tabindex="4" name="autologin" id="autologin"></label>
 			{% endif %}
-			<input type="submit" tabindex="5" name="login" value="{{ lang('LOGIN') }}" class="button2" />
+			<input type="submit" tabindex="5" name="login" value="{{ lang('LOGIN') }}" class="button2">
 			{{ S_LOGIN_REDIRECT }}
 			{{ S_FORM_TOKEN_LOGIN }}
 		</fieldset>

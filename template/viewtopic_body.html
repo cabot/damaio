@@ -48,7 +48,7 @@
 		<div class="search-box" role="search">
 			<form method="get" id="topic-search" action="{{ S_SEARCHBOX_ACTION }}">
 			<fieldset>
-				<input class="inputbox search tiny"  type="search" name="keywords" id="search_keywords" size="20" placeholder="{{ lang('SEARCH_TOPIC') }}" />
+				<input class="inputbox search tiny"  type="search" name="keywords" id="search_keywords" size="20" placeholder="{{ lang('SEARCH_TOPIC') }}">
 				<button class="button button-search" type="submit" title="{{ lang('SEARCH') }}">
 					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">{{ lang('SEARCH') }}</span>
 				</button>
@@ -91,7 +91,7 @@
 				{% EVENT viewtopic_body_poll_option_before %}
 				<dl class="{% if poll_option.POLL_OPTION_VOTED %}voted{% endif %}{% if poll_option.POLL_OPTION_MOST_VOTES %} most-votes{% endif %}"{% if poll_option.POLL_OPTION_VOTED %} title="{{ lang('POLL_VOTED_OPTION') }}"{% endif %} data-alt-text="{{ lang('POLL_VOTED_OPTION') }}" data-poll-option-id="{{ poll_option.POLL_OPTION_ID }}">
 					<dt>{% if S_CAN_VOTE %}<label for="vote_{{ poll_option.POLL_OPTION_ID }}">{{ poll_option.POLL_OPTION_CAPTION }}</label>{% else %}{{ poll_option.POLL_OPTION_CAPTION }}{% endif %}</dt>
-					{% if S_CAN_VOTE %}<dd style="width: auto;" class="poll_option_select">{% if S_IS_MULTI_CHOICE %}<input type="checkbox" name="vote_id[]" id="vote_{{ poll_option.POLL_OPTION_ID }}" value="{{ poll_option.POLL_OPTION_ID }}"{% if poll_option.POLL_OPTION_VOTED %} checked="checked"{% endif %} />{% else %}<input type="radio" name="vote_id[]" id="vote_{{ poll_option.POLL_OPTION_ID }}" value="{{ poll_option.POLL_OPTION_ID }}"{% if poll_option.POLL_OPTION_VOTED %} checked="checked"{% endif %} />{% endif %}</dd>{% endif %}
+					{% if S_CAN_VOTE %}<dd style="width: auto;" class="poll_option_select">{% if S_IS_MULTI_CHOICE %}<input type="checkbox" name="vote_id[]" id="vote_{{ poll_option.POLL_OPTION_ID }}" value="{{ poll_option.POLL_OPTION_ID }}"{% if poll_option.POLL_OPTION_VOTED %} checked="checked"{% endif %}>{% else %}<input type="radio" name="vote_id[]" id="vote_{{ poll_option.POLL_OPTION_ID }}" value="{{ poll_option.POLL_OPTION_ID }}"{% if poll_option.POLL_OPTION_VOTED %} checked="checked"{% endif %}>{% endif %}</dd>{% endif %}
 					<dd class="resultbar{% if not S_DISPLAY_RESULTS %} hidden{% endif %}"><div class="{% if poll_option.POLL_OPTION_PCT < 20 %}pollbar1{% elseif poll_option.POLL_OPTION_PCT < 40 %}pollbar2{% elseif poll_option.POLL_OPTION_PCT < 60 %}pollbar3{% elseif poll_option.POLL_OPTION_PCT < 80 %}pollbar4{% else %}pollbar5{% endif %}" style="width:{{ poll_option.POLL_OPTION_PERCENT_REL }};">{{ poll_option.POLL_OPTION_RESULT }}</div></dd>
 					<dd class="poll_option_percent{% if not S_DISPLAY_RESULTS %} hidden{% endif %}">{% if poll_option.POLL_OPTION_RESULT == 0 %}{{ lang('NO_VOTES') }}{% else %}{{ poll_option.POLL_OPTION_PERCENT }}{% endif %}</dd>
 				</dl>
@@ -106,7 +106,7 @@
 			{% if S_CAN_VOTE %}
 				<dl style="border-top: none;" class="poll_vote">
 					<dt>&nbsp;</dt>
-					<dd class="resultbar"><input type="submit" name="update" value="{{ lang('SUBMIT_VOTE') }}" class="button1" /></dd>
+					<dd class="resultbar"><input type="submit" name="update" value="{{ lang('SUBMIT_VOTE') }}" class="button1"></dd>
 				</dl>
 			{% endif %}
 
@@ -306,9 +306,9 @@
 				<p class="post-notice unapproved">
 					<span><i class="icon fa-question icon-red fa-fw" aria-hidden="true"></i></span>
 					<strong>{{ lang('POST_UNAPPROVED_ACTION') }}</strong>
-					<input class="button2" type="submit" value="{{ lang('DISAPPROVE') }}" name="action[disapprove]" />
-					<input class="button1" type="submit" value="{{ lang('APPROVE') }}" name="action[approve]" />
-					<input type="hidden" name="post_id_list[]" value="{{ postrow.POST_ID }}" />
+					<input class="button2" type="submit" value="{{ lang('DISAPPROVE') }}" name="action[disapprove]">
+					<input class="button1" type="submit" value="{{ lang('APPROVE') }}" name="action[approve]">
+					<input type="hidden" name="post_id_list[]" value="{{ postrow.POST_ID }}">
 					{{ S_FORM_TOKEN }}
 				</p>
 			</form>
@@ -324,10 +324,10 @@
 					<span><i class="icon fa-recycle icon-red fa-fw" aria-hidden="true"></i></span>
 					<strong>{{ lang('POST_DELETED_ACTION') }}</strong>
 					{% if postrow.S_DELETE_PERMANENT %}
-						<input class="button2" type="submit" value="{{ lang('DELETE') }}" name="action[delete]" />
+						<input class="button2" type="submit" value="{{ lang('DELETE') }}" name="action[delete]">
 					{% endif %}
-					<input class="button1" type="submit" value="{{ lang('RESTORE') }}" name="action[restore]" />
-					<input type="hidden" name="post_id_list[]" value="{{ postrow.POST_ID }}" />
+					<input class="button1" type="submit" value="{{ lang('RESTORE') }}" name="action[restore]">
+					<input type="hidden" name="post_id_list[]" value="{{ postrow.POST_ID }}">
 					{{ S_FORM_TOKEN }}
 				</p>
 			</form>
@@ -469,5 +469,7 @@
 		<p>{{ LOGGED_IN_USER_LIST }}</p>
 	</div>
 {% endif %}
+
+{% EVENT viewtopic_body_online_list_after %}
 
 {% include 'overall_footer.html' %}
