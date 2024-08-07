@@ -39,8 +39,10 @@
 			{% endfor %}
 		</ul>
 
+		{% EVENT notification_dropdown_footer_before %}
 		<div class="footer">
 			<a href="{{ U_VIEW_ALL_NOTIFICATIONS }}"><span>{{ lang('SEE_ALL') }}</span></a>
 		</div>
+		{% EVENT notification_dropdown_footer_after %}
 	</div>
 </div>
