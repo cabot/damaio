@@ -52,6 +52,7 @@
 	<h3>{{ lang('GROUP_SETTINGS_SAVE') }}</h3>
 
 	<fieldset>
+	{% EVENT ucp_group_settings_before %}
 	<dl>
 		<dt><label for="group_colour">{{ lang('GROUP_COLOR') ~ lang('COLON') }}</label><br><span>{{ lang('GROUP_COLOR_EXPLAIN') }}</span></dt>
 		<dd>
@@ -65,6 +66,7 @@
 		<dt><label for="group_rank">{{ lang('GROUP_RANK') ~ lang('COLON') }}</label></dt>
 		<dd><select name="group_rank" id="group_rank">{{ S_RANK_OPTIONS }}</select></dd>
 	</dl>
+	{% EVENT ucp_group_settings_after %}
 	</fieldset>
 
 	</div>
