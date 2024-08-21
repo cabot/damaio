@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.10
+
+* Update phpBB 3.3.13
+* Remove IE9 stylesheet link
+
 ## 1.0.9
 
 * Updated phpBB 3.3.12
