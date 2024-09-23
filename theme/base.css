@@ -417,8 +417,8 @@ select {
 
 .row-item[class*="_read"],
 .row-item[class*="_unread"],
-.forum_link,
-.topic_moved {
+.row-item.forum_link,
+.row-item.topic_moved {
 	background-image: none;
 }
 
