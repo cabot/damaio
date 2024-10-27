@@ -75,7 +75,9 @@
 	{% if not S_IS_BOT %}{{ RUN_CRON_TASK }}{% endif %}
 </div>
 
-<a href="#top" class="scrolltop"><span class="fa fa-arrow-up"></span></a>
+<a href="#top" class="scrolltop" aria-label="{{ lang('BACK_TO_TOP') }}">
+    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</a>
 
 <script src="{{ T_JQUERY_LINK }}"></script>
 {% if S_ALLOW_CDN %}<script>window.jQuery || document.write('\x3Cscript src="{{ T_ASSETS_PATH }}/javascript/jquery-3.7.1.min.js?assets_version={{ T_ASSETS_VERSION }}">\x3C/script>');</script>{% endif %}
