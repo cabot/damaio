@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.11
+
+* Replace font icons with svg icons in the footer
+* Replace Twitter icon with X icon
+
 ## 1.0.10
 
 * Update phpBB 3.3.13

@@ -5,7 +5,7 @@ or install the Damaïo Configuration extension:
 https://github.com/cabot/damaioconfiguration
 ---------------------------------------------------------------------------- #}
 
-{% set socialLinks = [
+{% set social_links = [
 	{'href': definition.DAMAIO_DEVIANTART, 'title': 'DeviantArt', 'customtitle': definition.DAMAIO_DEVIANTART_NAME},
 	{'href': definition.DAMAIO_FACEBOOK, 'title': 'Facebook', 'customtitle': definition.DAMAIO_FACEBOOK_NAME},
 	{'href': definition.DAMAIO_FLICKR, 'title': 'Flickr', 'customtitle': definition.DAMAIO_FLICKR_NAME},
@@ -19,27 +19,33 @@ https://github.com/cabot/damaioconfiguration
 	{'href': definition.DAMAIO_SOUNDCLOUD, 'title': 'SoundCloud', 'customtitle': definition.DAMAIO_SOUNDCLOUD_NAME},
 	{'href': definition.DAMAIO_STEAM, 'title': 'Steam', 'customtitle': definition.DAMAIO_STEAM_NAME},
 	{'href': definition.DAMAIO_TUMBLR, 'title': 'Tumblr', 'customtitle': definition.DAMAIO_TUMBLR_NAME},
-	{'href': definition.DAMAIO_TWITTER, 'title': 'Twitter', 'customtitle': definition.DAMAIO_TWITTER_NAME},
+	{'href': definition.DAMAIO_TWITTER, 'title': 'X-Twitter', 'customtitle': definition.DAMAIO_TWITTER_NAME},
 	{'href': definition.DAMAIO_WHATSAPP, 'title': 'WhatsApp', 'customtitle': definition.DAMAIO_WHATSAPP_NAME},
 	{'href': definition.DAMAIO_YOUTUBE, 'title': 'YouTube', 'customtitle': definition.DAMAIO_YOUTUBE_NAME}
 ] %}
 
-{% set footerListItems = [] %}
+{% set damaio_has_social_link = social_links|filter(social => social.href) is not empty %}
+{% set damaio_has_feed_link = S_ENABLE_FEEDS and definition.DAMAIO_FEED %}
 
-{% for socialLink in socialLinks if socialLink.href %}
-	{% set socialItem = '<li class="socialinks-list-item damaio-footer-' ~ socialLink.title|lower ~ '"><a href="' ~ socialLink.href ~ '" title="' ~ socialLink.customtitle|default(socialLink.title) ~ '"><i class="icon icon-xl fa-' ~ socialLink.title|lower ~ '"></i></a></li>' %}
-	{% set footerListItems = footerListItems|merge([socialItem]) %}
-{% endfor %}
-
-{% if definition.DAMAIO_FEED and S_ENABLE_FEEDS %}
-	{% set feedItem = '<li class="socialinks-list-item damaio-footer-rss"><a type="application/rss+xml" href="' ~ U_FEED ~ '"><i class="icon icon-xl fa-rss" title="' ~ lang('FEED') ~ ' - ' ~ SITENAME ~ '"></i></a></li>' %}
-	{% set footerListItems = footerListItems|merge([feedItem]) %}
-{% endif %}
-
-{% if footerListItems|length %}
+{% if damaio_has_social_link or damaio_has_feed_link %}
 <div class="socialinks">
 	<ul>
-		{{ footerListItems|join }}
+	{% apply spaceless %}
+		{% for social in social_links if social.href %}
+		<li class="socialinks-list-item damaio-footer-{{ social.title|lower }}">
+			<a href="{{ social.href }}" title="{{ social.customtitle|default(social.title) }}">
+				{% include 'social_icons/' ~ social.title|lower ~ '.svg' ignore missing %}
+			</a>
+		</li>
+		{% endfor %}
+		{% if damaio_has_feed_link %}
+			<li class="socialinks-list-item damaio-footer-rss">
+				<a type="application/rss+xml" href="{{ U_FEED }}" title="{{ lang('FEED') ~ ' - ' ~ SITENAME }}">
+					{% include 'social_icons/rss.svg' ignore missing %}
+				</a>
+			</li>
+		{% endif %}
+	{% endapply %}
 	</ul>
 </div>
 {% endif %}

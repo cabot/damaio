@@ -690,19 +690,30 @@ ul.linklist li a {
 }
 
 .socialinks-list-item {
-	display: inline-block;
-	margin: 5px 2px;
+	--spacing-item: 8px;
+	display: inline-flex;
+	font-size: 2.2em;
+	margin: var(--spacing-item);
 }
 
-.socialinks-list-item .icon {
-	font-size: 2.2em;
-	padding: 5px;
+.socialinks-list-item:last-child {
+	margin-inline-end: calc(var(--spacing-item) * 2);
+}
+
+.socialinks-list-item a {
+	display: inherit;
 	opacity: 0.75;
 	transition: opacity 0.25s;
 }
 
-.socialinks-list-item .icon:hover {
+.socialinks-list-item a:hover {
 	opacity: 1;
+}
+
+.socialinks-list-item svg {
+	fill: currentColor;
+	height: 1em;
+	width: 1em;
 }
 
 .stat-block {
