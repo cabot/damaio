@@ -720,18 +720,17 @@ ul.linklist li a {
 	padding: 12px 10px;
 }
 
-.stat-block:empty {
-	display: none;
+.stat-block .stat-block {
+	padding: 0;
+}
+
+.stat-block :first-child h3 {
+	margin: 0;
 }
 
 .stat-block h3 {
 	font-size: 1em;
-	margin: 0;
 	border-bottom: none;
-}
-
-.stat-block p {
-	margin: 0;
 }
 
 table.table1 thead th {
