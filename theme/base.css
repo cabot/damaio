@@ -1079,6 +1079,10 @@ a.avatar-letter:active {
 }
 
 /* Paypal Donation Extension */
+.damaio .donation_stats {
+	margin-block: .5em;
+}
+
 fieldset.submit-buttons input.paypalbutton {
 	padding: 0 12px;
 }
