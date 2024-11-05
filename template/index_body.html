@@ -12,9 +12,9 @@
 
 {% EVENT index_body_forumlist_body_after %}
 
-<div class="forabg headerspace damaio-stat">
+<div class="forabg headerspace index-stats-block">
 	<div class="inner">
-	<ul class="topiclist damaio-header-stats">
+	<ul class="topiclist index-stats-header">
 		<li class="header">
 			<dl class="row-item">
 				<dt><div class="list-inner">{{ lang('INFORMATION') }}</div></dt>
@@ -22,7 +22,7 @@
 			</dl>
 		</li>
 	</ul>
-	<div class="stat-block">
+	<div class="stat-block index-stats-content">
 		{% EVENT index_body_stat_blocks_before %}
 
 		{% if not definition.MODAL_LOGIN and (not S_USER_LOGGED_IN and not S_IS_BOT) %}
