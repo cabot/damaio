@@ -1049,7 +1049,7 @@ a.avatar-letter:active {
 	scroll-margin-top: 2.5rem;
 }
 
-/* || Tweaks for phpBB official extensions
+/* || Extensions tweak
 --------------------------------------------------------------------------- */
 
 /* Collapsible Forum Categories */
@@ -1076,6 +1076,11 @@ a.avatar-letter:active {
 	border: 1px dotted;
 	scroll-margin-top: 0.5em;
 	border-radius: var(--border-radius-small);
+}
+
+/* Paypal Donation Extension */
+fieldset.submit-buttons input.paypalbutton {
+	padding: 0 12px;
 }
 
 /* || Media queries
