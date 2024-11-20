@@ -408,7 +408,7 @@ ul.forums {
 }
 
 select {
-	padding: 6px 1px;
+	padding: 6px 4px;
 }
 
 .contact-icon {
@@ -417,8 +417,8 @@ select {
 
 .row-item[class*="_read"],
 .row-item[class*="_unread"],
-.forum_link,
-.topic_moved {
+.row-item.forum_link,
+.row-item.topic_moved {
 	background-image: none;
 }
 
@@ -690,37 +690,53 @@ ul.linklist li a {
 }
 
 .socialinks-list-item {
-	display: inline-block;
-	margin: 5px 2px;
+	--spacing-item: 8px;
+	display: inline-flex;
+	font-size: 2.2em;
+	margin: var(--spacing-item);
 }
 
-.socialinks-list-item .icon {
-	font-size: 2.2em;
-	padding: 5px;
+.socialinks-list-item:last-child {
+	margin-inline-end: calc(var(--spacing-item) * 2);
+}
+
+.socialinks-list-item a {
+	display: inherit;
 	opacity: 0.75;
 	transition: opacity 0.25s;
 }
 
-.socialinks-list-item .icon:hover {
+.socialinks-list-item a:hover {
 	opacity: 1;
+}
+
+.socialinks-list-item svg {
+	fill: currentColor;
+	height: 1em;
+	width: 1em;
 }
 
 .stat-block {
 	padding: 12px 10px;
 }
 
-.stat-block:empty {
-	display: none;
+.stat-block .stat-block {
+	padding: 0;
 }
 
 .stat-block h3 {
 	font-size: 1em;
-	margin: 0;
 	border-bottom: none;
+	margin-top: 0;
+}
+
+.index-stats-content :not(:first-child) h3,
+.index-stats-content > h3 {
+	margin-top: 1.5em;
 }
 
 .stat-block p {
-	margin: 0;
+	margin-bottom: 0;
 }
 
 table.table1 thead th {
@@ -1033,7 +1049,7 @@ a.avatar-letter:active {
 	scroll-margin-top: 2.5rem;
 }
 
-/* || Tweaks for phpBB official extensions
+/* || Extensions tweak
 --------------------------------------------------------------------------- */
 
 /* Collapsible Forum Categories */
@@ -1060,6 +1076,15 @@ a.avatar-letter:active {
 	border: 1px dotted;
 	scroll-margin-top: 0.5em;
 	border-radius: var(--border-radius-small);
+}
+
+/* Paypal Donation Extension */
+.damaio .donation_stats {
+	margin-block: .5em;
+}
+
+fieldset.submit-buttons input.paypalbutton {
+	padding: 0 12px;
 }
 
 /* || Media queries

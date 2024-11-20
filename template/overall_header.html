@@ -37,9 +37,12 @@
 <script>if (localStorage.sideoftheforce) document.documentElement.setAttribute("data-theme", localStorage.sideoftheforce);</script>
 {% if definition.COLOR_PICKER %}
 	<script>
-		if (localStorage.maincolor1) document.documentElement.style.setProperty("--main-color1", localStorage.maincolor1);
-		if (localStorage.maincolor2) document.documentElement.style.setProperty("--main-color2", localStorage.maincolor2);
-		if (localStorage.maincolor3) document.documentElement.style.setProperty("--main-color3", localStorage.maincolor3);
+		for (let i = 1; i <= 3; i++) {
+			const color = localStorage.getItem('maincolor' + i);
+			if (color) {
+				document.documentElement.style.setProperty('--main-color' + i, color);
+			}
+		}
 	</script>
 	<link href="{{ T_THEME_PATH }}/spectrum/spectrum.min.css?v=2.0.10&assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
 {% endif %}
