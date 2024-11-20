@@ -20,7 +20,7 @@
 	</fieldset>
 {% endif %}
 
-<div id="post-{{ MESSAGE_ID }}" class="post pm has-profile{% if S_POST_UNAPPROVED or S_POST_REPORTED %} reported{% endif %}">
+<div id="post-{{ MESSAGE_ID }}" class="post pm has-profile">
 <div class="inner">
 		{% if S_ONLINE %}<span class="online-text">{{ lang('ONLINE') }}</span>{% endif %}
 	<dl class="postprofile" id="profile{{ MESSAGE_ID }}">
