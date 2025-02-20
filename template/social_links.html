@@ -34,14 +34,18 @@ https://github.com/cabot/damaioconfiguration
 		{% for social in social_links if social.href %}
 		<li class="socialinks-list-item damaio-footer-{{ social.title|lower }}">
 			<a href="{{ social.href }}" title="{{ social.customtitle|default(social.title) }}">
-				{% include 'social_icons/' ~ social.title|lower ~ '.svg' ignore missing %}
+				{{ include('social_icons/' ~ social.title|lower ~ '.svg', {
+					'aria_label': social.social.customtitle|default(social.title)
+				}, ignore_missing = true) }}
 			</a>
 		</li>
 		{% endfor %}
 		{% if damaio_has_feed_link %}
 			<li class="socialinks-list-item damaio-footer-rss">
 				<a type="application/rss+xml" href="{{ U_FEED }}" title="{{ lang('FEED') ~ ' - ' ~ SITENAME }}">
-					{% include 'social_icons/rss.svg' ignore missing %}
+					{{ include('social_icons/rss.svg', {
+						'aria_label': lang('FEED') ~ ' - ' ~ SITENAME
+					}, ignore_missing = true) }}
 				</a>
 			</li>
 		{% endif %}
