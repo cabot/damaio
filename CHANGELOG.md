@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.12
+
+* New icons added
+    * Bluesky
+    * Discord
+    * Mastodon
+    * PayPal
+    * Telegram
+    * TikTok
+    * VKontakte
+
 ## 1.0.11
 
 * Replace font icons with svg icons in the footer
