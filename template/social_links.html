@@ -6,20 +6,27 @@ https://github.com/cabot/damaioconfiguration
 ---------------------------------------------------------------------------- #}
 
 {% set social_links = [
+	{'href': definition.DAMAIO_BLUESKY, 'title': 'Bluesky', 'customtitle': definition.DAMAIO_BLUESKY_NAME},
 	{'href': definition.DAMAIO_DEVIANTART, 'title': 'DeviantArt', 'customtitle': definition.DAMAIO_DEVIANTART_NAME},
+	{'href': definition.DAMAIO_DISCORD, 'title': 'Discord', 'customtitle': definition.DAMAIO_DISCORD_NAME},
 	{'href': definition.DAMAIO_FACEBOOK, 'title': 'Facebook', 'customtitle': definition.DAMAIO_FACEBOOK_NAME},
 	{'href': definition.DAMAIO_FLICKR, 'title': 'Flickr', 'customtitle': definition.DAMAIO_FLICKR_NAME},
 	{'href': definition.DAMAIO_GITHUB, 'title': 'GitHub', 'customtitle': definition.DAMAIO_GITHUB_NAME},
 	{'href': definition.DAMAIO_INSTAGRAM, 'title': 'Instagram', 'customtitle': definition.DAMAIO_INSTAGRAM_NAME},
 	{'href': definition.DAMAIO_LINKEDIN, 'title': 'LinkedIn', 'customtitle': definition.DAMAIO_LINKEDIN_NAME},
+	{'href': definition.DAMAIO_MASTODON, 'title': 'Mastodon', 'customtitle': definition.DAMAIO_MASTODON_NAME},
+	{'href': definition.DAMAIO_PAYPAL, 'title': 'PayPal', 'customtitle': definition.DAMAIO_PAYPAL_NAME},
 	{'href': definition.DAMAIO_PINTEREST, 'title': 'Pinterest', 'customtitle': definition.DAMAIO_PINTEREST_NAME},
 	{'href': definition.DAMAIO_REDDIT, 'title': 'Reddit', 'customtitle': definition.DAMAIO_REDDIT_NAME},
 	{'href': definition.DAMAIO_SKYPE, 'title': 'Skype', 'customtitle': definition.DAMAIO_SKYPE_NAME},
 	{'href': definition.DAMAIO_SNAPCHAT, 'title': 'Snapchat', 'customtitle': definition.DAMAIO_SNAPCHAT_NAME},
 	{'href': definition.DAMAIO_SOUNDCLOUD, 'title': 'SoundCloud', 'customtitle': definition.DAMAIO_SOUNDCLOUD_NAME},
 	{'href': definition.DAMAIO_STEAM, 'title': 'Steam', 'customtitle': definition.DAMAIO_STEAM_NAME},
+	{'href': definition.DAMAIO_TELEGRAM, 'title': 'Telegram', 'customtitle': definition.DAMAIO_TELEGRAM_NAME},
+	{'href': definition.DAMAIO_TIKTOK, 'title': 'TikTok', 'customtitle': definition.DAMAIO_TIKTOK_NAME},
 	{'href': definition.DAMAIO_TUMBLR, 'title': 'Tumblr', 'customtitle': definition.DAMAIO_TUMBLR_NAME},
 	{'href': definition.DAMAIO_TWITTER, 'title': 'X-Twitter', 'customtitle': definition.DAMAIO_TWITTER_NAME},
+	{'href': definition.DAMAIO_VKONTAKTE, 'title': 'VKontakte', 'customtitle': definition.DAMAIO_VKONTAKTE_NAME},
 	{'href': definition.DAMAIO_WHATSAPP, 'title': 'WhatsApp', 'customtitle': definition.DAMAIO_WHATSAPP_NAME},
 	{'href': definition.DAMAIO_YOUTUBE, 'title': 'YouTube', 'customtitle': definition.DAMAIO_YOUTUBE_NAME}
 ] %}
@@ -35,7 +42,7 @@ https://github.com/cabot/damaioconfiguration
 		<li class="socialinks-list-item damaio-footer-{{ social.title|lower }}">
 			<a href="{{ social.href }}" title="{{ social.customtitle|default(social.title) }}">
 				{{ include('social_icons/' ~ social.title|lower ~ '.svg', {
-					'aria_label': social.social.customtitle|default(social.title)
+					'aria_label': social.customtitle|default(social.title)
 				}, ignore_missing = true) }}
 			</a>
 		</li>
