@@ -1087,6 +1087,24 @@ fieldset.submit-buttons input.paypalbutton {
 	padding: 0 12px;
 }
 
+/* Profile on the left / Profil sur la gauche
+(https://www.phpbb-fr.com/customise/db/extension/profil_sur_la_gauche/) */
+@media (min-width: 701px) {
+	.online-text:has(~ dl .preonline) {
+		top: -2px;
+		right: auto;
+		left: 10px;
+	}
+
+	.preonline {
+		display: none;
+	}
+
+	.preonline ~ .avatar {
+		margin-top: 4px;
+	}
+}
+
 /* || Media queries
 --------------------------------------------------------------------------- */
 @media (max-width: 700px) {
