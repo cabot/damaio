@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light dark">
 {{ META }}
 <title>{{ SITENAME }} &bull; {% if S_IN_MCP %}{{ lang('MCP') }} &bull; {% elseif S_IN_UCP %}{{ lang('UCP') }} &bull; {% endif %}{{ PAGE_TITLE }}</title>
-
+{% include 'config.html' %}
 <link href="{{ T_FONT_AWESOME_LINK }}" rel="stylesheet">
 <link rel="preload" href="{{ T_THEME_PATH }}/fonts/rubik-regular.woff2" as="font" type="font/woff2" crossorigin="">
 <link href="{{ ROOT_PATH }}styles/prosilver/theme/stylesheet.css?assets_version={{ T_ASSETS_VERSION }}" rel="stylesheet">
