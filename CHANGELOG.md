@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.13
+
+* Fix SoundCloud icon name
+* Add a config parameter to show/hide the "scroll to top" link
+
 ## 1.0.12
 
 * New icons added
