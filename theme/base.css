@@ -477,6 +477,10 @@ select {
 	content: "\f0e5";
 }
 
+.row-item[class*=_hot]:before {
+	content: "\f06d";
+}
+
 .row-item[class*="_locked"]::before {
 	content: "\f023";
 }
