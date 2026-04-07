@@ -617,6 +617,19 @@ input.button3:focus {
 	color: #e5e5e5;
 }
 
+.notification_list .dropdown-contents li {
+	--notification-border-width: 4px;
+	border-inline: var(--notification-border-width) solid transparent;
+}
+
+.notification_list .dropdown-contents li.bg2 {
+	border-inline-color: var(--main-color2);
+}
+
+.notification_list .dropdown-contents ul li a {
+	padding-inline: var(--notification-border-width);
+}
+
 .dropdown-extended .header,
 .dropdown-extended .footer {
 	border-color: var(--border-color-3);
@@ -750,14 +763,6 @@ a.avatar-letter:active {
 	background-color: var(--input-bg);
 	color: var(--input-txt-color);
 	border: 1px solid var(--border-color-1) !important;
-}
-
-.damaio .cc-message {
-	color: var(--text-color-2);
-}
-
-.damaio .cc-banner .cc-link {
-	color: var(--links-color);
 }
 
 /* || Tweaks for phpBB official extensions
