@@ -154,11 +154,10 @@ li.row a:hover strong {
 	}
 }
 
-.inputbox:hover {
-	border-color: var(--main-color2);
-}
-
-.inputbox:focus {
+.inputbox:hover,
+select:hover,
+.inputbox:focus,
+select:focus {
 	border-color: var(--main-color2);
 }
 
