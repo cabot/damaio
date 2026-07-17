@@ -128,6 +128,8 @@
 			{% if S_BCC_RECIPIENT %}<br><strong>{{ lang('BCC') ~ lang('COLON') }}</strong> {% for bcc_recipient in bcc_recipient %}{% if bcc_recipient.NAME_FULL %}{{ bcc_recipient.NAME_FULL }}{% else %}<a href="{{ bcc_recipient.U_VIEW }}"{% if bcc_recipient.COLOUR %} style="color:{{ bcc_recipient.COLOUR }};"{% endif %}><strong>{{ bcc_recipient.NAME }}</strong></a>{% endif %}&nbsp;{% endfor %}{% endif %}
 		</p>
 
+		{% EVENT ucp_pm_viewmessage_message_content_before %}
+
 		<div class="content">{{ MESSAGE }}</div>
 
 		{% if S_HAS_ATTACHMENTS %}

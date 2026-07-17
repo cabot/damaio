@@ -57,6 +57,7 @@ fieldset.polls {
 	border: none;
 	border-radius: 0;
 	padding: 0 5px;
+	margin: 0 auto;
 }
 
 .headerbar {
@@ -200,6 +201,10 @@ dd.lastpost > span > *:not(dfn) {
 
 a.subforum {
 	margin-left: 0.1em;
+}
+
+.content {
+	line-height: 1.5;
 }
 
 .postbody .content {
@@ -477,6 +482,10 @@ select {
 	content: "\f0e5";
 }
 
+.row-item[class*=_hot]:before {
+	content: "\f06d";
+}
+
 .row-item[class*="_locked"]::before {
 	content: "\f023";
 }
@@ -495,6 +504,7 @@ select {
 
 .agreement {
 	font-size: 14px;
+	line-height: 1.6;
 }
 
 .dropdown {

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.13
+
+* Fix SoundCloud icon name
+* Add a config parameter to show/hide the "scroll to top" link
+* Modification of the popular topics icon. Thanks to [Talk19Zehn](https://www.phpbb.com/community/memberlist.php?mode=viewprofile&u=1327906) for the suggestion.
+* JS & CSS minor adjustments
+
 ## 1.0.12
 
 * New icons added
