@@ -428,6 +428,10 @@ fieldset.polls dl.voted {
 	background-color: var(--color-3);
 }
 
+.phpbb_twitter-icon {
+	background-color: #000;
+}
+
 .pagination li a {
 	color: #ffffff;
 }
