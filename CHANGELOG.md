@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.14
+
+* Replace Twitter icon with X icon in icons_contact.svg
+
 ## 1.0.13
 
 * Fix SoundCloud icon name
